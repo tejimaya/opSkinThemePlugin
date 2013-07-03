@@ -21,7 +21,7 @@
 <br />
 <?php endif; ?>
 
-<p><?php echo __('スキンプテーマはどれか一つのみが「有効」になっている必要があります。') ?></p>
+<p><?php echo __('スキンテーマはどれか一つのみが「有効」になっている必要があります。') ?></p>
 <?php echo $form->renderFormTag(url_for('opSkinThemePlugin/index')); ?>
 <table>
 <?php include_partial('themeSelectRows', array('form' => $form)); ?>

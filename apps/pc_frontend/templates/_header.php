@@ -1,5 +1,4 @@
-<h1 class="brand"><?php echo link_to($op_config['sns_name'], '@homepage') ?></h1>
-
+<a href="/" class="brand"><?php printf($op_config['sns_name'], '@homepage') ?></a>
 <?php if(opToolkit::isSecurePage()): ?>
 <div id="notificationCenter">
   <?php echo op_image_tag('NOTIFY_CENTER.png', array('height' => '32', 'class' => 'ncbutton')) ?>

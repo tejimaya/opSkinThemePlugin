@@ -30,6 +30,10 @@ opSkinThemePlugin
 
 
 ## 更新履歴
+### 1.0.0 alpha
+* ceruleanを中心に大幅なデザインの変更(bootstrap v2.3.2に対応)
+* タイムライン部分のテーマが変更されない場合は、opTimelinePluginの更新をお願いします
+
 ### 0.9.4 alpha
 * プレビューのアクセス方法の修正
 

@@ -3,7 +3,7 @@
 /*
 Theme Name:cerulean
 Theme URI:
-Description:Bootswatchのcerulean
+Description:Bootswatchのcerulean(背景画像付)
 Author:sonobe
 Version: 1.0.0
 */
@@ -11,8 +11,12 @@ Version: 1.0.0
 /*==============================================================================
  * Common
  *----------------------------------------------------------------------------*/
-body {
-  background:white;
+#Body {
+  z-index: -100;
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 /*well*/
 .parts,
