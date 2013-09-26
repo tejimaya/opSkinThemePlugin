@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 /*
-Theme Name:cerulean-light
+Theme Name:bamboo
 Theme URI:
-Description:Bootswatchのcerulean(背景明)
+Description:竹林
 Author:sonobe
 Version: 1.0.0
 */
@@ -11,8 +11,12 @@ Version: 1.0.0
 /*==============================================================================
  * Common
  *----------------------------------------------------------------------------*/
-body {
-  background-image: url(../img/bg.png);
+#Body {
+  z-index: -100;
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 /*well*/
 .parts,
