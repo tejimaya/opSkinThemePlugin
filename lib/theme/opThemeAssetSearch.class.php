@@ -87,7 +87,8 @@ class opThemeAssetSearch extends opInstalledPluginManager
       $files[] = str_replace($this->getWebDir(), '/opSkinThemePlugin', $fileName);
     }
 
-    if (empty($files)) {
+    if (empty($files))
+    {
       return false;
     }
 

@@ -79,7 +79,8 @@ class opSkinThemePluginActions extends sfActions
   private function checkThemeDirValidity()
   {
     //まだテーマを選択していない場合はエラーチェックをしない
-    if ($this->config->unRegisteredIsTheme()) {
+    if ($this->config->unRegisteredIsTheme())
+    {
       //そもそも使用するテーマがないので存在するものとして扱う
       $this->existsUseTheme = true;
     }
