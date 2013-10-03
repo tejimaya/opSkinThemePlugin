@@ -100,7 +100,7 @@ class opThemeEvent
 
       if ($filePaths !== false)
       {
-        self::includeCSSOrJS($filePaths, $type);
+        self::includeCssOrJs($filePaths, $type);
       }
     }
   }
@@ -108,7 +108,7 @@ class opThemeEvent
   /**
    * @todo process in the case of non-javascript or css
    */
-  private static function includeCSSOrJS($filePaths, $type)
+  private static function includeCssOrJs($filePaths, $type)
   {
     $response = sfContext::getInstance()->getResponse();
 
