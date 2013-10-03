@@ -55,7 +55,7 @@ class opThemeAssetSearch extends opInstalledPluginManager
     }
   }
 
-  public function loadThemeInsance()
+  public function loadThemeInstance()
   {
     $pattern = $this->getThemePath().'/*';
 
