@@ -166,7 +166,7 @@ class opThemeInfoParser
     //項目が全てない場合はエラーとする
     foreach ($this->getConfigNames() as $name)
     {
-      $exsitsConfig = false;
+      $existsConfig = false;
 
       foreach ($configLines as $line)
       {
@@ -174,11 +174,11 @@ class opThemeInfoParser
 
         if (strpos($line, $configNameFiled) !== false)
         {
-          $exsitsConfig = true;
+          $existsConfig = true;
         }
       }
 
-      if (!$exsitsConfig) {
+      if (!$existsConfig) {
         return false;
       }
     }
