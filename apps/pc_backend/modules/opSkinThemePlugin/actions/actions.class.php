@@ -54,11 +54,9 @@ class opSkinThemePluginActions extends sfActions
     $this->unRegisterUseTheme = $this->config->unRegisteredIsTheme();
 
     $this->checkThemeDirValidity();
-    
+
     //既存のプラグインと同じフォームにするために、プラグイン設定画面のフォームを使用する
     $this->form = new opThemeActivationForm(array(), array('themes' => $this->themes));
-
-    
 
     if ($request->isMethod(sfRequest::POST))
     {
@@ -126,5 +124,4 @@ class opSkinThemePluginActions extends sfActions
 
     return $notInfoList;
   }
-
 }

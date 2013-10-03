@@ -15,10 +15,8 @@
 * @subpackage theme
 * @author suzuki_mar <supasu145@gmail.com>
 */
-
 class opThemeAssetSearch extends opInstalledPluginManager
 {
-
   private $webPath;
   private $ThemePath;
 
@@ -105,5 +103,4 @@ class opThemeAssetSearch extends opInstalledPluginManager
   {
     return $this->webPath;
   }
-
 }

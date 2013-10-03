@@ -26,7 +26,6 @@
  */
 class opThemeConfig
 {
-
   /**
    * 新しくテーブルを作成するのは、プラグインとしてはやりすぎなので、
    * ただ本体に取り込まれてテーブルを作成することができるようになったら
@@ -75,5 +74,4 @@ class opThemeConfig
     $snsConfigTable = Doctrine::getTable('SnsConfig');
     return $snsConfigTable->retrieveByName('Theme_used');
   }
-
 }

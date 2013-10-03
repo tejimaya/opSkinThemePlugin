@@ -15,7 +15,6 @@
 * @subpackage theme
 * @author suzuki_mar <supasu145@gmail.com>
 */
-
 class opThemeEvent
 {
 
@@ -101,13 +100,11 @@ class opThemeEvent
     {
       $filePaths = $themeSearch->findAssetsPathByThemeNameAndType($themeName, $type);
 
-
       if ($filePaths !== false)
       {
         self::includeCSSOrJS($filePaths, $type);
       }
     }
-
   }
 
   /**
@@ -133,5 +130,4 @@ class opThemeEvent
       }
     }
   }
-
 }

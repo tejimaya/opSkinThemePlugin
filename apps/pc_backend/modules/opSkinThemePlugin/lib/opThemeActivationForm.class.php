@@ -15,11 +15,9 @@
 * @subpackage theme
 * @author suzuki_mar <supasu145@gmail.com>
 */
-
 class opThemeActivationForm extends sfForm
 {
-  const
-  THEME_FILED_KEY = 'theme';
+  const THEME_FILED_KEY = 'theme';
 
   public function configure()
   {
@@ -110,7 +108,7 @@ class opThemeActivationForm extends sfForm
     foreach ($inputs as $id => $input)
     {
       $match = array();
-      preg_match('/(.*_theme_)(.*)$/', $id, $match);      
+      preg_match('/(.*_theme_)(.*)$/', $id, $match);
       $name = $match[2];
 
       $theme = $themes[$name];
@@ -190,5 +188,4 @@ class opThemeActivationForm extends sfForm
 
     return $skinThemeInfo->save($value);
   }
-
 }

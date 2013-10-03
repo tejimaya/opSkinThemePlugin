@@ -45,7 +45,6 @@ var openpne = '.json_encode($jsonData).';
 </div><!-- HeaderContainer -->
 </div><!-- Header -->
 
-
 <div id="Contents">
 <div id="ContentsContainer">
 

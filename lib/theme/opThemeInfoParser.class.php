@@ -19,10 +19,8 @@
 /**
  * 設定ファイルを読み込む処理は複雑なので、クラスを作成した
  */
-
 class opThemeInfoParser
 {
-
   /**
    * @var opThemeAssetSearch
    */
@@ -83,7 +81,6 @@ class opThemeInfoParser
       {
         $configLines[] = $line;
       }
-
 
       if (strpos($line, '*/') !== false)
       {
@@ -184,10 +181,8 @@ class opThemeInfoParser
       if (!$exsitsConfig) {
         return false;
       }
-
     }
 
     return true;
   }
-
 }

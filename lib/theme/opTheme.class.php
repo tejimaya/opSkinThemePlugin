@@ -16,7 +16,6 @@
 * @author suzuki_mar <supasu145@gmail.com>
 */
 
-
 /*
  * opPluginはプラグインを前提にして作られたものなので、
  * テーマ用のクラスを作成した
@@ -30,8 +29,7 @@ class opTheme
     return $instance;
   }
 
-  private
-  $themeDirName;
+  private $themeDirName;
 
   /**
    * 複数回設定ファイルを読みこまなくてすむようにするため
