@@ -5,7 +5,7 @@
 
   <?php if (!$unRegisterUseTheme && !$existsUseTheme): ?>
     <p><?php echo __('Does not exists %value% of used theme at public directory.', array('%value%' => $useTheme)) ?></p>
-    <?php if (isset($notInfoThemeList)): //行詰めで表示されてしまうので改行する?>
+    <?php if (isset($notInfoThemeList)): ?>
       <br />
     <?php endif; ?>
   <?php endif; ?>

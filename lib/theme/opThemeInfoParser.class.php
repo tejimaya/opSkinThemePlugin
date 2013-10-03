@@ -9,16 +9,12 @@
 */
 
 /**
-* 設定ファイルを読み込んでテーマ情報をパースするクラス
+* to parse the theme information reads the configuration file
 *
 * @package OpenPNE
 * @subpackage theme
 * @author suzuki_mar <supasu145@gmail.com>
 */
-
-/**
- * 設定ファイルを読み込む処理は複雑なので、クラスを作成した
- */
 class opThemeInfoParser
 {
   /**
@@ -42,7 +38,6 @@ class opThemeInfoParser
     );
   }
 
-  //処理が大きすぎるので、クラスにした方がいいと思う 移譲して
   public function parseInfoFileByThemeName($themeName)
   {
     $infoPath = $this->search->getThemePath().'/'.$themeName.'/css/main.css';
@@ -87,7 +82,7 @@ class opThemeInfoParser
 
         if ($this->isConfigLines($configLines))
         {
-          //ブロックの開始と終了は削除する
+          //remove the start and end of the block
           array_shift($configLines);
           array_pop($configLines);
 
@@ -96,7 +91,6 @@ class opThemeInfoParser
         }
 
         $commentLineStart = false;
-        //配列に行がどんどん追加されてしまう
         $configLines = array();
       }
     }
@@ -135,8 +129,8 @@ class opThemeInfoParser
 
     foreach ($strs as $str)
     {
-      //空白文字で区切るときに文字化けがおこってしまっているので、文字コードを変更して文字化けを修正する
-      //コンフィグ名はすべて英字なのでASCIIを指定してする
+      //Garbled measures
+      // specify the ASCII configuration name because it is all alphabetic
       $str = mb_convert_encoding($str, 'ASCII');
       $configKey .= strtolower($str).'_';
     }
@@ -150,20 +144,20 @@ class opThemeInfoParser
   {
     $configCount = count($this->getConfigNames());
 
-    //コメントブロックの先頭と終了分も追加する
+    //add end and the beginning of the comment block
     if (count($lines) !== $configCount + 2)
     {
       return false;
     }
 
     $configLines = array();
-    //コメントブロックは無視する
+    //ignore the comment block
     for ($i = 1; $i < count($lines) - 1; $i++)
     {
       $configLines[] = $lines[$i];
     }
 
-    //項目が全てない場合はエラーとする
+    //It is an error If the desired item is not aligned
     foreach ($this->getConfigNames() as $name)
     {
       $existsConfig = false;

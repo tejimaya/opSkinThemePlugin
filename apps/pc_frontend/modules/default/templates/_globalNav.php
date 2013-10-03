@@ -1,4 +1,4 @@
-<?php //新しいデザインのグローバルナビゲーション ?>
+<?php // global navigation of new design. ?>
 <?php if ($navs && 0 < count($navs)): ?>
 <li id="newGlobalNav" class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -18,7 +18,7 @@
 </li>
 <?php endif; ?>
 
-<?php //古いデザインのグローバルナビゲーション ?>
+<?php // global navigation of old design. ?>
 <?php if ($navs): ?>
 <ul id="oldGlobalNav">
 <?php foreach ($navs as $nav): ?>

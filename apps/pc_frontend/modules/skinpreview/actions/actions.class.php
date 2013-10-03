@@ -9,7 +9,7 @@
 */
 
 /**
-* 使用するテーマをプレビュー表示する
+* opSkinThemePlugin preview actions.
 *
 * @package OpenPNE
 * @subpackage theme

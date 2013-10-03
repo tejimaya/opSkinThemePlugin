@@ -9,7 +9,7 @@
 */
 
 /**
-* テーマのアセットファイルを検索する
+* search for assets of the theme's files
 *
 * @package OpenPNE
 * @subpackage theme
@@ -21,8 +21,7 @@ class opThemeAssetSearch extends opInstalledPluginManager
   private $themePath;
 
   /**
-   *
-   * @todo 必須パラメーターがない場合は例外を発生させるようにする
+   * @todo raise an exception if there is no required parameters
    */
   public function __construct(array $params)
   {
@@ -41,7 +40,7 @@ class opThemeAssetSearch extends opInstalledPluginManager
   }
 
   /**
-   * 選択したテーマが使用できない場合に代わりのスキンを探す
+   * Find theme alternative if you can not use the selected theme
    */
   public function findSubstitutionTheme()
   {
@@ -60,7 +59,7 @@ class opThemeAssetSearch extends opInstalledPluginManager
     $availableThemeNames = array();
     foreach (glob($pattern, GLOB_ONLYDIR) as $dirPath)
     {
-      //main.cssがないものはテーマディレクトリとして扱わない
+      //it is not treated as a theme directory that there is no main.css
       $mainCssPath = $dirPath.'/css/main.css';
       if (file_exists($mainCssPath))
       {

@@ -9,7 +9,7 @@
 */
 
 /**
-* テーマを適用させるイベントクラス
+* Theme applied event class
 *
 * @package OpenPNE
 * @subpackage theme
@@ -17,7 +17,6 @@
 */
 class opThemeEvent
 {
-
   public static function enableTheme(sfEvent $event)
   {
     if (!self::isFrontend())
@@ -32,7 +31,6 @@ class opThemeEvent
 
     $themeInfo = new opThemeConfig();
 
-    //使用するテーマが登録されていない場合はテーマを読み込まない
     if ($themeInfo->unRegisteredIsTheme())
     {
       sfContext::getInstance()->getUser()->setFlash('error', sfContext::getInstance()->getI18n()->__('Theme is not registered.'), false);
@@ -108,7 +106,7 @@ class opThemeEvent
   }
 
   /**
-   * @todo CSSとJS以外だったら例外を出す
+   * @todo process in the case of non-javascript or css
    */
   private static function includeCSSOrJS($filePaths, $type)
   {

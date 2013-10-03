@@ -9,7 +9,7 @@
 */
 
 /**
-* テーマ選択のフォームクラス
+* Form class of theme selection
 *
 * @package OpenPNE
 * @subpackage theme

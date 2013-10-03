@@ -9,7 +9,7 @@
 */
 
 /**
-* 使用するテーマを選択する
+* opSkinThemePlugin actions.
 *
 * @package OpenPNE
 * @subpackage theme
@@ -18,7 +18,6 @@
 
 class opSkinThemePluginActions extends sfActions
 {
-
   /**
    * @var opThemeAssetSearch
    */
@@ -30,7 +29,7 @@ class opSkinThemePluginActions extends sfActions
   private $config;
 
   /**
-   * 登録してあるテーマ一覧
+   * @var opTheme
    */
   private $themes;
 
@@ -55,7 +54,6 @@ class opSkinThemePluginActions extends sfActions
 
     $this->checkThemeDirValidity();
 
-    //既存のプラグインと同じフォームにするために、プラグイン設定画面のフォームを使用する
     $this->form = new opThemeActivationForm(array(), array('themes' => $this->themes));
 
     if ($request->isMethod(sfRequest::POST))
@@ -74,14 +72,13 @@ class opSkinThemePluginActions extends sfActions
   }
 
   /**
-   * テーマが正しく設置されているかを確認する
+   * confirm theme is being installed correctly
    */
   private function checkThemeDirValidity()
   {
-    //まだテーマを選択していない場合はエラーチェックをしない
     if ($this->config->unRegisteredIsTheme())
     {
-      //そもそも使用するテーマがないので存在するものとして扱う
+      //If it is not selected, and treated as what exists
       $this->existsUseTheme = true;
     }
     else
