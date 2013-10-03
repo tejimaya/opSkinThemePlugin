@@ -18,7 +18,7 @@
 class opThemeAssetSearch extends opInstalledPluginManager
 {
   private $webPath;
-  private $ThemePath;
+  private $themePath;
 
   /**
    *
@@ -27,7 +27,7 @@ class opThemeAssetSearch extends opInstalledPluginManager
   public function __construct(array $params)
   {
     $this->webPath = $params['web_path'];
-    $this->ThemePath = $params['theme_path'];
+    $this->themePath = $params['theme_path'];
   }
 
   public function existsAssetsByThemeName($themeName)
@@ -97,7 +97,7 @@ class opThemeAssetSearch extends opInstalledPluginManager
 
   public function getThemePath()
   {
-    return $this->ThemePath;
+    return $this->themePath;
   }
 
   public function getWebDir()
