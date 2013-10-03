@@ -25,7 +25,7 @@ class opThemeEvent
       return false;
     }
 
-    if (self::isPrviewModule())
+    if (self::isPreviewModule())
     {
       return false;
     }
@@ -57,7 +57,7 @@ class opThemeEvent
       return false;
     }
 
-    if (!self::isPrviewModule())
+    if (!self::isPreviewModule())
     {
       return false;
     }
@@ -80,7 +80,7 @@ class opThemeEvent
     self::enableSkinByTheme($themeName);
   }
 
-  private static function isPrviewModule()
+  private static function isPreviewModule()
   {
     return (sfContext::getInstance()->getModuleName() === 'skinpreview');
   }
