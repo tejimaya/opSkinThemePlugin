@@ -67,13 +67,13 @@ class opThemeAssetSearch extends opInstalledPluginManager
       }
     }
 
-    $plugins = array();
+    $themes = array();
     foreach ($availableThemeNames as $name)
     {
-      $plugins[$name] = opTheme::getInstance($name);
+      $themes[$name] = opTheme::getInstance($name);
     }
 
-    return $plugins;
+    return $themes;
   }
 
   public function findAssetsPathByThemeNameAndType($themeName, $type)
