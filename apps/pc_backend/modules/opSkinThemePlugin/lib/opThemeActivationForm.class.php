@@ -123,10 +123,9 @@ class opThemeActivationForm extends sfForm
 
   private function createRowTag($widget, $input, opTheme $theme)
   {
-    //@todo 国際対応する
     $linkUrl = sfContext::getInstance()->getConfiguration()->generateAppUrl('pc_frontend', array('sf_route' => 'skin_preview'), true);
     $linkUrl .= $theme->getThemeDirName();
-    $linkTag = '<a href="'.$linkUrl.'" target="_blank">プレビュー</a>';
+    $linkTag = '<a href="'.$linkUrl.'" target="_blank">'.sfContext::getInstance()->getI18n()->__('Preview').'</a>';
 
     $tagIds = array(
         'author' => 'author_'.$theme->getThemeName(),

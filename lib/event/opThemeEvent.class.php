@@ -35,7 +35,7 @@ class opThemeEvent
     //使用するテーマが登録されていない場合はテーマを読み込まない
     if ($themeInfo->unRegisteredIsTheme())
     {
-      sfContext::getInstance()->getUser()->setFlash('error', 'テーマが登録されていません', false);
+      sfContext::getInstance()->getUser()->setFlash('error', sfContext::getInstance()->getI18n()->__('Theme is not registered.'), false);
       return false;
     }
 

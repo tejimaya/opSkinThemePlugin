@@ -1,7 +1,7 @@
 <?php if ($isExistsTheme): ?>
-  <p><?php echo __($themeName.'テーマをプレビュー表示しています') ?></p>
+  <p><?php echo __('preview the "%value%" themes.', array('%value%' => $themeName)) ?></p>
 <?php elseif ($emptyThemeName): ?>
-  <p><?php echo__('テーマ名のパラメーターが空です') ?></p>
+  <p><?php echo__('Parameters of the theme name is empty.') ?></p>
 <?php else: ?>
-  <p><?php echo __($themeName.'テーマはありません') ?></p>
+  <p><?php echo __('There is no "%value%" theme.', array('%value%' => $themeName)) ?></p>
 <?php endif; ?>
