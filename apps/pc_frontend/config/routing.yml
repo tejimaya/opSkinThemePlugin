@@ -1,0 +1,4 @@
+skin_preview:
+  url: /skinpreview/index/theme_name/
+  param: { module: skinpreview, action: index }
+
