@@ -48,7 +48,7 @@ class opThemeConfig
     return ($this->_findThemeUsedInstance() !== null);
   }
 
-  public function unRegisteredisTheme()
+  public function unRegisteredIsTheme()
   {
     return!($this->registeredUsedTheme());
   }
