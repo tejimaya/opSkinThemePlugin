@@ -15,7 +15,7 @@
 * @subpackage theme
 * @author suzuki_mar <supasu145@gmail.com>
 */
-class skinpreviewActions extends sfActions
+class skinPreviewActions extends sfActions
 {
   /**
    * Executes index action
