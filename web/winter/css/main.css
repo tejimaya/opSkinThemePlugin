@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 /*
-Theme Name:cerulean-dark
+Theme Name:winter
 Theme URI:
-Description:Bootswatchのcerulean(背景暗)
+Description:雪景色
 Author:sonobe
 Version: 1.0.0
 */
@@ -11,8 +11,13 @@ Version: 1.0.0
 /*==============================================================================
  * Common
  *----------------------------------------------------------------------------*/
-body {
-  background-image: url(../img/bg.png);
+
+#Body {
+  z-index: -100;
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 /*well*/
 .parts,
@@ -38,14 +43,16 @@ div.partsHeading h3 {
 .input_submit,
 input[type="submit"],
 input[type="button"] {
-  color: #333;
+  color: #555555;
   background-color: #fff;
-  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  border-color: 1px solid #cccccc;
   border-bottom-color: #b3b3b3;
 }
 .input_submit:hover,
 input[type="submit"]:hover,
-input[type="button"]:hover {  background-color: #e6e6e6 }
+input[type="button"]:hover { 
+  background-color: #e6e6e6
+}
 div.parts table {
   border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -54,7 +61,7 @@ div.parts table {
 /*==============================================================================
  * Header
  *----------------------------------------------------------------------------*/
-div#Header div#HeaderContainer div.container div#notificationCenter {  background-image: url(../img/NOTIFY_CENTER_2.png) }
+div#Header div#HeaderContainer div.container div#notificationCenter {  background-image: url(../img/NOTIFY_CENTER_1.png) }
 /*==============================================================================
  * Notification
  *----------------------------------------------------------------------------*/
@@ -74,12 +81,19 @@ div.container div#notificationCenter div#notificationCenterDetail,
  * informationBox
  *----------------------------------------------------------------------------*/
 .informationBox {
-  color: #38b44a;
-  background-color: #caeecf;
-  border-color: #b7e8b6;
+  color: #3A87AD;
+  background-color: #D9EDF7;
+  border-color: #BCE8F1;
 }
 div.alertBox {
-  background-color: #fadfdd;
-  color: #df382c;
-  border-color: #f8d0d4;
+  background-color: #FCF8E3;
+  color: #C09853;
+  border-color: #FBEED5;
+}
+/*==============================================================================
+ * license
+ *----------------------------------------------------------------------------*/
+#Footer span {
+  position: absolute;
+  margin-top: 6px;
 }

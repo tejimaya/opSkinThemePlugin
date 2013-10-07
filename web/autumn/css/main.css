@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 /*
-Theme Name:cerulean-dark
+Theme Name:cosmo-autumn
 Theme URI:
-Description:Bootswatchのcerulean(背景暗)
+Description:紅葉
 Author:sonobe
 Version: 1.0.0
 */
@@ -11,8 +11,21 @@ Version: 1.0.0
 /*==============================================================================
  * Common
  *----------------------------------------------------------------------------*/
-body {
-  background-image: url(../img/bg.png);
+a {
+color: #E2360B;
+text-decoration: none;
+}
+a:hover, a:focus {
+color: #E2360B;
+text-decoration: underline;
+}
+
+#Body {
+  z-index: -100;
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 /*well*/
 .parts,
@@ -22,11 +35,11 @@ div.dparts div.parts,
 #profileForm,
 #Footer,
 .timeline-large {
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  background-color: #eeeeee;
+  border: 1px solid #dcdcdc;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
   -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
   box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
@@ -38,19 +51,22 @@ div.partsHeading h3 {
 .input_submit,
 input[type="submit"],
 input[type="button"] {
-  color: #333;
+  color: #555555;
   background-color: #fff;
-  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  border-color: 1px solid #cccccc;
   border-bottom-color: #b3b3b3;
 }
 .input_submit:hover,
 input[type="submit"]:hover,
-input[type="button"]:hover {  background-color: #e6e6e6 }
+input[type="button"]:hover { 
+  background-color: #e6e6e6
+}
 div.parts table {
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
 }
+
 /*==============================================================================
  * Header
  *----------------------------------------------------------------------------*/
@@ -60,10 +76,15 @@ div#Header div#HeaderContainer div.container div#notificationCenter {  backgroun
  *----------------------------------------------------------------------------*/
 div.container div#notificationCenter div#notificationCenterDetail,
 #informationAboutThisIsYourProfilePage.descriptionBox .parts,
-.flashError {
-  background-color: #fcefd4;
-  border: 1px solid #fae1c6;
-  color: #eca918;
+.flashError,
+.informationBox,
+div.alertBox {
+  background-color: #C52F0A;
+  border: none;
+  color: #FFFFFF;
+}
+#Left .pageNav li.current {
+  background-color: #C52F0A;
 }
 /*==============================================================================
  * Timeline
@@ -71,15 +92,13 @@ div.container div#notificationCenter div#notificationCenterDetail,
 .timeline-post a.screen-name,
 .nav > li > a {  color: #333 }
 /*==============================================================================
- * informationBox
+ * license
  *----------------------------------------------------------------------------*/
-.informationBox {
-  color: #38b44a;
-  background-color: #caeecf;
-  border-color: #b7e8b6;
+#Footer {
+  background-color:#080808;
+  color:#ffffff;
 }
-div.alertBox {
-  background-color: #fadfdd;
-  color: #df382c;
-  border-color: #f8d0d4;
+#Footer span {
+  position: absolute;
+  margin-top: 6px;
 }
