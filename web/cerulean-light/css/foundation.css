@@ -614,7 +614,6 @@ div#sideBanner form {
 /*----------------------------------------------
  * Footer
  *--------------------------------------------*/
-#Footer a {  color: #0088cc }
 #Footer p {
   padding: 0 10px;
   line-height: 30px;
@@ -1393,6 +1392,24 @@ span.op_color {
   color: inherit;
   font-size: inherit;
 }
+
+/*==============================================================================
+ * ad_toggle
+ *----------------------------------------------------------------------------*/
+div#LayoutA div#Left div.ad ins {
+  margin-left: -4px !important;
+  margin-top: -4px !important;
+  margin-bottom: -13px !important;
+}
+div#LayoutB div#Left div.ad {
+  display: none;
+}
+div#sideBanner div.ad ins {
+  margin-left: 30px !important;
+  margin-top: -4px !important;
+  margin-bottom: -13px !important;
+}
+
 /*古いデザインのタグは表示しないようにする*/
 #oldLocalNavContents,
 #oldGlobalNav {  display: none }
