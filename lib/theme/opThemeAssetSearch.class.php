@@ -9,27 +9,24 @@
 */
 
 /**
-* テーマのアセットファイルを検索する
+* search for assets of the theme's files
 *
 * @package OpenPNE
 * @subpackage theme
 * @author suzuki_mar <supasu145@gmail.com>
 */
-
 class opThemeAssetSearch extends opInstalledPluginManager
 {
-
   private $webPath;
-  private $ThemePath;
+  private $themePath;
 
   /**
-   *
-   * @todo 必須パラメーターがない場合は例外を発生させるようにする
+   * @todo raise an exception if there is no required parameters
    */
   public function __construct(array $params)
   {
     $this->webPath = $params['web_path'];
-    $this->ThemePath = $params['theme_path'];
+    $this->themePath = $params['theme_path'];
   }
 
   public function existsAssetsByThemeName($themeName)
@@ -43,7 +40,7 @@ class opThemeAssetSearch extends opInstalledPluginManager
   }
 
   /**
-   * 選択したテーマが使用できない場合に代わりのスキンを探す
+   * Find theme alternative if you can not use the selected theme
    */
   public function findSubstitutionTheme()
   {
@@ -55,14 +52,14 @@ class opThemeAssetSearch extends opInstalledPluginManager
     }
   }
 
-  public function loadThemeInsance()
+  public function loadThemeInstance()
   {
     $pattern = $this->getThemePath().'/*';
 
     $availableThemeNames = array();
     foreach (glob($pattern, GLOB_ONLYDIR) as $dirPath)
     {
-      //main.cssがないものはテーマディレクトリとして扱わない
+      //it is not treated as a theme directory that there is no main.css
       $mainCssPath = $dirPath.'/css/main.css';
       if (file_exists($mainCssPath))
       {
@@ -70,13 +67,13 @@ class opThemeAssetSearch extends opInstalledPluginManager
       }
     }
 
-    $plugins = array();
+    $themes = array();
     foreach ($availableThemeNames as $name)
     {
-      $plugins[$name] = opTheme::getInstance($name);
+      $themes[$name] = opTheme::getInstance($name);
     }
 
-    return $plugins;
+    return $themes;
   }
 
   public function findAssetsPathByThemeNameAndType($themeName, $type)
@@ -89,7 +86,8 @@ class opThemeAssetSearch extends opInstalledPluginManager
       $files[] = str_replace($this->getWebDir(), '/opSkinThemePlugin', $fileName);
     }
 
-    if (empty($files)) {
+    if (empty($files))
+    {
       return false;
     }
 
@@ -98,12 +96,11 @@ class opThemeAssetSearch extends opInstalledPluginManager
 
   public function getThemePath()
   {
-    return $this->ThemePath;
+    return $this->themePath;
   }
 
   public function getWebDir()
   {
     return $this->webPath;
   }
-
 }

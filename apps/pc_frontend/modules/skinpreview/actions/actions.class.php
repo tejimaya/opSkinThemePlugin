@@ -9,16 +9,14 @@
 */
 
 /**
-* 使用するテーマをプレビュー表示する
+* opSkinThemePlugin preview actions.
 *
 * @package OpenPNE
 * @subpackage theme
 * @author suzuki_mar <supasu145@gmail.com>
 */
-
-class skinpreviewActions extends sfActions
+class skinPreviewActions extends sfActions
 {
-
   /**
    * Executes index action
    *
@@ -34,5 +32,4 @@ class skinpreviewActions extends sfActions
 
     $this->emptyThemeName = ($this->themeName === null);
   }
-
 }

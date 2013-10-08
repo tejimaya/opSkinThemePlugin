@@ -9,16 +9,14 @@
 */
 
 /**
-* テーマを適用させるイベントクラス
+* Theme applied event class
 *
 * @package OpenPNE
 * @subpackage theme
 * @author suzuki_mar <supasu145@gmail.com>
 */
-
 class opThemeEvent
 {
-
   public static function enableTheme(sfEvent $event)
   {
     if (!self::isFrontend())
@@ -26,17 +24,16 @@ class opThemeEvent
       return false;
     }
 
-    if (self::isPrviewModule())
+    if (self::isPreviewModule())
     {
       return false;
     }
 
     $themeInfo = new opThemeConfig();
 
-    //使用するテーマが登録されていない場合はテーマを読み込まない
-    if ($themeInfo->unRegisteredisTheme())
+    if ($themeInfo->unRegisteredIsTheme())
     {
-      sfContext::getInstance()->getUser()->setFlash('error', 'テーマが登録されていません', false);
+      sfContext::getInstance()->getUser()->setFlash('error', sfContext::getInstance()->getI18n()->__('Theme is not registered.'), false);
       return false;
     }
 
@@ -58,7 +55,7 @@ class opThemeEvent
       return false;
     }
 
-    if (!self::isPrviewModule())
+    if (!self::isPreviewModule())
     {
       return false;
     }
@@ -81,7 +78,7 @@ class opThemeEvent
     self::enableSkinByTheme($themeName);
   }
 
-  private static function isPrviewModule()
+  private static function isPreviewModule()
   {
     return (sfContext::getInstance()->getModuleName() === 'skinpreview');
   }
@@ -101,19 +98,17 @@ class opThemeEvent
     {
       $filePaths = $themeSearch->findAssetsPathByThemeNameAndType($themeName, $type);
 
-
       if ($filePaths !== false)
       {
-        self::includeCSSOrJS($filePaths, $type);
+        self::includeCssOrJs($filePaths, $type);
       }
     }
-
   }
 
   /**
-   * @todo CSSとJS以外だったら例外を出す
+   * @todo process in the case of non-javascript or css
    */
-  private static function includeCSSOrJS($filePaths, $type)
+  private static function includeCssOrJs($filePaths, $type)
   {
     $response = sfContext::getInstance()->getResponse();
 
@@ -133,5 +128,4 @@ class opThemeEvent
       }
     }
   }
-
 }

@@ -9,34 +9,22 @@
 */
 
 /**
-* テーマのエンティティクラス
+* Entity class of theme
 *
 * @package OpenPNE
 * @subpackage theme
 * @author suzuki_mar <supasu145@gmail.com>
 */
-
-
-/*
- * opPluginはプラグインを前提にして作られたものなので、
- * テーマ用のクラスを作成した
- */
 class opTheme
 {
-
   public static function getInstance($name)
   {
     $instance = new self($name);
     return $instance;
   }
 
-  private
-  $themeDirName;
+  private $themeDirName;
 
-  /**
-   * 複数回設定ファイルを読みこまなくてすむようにするため
-   * @var array
-   */
   private $themeInfo = array();
 
   public function __construct($name)
@@ -49,8 +37,7 @@ class opTheme
   }
 
   /**
-   * ディレクトリを検索したりするときに使用するので、
-   * テーマ名とは別に用意しておく
+   * for directory search
    */
   public function getThemeDirName()
   {
@@ -58,8 +45,7 @@ class opTheme
   }
 
   /**
-   * テーマファイルのテーマ名を変更しても、名前が変わらなかったらエラーみたいな感じになってしまうので
-   * テーマ名はテーマファイルに定義してある情報を使用する
+   * Theme name in the theme file
    */
   public function getThemeName()
   {
@@ -85,7 +71,6 @@ class opTheme
   {
     return $this->themeInfo['version'];
   }
-
 
   public function existsInfoFile()
   {

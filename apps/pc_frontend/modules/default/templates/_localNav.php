@@ -14,8 +14,6 @@
 <?php endforeach; ?>
 <?php endif; ?>
 
-
-
 <?php if ($navs): ?>
 <ul id="oldLocalNavContents" class="<?php echo $type; ?>">
 <?php foreach ($navs as $nav): ?>

@@ -71,8 +71,6 @@ include_component('default', 'localNav', $localNavOptions);
 ?>
 </ul>
 
-
-
 <div id="globalNav">
 <ul class="nav pull-right" >
 <?php

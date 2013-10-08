@@ -9,30 +9,14 @@
  */
 
 /**
- * テーマの設定値(使用するテーマなど)を管理するクラス
+ * Class that manages the set value of the theme (such as a theme to be used)
  *
  * @package OpenPNE
  * @subpackage theme
  * @author suzuki_mar <supasu145@gmail.com>
  */
-
-/**
- * 新しくテーブルを作成するのは、プラグインとしてはやりすぎなので、
- * sns_configテーブルに設定値を登録している
- *
- * ただ本体に取り込まれてテーブルを作成することができるようになったら
- * themeテーブルを作成した方が拡張しやすくなると思う
- *
- */
 class opThemeConfig
 {
-
-  /**
-   * 新しくテーブルを作成するのは、プラグインとしてはやりすぎなので、
-   * ただ本体に取り込まれてテーブルを作成することができるようになったら
-   * themeテーブルを作成した方がいい
-   *
-   */
   public function findUseTheme()
   {
     if ($this->_findThemeUsedInstance() === null)
@@ -48,7 +32,7 @@ class opThemeConfig
     return ($this->_findThemeUsedInstance() !== null);
   }
 
-  public function unRegisteredisTheme()
+  public function unRegisteredIsTheme()
   {
     return!($this->registeredUsedTheme());
   }
@@ -75,5 +59,4 @@ class opThemeConfig
     $snsConfigTable = Doctrine::getTable('SnsConfig');
     return $snsConfigTable->retrieveByName('Theme_used');
   }
-
 }

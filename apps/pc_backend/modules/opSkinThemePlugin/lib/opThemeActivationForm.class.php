@@ -9,17 +9,15 @@
 */
 
 /**
-* テーマ選択のフォームクラス
+* Form class of theme selection
 *
 * @package OpenPNE
 * @subpackage theme
 * @author suzuki_mar <supasu145@gmail.com>
 */
-
 class opThemeActivationForm extends sfForm
 {
-  const
-  THEME_FILED_KEY = 'theme';
+  const THEME_FILED_KEY = 'theme';
 
   public function configure()
   {
@@ -110,7 +108,7 @@ class opThemeActivationForm extends sfForm
     foreach ($inputs as $id => $input)
     {
       $match = array();
-      preg_match('/(.*_theme_)(.*)$/', $id, $match);      
+      preg_match('/(.*_theme_)(.*)$/', $id, $match);
       $name = $match[2];
 
       $theme = $themes[$name];
@@ -125,9 +123,9 @@ class opThemeActivationForm extends sfForm
 
   private function createRowTag($widget, $input, opTheme $theme)
   {
-    //@todo 国際対応する
-    $linkUrl = '/pc_frontend.php/skinpreview/index/theme_name/'.$theme->getThemeDirName();
-    $linkTag = '<a href="'.$linkUrl.'" target="_blank">プレビュー</a>';
+    $linkUrl = sfContext::getInstance()->getConfiguration()->generateAppUrl('pc_frontend', array('sf_route' => 'skin_preview'), true);
+    $linkUrl .= $theme->getThemeDirName();
+    $linkTag = '<a href="'.$linkUrl.'" target="_blank">'.sfContext::getInstance()->getI18n()->__('Preview').'</a>';
 
     $tagIds = array(
         'author' => 'author_'.$theme->getThemeName(),
@@ -190,5 +188,4 @@ class opThemeActivationForm extends sfForm
 
     return $skinThemeInfo->save($value);
   }
-
 }

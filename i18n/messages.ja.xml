@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+  <file orginal="global" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="">
+        <source>Preview</source>
+        <target>プレビュー</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Select</source>
+        <target>選択</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Theme Name</source>
+        <target>テーマ名</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Theme</source>
+        <target>テーマ</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Creator</source>
+        <target>制作者</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Version</source>
+        <target>バージョン</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Setting of Skin Theme</source>
+        <target>スキンテーマ設定</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Errors of Skin Theme</source>
+        <target>テーマのエラー情報</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Does not exists %value% of used theme at public directory.</source>
+        <target>使用しているテーマの %value% が公開ディレクトリにありません。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Information of the following themes is not set.</source>
+        <target>以下のテーマの情報が設定されていません。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>You need only one is set to "Enable" any skins theme.</source>
+        <target>スキンテーマはどれか一つのみが「有効」になっている必要があります。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Configuration changes</source>
+        <target>設定変更</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>How to add a theme</source>
+        <target>テーマの追加方法</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>You can add themes, please created under the "plugins / opSkinThemePlugin / web" directory.</source>
+        <target>テーマを追加するには、plugins/opSkinThemePluginのwebディレクトリの下に作成してください。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>After you add a theme, run the ". / Symfony publish-assets", please copy the public directory theme directory.</source>
+        <target>テーマを追加したら、"./symfony publish-assets" を実行して、テーマディレクトリを公開ディレクトリにコピーしてください。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Please refer to the README for detailed explanation of the theme plug-in.</source>
+        <target>テーマプラグインの詳しい説明はREADMEを参照ください。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>preview the "%value%" themes.</source>
+        <target>%value%テーマをプレビュー表示しています。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Parameters of the theme name is empty.</source>
+        <target>テーマ名のパラメーターが空です。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>There is no "%value%" theme.</source>
+        <target>"%value%" テーマはありません。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Theme is not registered.</source>
+        <target>テーマが登録されていません。</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

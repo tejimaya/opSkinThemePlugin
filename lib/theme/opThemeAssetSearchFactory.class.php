@@ -9,23 +9,15 @@
 */
 
 /**
-* opThemeLoaderを作成するためのファクトリークラス
+* Factory class for creating opThemeLoader
 *
 * @package OpenPNE
 * @subpackage theme
 * @author suzuki_mar <supasu145@gmail.com>
 */
-
-/* 
- * ThemeLoaderを作成するためのコードが分散してしまっているのと
- * パスの引数が変更したらインスタンスを作成しているところをすべて変更する必要があるので、
- * ファクトリークラスを作成した
- */
-
 class opThemeAssetSearchFactory
 {
   /**
-   *
    * @return opSkinThemeAssetSearch
    */
   public static function createSearchInstance()
