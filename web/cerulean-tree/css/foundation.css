@@ -324,6 +324,7 @@ pre {  overflow: auto }
 #sideBanner {
   float: right;
   width: 250px;
+  margin-bottom: 30px;
 }
 div#sideBanner form {
   margin-bottom: 20px;
@@ -1405,9 +1406,7 @@ div#LayoutB div#Left div.ad {
   display: none;
 }
 div#sideBanner div.ad ins {
-  margin-left: 30px !important;
-  margin-top: -4px !important;
-  margin-bottom: -13px !important;
+  margin-left: 20px !important;
 }
 
 /*古いデザインのタグは表示しないようにする*/

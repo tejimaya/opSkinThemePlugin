@@ -119,7 +119,7 @@ EOM;
 
 <div id="sideBanner">
 <?php include_component('default', 'sideBannerGadgets'); ?>
-<div class="well dparts ad">
+<div class="dparts ad">
 <?php if (opConfig::get('opt_ad_free') == 0): ?>
 <?php 
 echo <<<EOM
@@ -138,7 +138,7 @@ EOM;
 ?>
 </div>
 
-<div class="well dparts ad">
+<div class="dparts ad">
 <?php 
 echo <<<EOM
 <script type="text/javascript"><!--
