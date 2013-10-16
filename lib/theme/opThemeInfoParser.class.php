@@ -26,157 +26,80 @@ class opThemeInfoParser
   {
     $this->search = opThemeAssetSearchFactory::createSearchInstance();
   }
-
-  private function getConfigNames()
-  {
-    return array(
-        'Theme Name',
-        'Theme URI',
-        'Description',
-        'Author',
-        'Version',
-    );
-  }
-
+ 
   public function parseInfoFileByThemeName($themeName)
   {
+    $file_headers = array(
+      'theme_name'  => 'Theme Name',
+      'theme_uri'   => 'Theme URI',
+      'description' => 'Description',
+      'author'      => 'Author',
+      'author_uri'  => 'Author URI',
+      'version'     => 'Version',
+    );
     $infoPath = $this->search->getThemePath().'/'.$themeName.'/css/main.css';
-    $fp = fopen($infoPath, 'r');
+    $headerData = $this->get_file_data($infoPath, $file_headers);
 
-    if (!$fp)
-    {
-      fclose($fp);
-      return false;
-    }
-
-    $configLines = $this->clipConfigLines($fp);
-
-    if ($configLines === false)
-    {
-      return false;
-    }
-
-    return $this->parseConfigLines($configLines);
+    return $headerData;
   }
 
-  private function clipConfigLines($fp)
-  {
-    $commentLineStart = false;
+  /**
+   * Retrieve metadata from a file.
+   *
+   * Searches for metadata in the first 8kiB of a file, such as a plugin or theme.
+   * Each piece of metadata must be on its own line. Fields can not span multiple
+   * lines, the value will get cut at the end of the first line.
+   *
+   * If the file data is not within that first 8kiB, then the author should correct
+   * their plugin file and move the data headers to the top.
+   *
+   * @see http://codex.wordpress.org/File_Header
+   *
+   * @since 2.9.0
+   * @param string $file Path to the file
+   * @param array $default_headers List of headers, in the format array('HeaderKey' => 'Header Name')
+   * @param string $context If specified adds filter hook "extra_{$context}_headers"
+   */
+  private function get_file_data( $file, $default_headers, $context = '' ) {
+    // We don't need to write to the file, so just open for reading.
+    $fp = fopen( $file, 'r' );
 
-    while (!feof($fp))
-    {
-      $line = trim(fgets($fp));
+    // Pull only the first 8kiB of the file in.
+    $file_data = fread( $fp, 8192 );
 
-      if (strpos($line, '/*') !== false)
-      {
-        $commentLineStart = true;
-      }
+    // PHP will close file handle, but we are good citizens.
+    fclose( $fp );
 
-      if ($commentLineStart)
-      {
-        $configLines[] = $line;
-      }
+    // Make sure we catch CR-only line endings.
+    $file_data = str_replace( "\r", "\n", $file_data );
 
-      if (strpos($line, '*/') !== false)
-      {
-
-        if ($this->isConfigLines($configLines))
-        {
-          //remove the start and end of the block
-          array_shift($configLines);
-          array_pop($configLines);
-
-          fclose($fp);
-          return $configLines;
-        }
-
-        $commentLineStart = false;
-        $configLines = array();
-      }
+    if ( $context && $extra_headers = apply_filters( "extra_{$context}_headers", array() ) ) {
+      $extra_headers = array_combine( $extra_headers, $extra_headers ); // keys equal values
+      $all_headers = array_merge( $extra_headers, (array) $default_headers );
+    } else {
+      $all_headers = $default_headers;
     }
 
-    fclose($fp);
-    return false;
+    foreach ( $all_headers as $field => $regex ) {
+      if ( preg_match( '/^[ \t\/*#@]*' . preg_quote( $regex, '/' ) . ':(.*)$/mi', $file_data, $match ) && $match[1] )
+        $all_headers[ $field ] = $this->_cleanup_header_comment( $match[1] );
+      else
+        $all_headers[ $field ] = '';
+    }
+
+    return $all_headers;
   }
 
-  private function parseConfigLines(array $configLines)
-  {
-    $configs = array();
-    foreach ($this->getConfigNames() as $name)
-    {
-      foreach ($configLines as $line)
-      {
-        $configNameFiled = $name.':';
-
-        if (strpos($line, $configNameFiled) !== false)
-        {
-          $value = str_replace($configNameFiled, '', $line);
-          $key = $this->toConfigKeyByConfigName($name);
-
-          $configs[$key] = $value;
-        }
-      }
-    }
-
-    return $configs;
-  }
-
-  private function toConfigKeyByConfigName($configName)
-  {
-    $configKey = '';
-
-    $strs = preg_split("/[\s]+/", $configName, -1, PREG_SPLIT_NO_EMPTY);
-
-    foreach ($strs as $str)
-    {
-      //Garbled measures
-      // specify the ASCII configuration name because it is all alphabetic
-      $str = mb_convert_encoding($str, 'ASCII');
-      $configKey .= strtolower($str).'_';
-    }
-
-    $configKey = substr($configKey, 0, -1);
-
-    return $configKey;
-  }
-
-  private function isConfigLines(array $lines)
-  {
-    $configCount = count($this->getConfigNames());
-
-    //add end and the beginning of the comment block
-    if (count($lines) !== $configCount + 2)
-    {
-      return false;
-    }
-
-    $configLines = array();
-    //ignore the comment block
-    for ($i = 1; $i < count($lines) - 1; $i++)
-    {
-      $configLines[] = $lines[$i];
-    }
-
-    //It is an error If the desired item is not aligned
-    foreach ($this->getConfigNames() as $name)
-    {
-      $existsConfig = false;
-
-      foreach ($configLines as $line)
-      {
-        $configNameFiled = $name.':';
-
-        if (strpos($line, $configNameFiled) !== false)
-        {
-          $existsConfig = true;
-        }
-      }
-
-      if (!$existsConfig) {
-        return false;
-      }
-    }
-
-    return true;
+  /**
+   * Strip close comment and close php tags from file headers used by WP.
+   * See http://core.trac.wordpress.org/ticket/8497
+   *
+   * @since 2.8.0
+   *
+   * @param string $str
+   * @return string
+   */
+  private function _cleanup_header_comment($str) {
+    return trim(preg_replace("/\s*(?:\*\/|\?>).*/", '', $str));
   }
 }
