@@ -1,3 +1,7 @@
+<?php slot('submenu') ?>
+<?php include_partial('plugin/submenu') ?>
+<?php end_slot(); ?>
+
 <h2><?php echo __('Setting of Skin Theme') ?></h2>
 
 <?php if ($isExistsErrorTheme): ?>
