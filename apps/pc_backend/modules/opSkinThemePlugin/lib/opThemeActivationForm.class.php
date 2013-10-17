@@ -127,12 +127,6 @@ class opThemeActivationForm extends sfForm
     $linkUrl .= $theme->getThemeDirName();
     $linkTag = '<a href="'.$linkUrl.'" target="_blank">'.sfContext::getInstance()->getI18n()->__('Preview').'</a>';
 
-    $tagIds = array(
-        'author' => 'author_'.$theme->getThemeName(),
-        'version' => 'version_'.$theme->getThemeName(),
-        'summery' => 'summery_'.$theme->getThemeName(),
-    );
-
     $rowContents = array(
         'button' => $input['input'],
         'name' => $input['label'],
