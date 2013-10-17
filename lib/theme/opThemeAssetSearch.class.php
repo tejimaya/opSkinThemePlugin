@@ -73,21 +73,16 @@ class opThemeAssetSearch extends opInstalledPluginManager
   {
     $pattern = $this->getThemePath().'/*';
 
-    $availableThemeNames = array();
+    $themes = array();
     foreach (glob($pattern, GLOB_ONLYDIR) as $dirPath)
     {
       //it is not treated as a theme directory that there is no main.css
       $mainCssPath = $dirPath.'/css/main.css';
       if (file_exists($mainCssPath))
       {
-        $availableThemeNames[] = pathinfo($dirPath, PATHINFO_FILENAME);
+        $name = pathinfo($dirPath, PATHINFO_FILENAME);
+        $themes[$name] = new opTheme($name);
       }
-    }
-
-    $themes = array();
-    foreach ($availableThemeNames as $name)
-    {
-      $themes[$name] = new opTheme($name);
     }
 
     return $themes;
