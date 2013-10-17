@@ -24,7 +24,7 @@ class skinPreviewActions extends sfActions
    */
   public function executeIndex(sfWebRequest $request)
   {
-    $themeSearch = opThemeAssetSearchFactory::createSearchInstance();
+    $themeSearch = new opThemeAssetSearch();
 
     $this->themeName = $this->getRequest()->getParameterHolder()->get('theme_name');
 

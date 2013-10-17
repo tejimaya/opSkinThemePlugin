@@ -21,12 +21,24 @@ class opThemeAssetSearch extends opInstalledPluginManager
   private $themePath;
 
   /**
-   * @todo raise an exception if there is no required parameters
+   * constructor of opThemeAssetSearch
+   *
+   * @param null $webPath public directory of opSkinThemePlugin
+   * @param null $themePath directory that contains the theme directory
    */
-  public function __construct(array $params)
+  public function __construct($webPath = null, $themePath = null)
   {
-    $this->webPath = $params['web_path'];
-    $this->themePath = $params['theme_path'];
+    if (null == $webPath)
+    {
+      $webPath = sfConfig::get('sf_web_dir').'/opSkinThemePlugin';
+    }
+    if (null == $themePath)
+    {
+      $themePath = __DIR__.'/../../web';
+    }
+
+    $this->webPath = $webPath;
+    $this->themePath = $themePath;
   }
 
   public function existsAssetsByThemeName($themeName)

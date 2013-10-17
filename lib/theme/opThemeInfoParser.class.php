@@ -24,7 +24,7 @@ class opThemeInfoParser
 
   public function __construct()
   {
-    $this->search = opThemeAssetSearchFactory::createSearchInstance();
+    $this->search = new opThemeAssetSearch();
   }
  
   public function parseInfoFileByThemeName($themeName)

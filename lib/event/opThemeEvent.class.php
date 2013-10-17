@@ -38,7 +38,7 @@ class opThemeEvent
     }
 
     $themeName = $themeInfo->findUseTheme();
-    $themeSearch = opThemeAssetSearchFactory::createSearchInstance();
+    $themeSearch = new opThemeAssetSearch();
 
     if (!$themeSearch->existsAssetsByThemeName($themeName))
     {
@@ -68,7 +68,7 @@ class opThemeEvent
       return false;
     }
 
-    $themeSearch = opThemeAssetSearchFactory::createSearchInstance();
+    $themeSearch = new opThemeAssetSearch();
 
     if (!$themeSearch->existsAssetsByThemeName($themeName))
     {
@@ -91,7 +91,7 @@ class opThemeEvent
 
   public static function enableSkinByTheme($themeName)
   {
-    $themeSearch = opThemeAssetSearchFactory::createSearchInstance();
+    $themeSearch = new opThemeAssetSearch();
 
     $assetsType = array('css', 'js');
     foreach ($assetsType as $type)
