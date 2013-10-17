@@ -64,7 +64,12 @@ class opThemeAssetSearch extends opInstalledPluginManager
     }
   }
 
-  public function loadThemeInstance()
+  /**
+   * Get all of the themes that have been installed.
+   *
+   * @return array all of the themes that have been installed.
+   */
+  public function getInstalledThemes()
   {
     $pattern = $this->getThemePath().'/*';
 

@@ -48,8 +48,8 @@ class opSkinThemePluginActions extends sfActions
    */
   public function executeIndex(sfWebRequest $request)
   {
-    //
-    $this->themes = $this->search->loadThemeInstance();
+    // get all themes
+    $this->themes = $this->search->getInstalledThemes();
     $this->useTheme = $this->config->findUseTheme();
     $this->unRegisterUseTheme = $this->config->unRegisteredIsTheme();
 
