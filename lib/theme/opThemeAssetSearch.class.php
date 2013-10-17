@@ -70,7 +70,7 @@ class opThemeAssetSearch extends opInstalledPluginManager
     $themes = array();
     foreach ($availableThemeNames as $name)
     {
-      $themes[$name] = opTheme::getInstance($name);
+      $themes[$name] = new opTheme($name);
     }
 
     return $themes;

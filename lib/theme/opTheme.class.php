@@ -17,12 +17,6 @@
 */
 class opTheme
 {
-  public static function getInstance($name)
-  {
-    $instance = new self($name);
-    return $instance;
-  }
-
   private $themeDirName;
 
   private $themeInfo = array();
