@@ -54,6 +54,7 @@ class opThemeInfoParser
    * their plugin file and move the data headers to the top.
    *
    * @see http://codex.wordpress.org/File_Header
+   * @see https://github.com/WordPress/WordPress/blob/master/wp-includes/functions.php#L3675
    *
    * @since 2.9.0
    * @param string $file Path to the file
@@ -96,6 +97,8 @@ class opThemeInfoParser
    * See http://core.trac.wordpress.org/ticket/8497
    *
    * @since 2.8.0
+   *
+   * @see https://github.com/WordPress/WordPress/blob/master/wp-includes/functions.php#L3609
    *
    * @param string $str
    * @return string
