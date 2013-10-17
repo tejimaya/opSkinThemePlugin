@@ -58,9 +58,10 @@ class opThemeInfoParser
    * @since 2.9.0
    * @param string $file Path to the file
    * @param array $default_headers List of headers, in the format array('HeaderKey' => 'Header Name')
-   * @param string $context If specified adds filter hook "extra_{$context}_headers"
+   * @return array $all_headers array
    */
-  private function get_file_data( $file, $default_headers, $context = '' ) {
+  private function get_file_data( $file, $default_headers)
+  {
     // We don't need to write to the file, so just open for reading.
     $fp = fopen( $file, 'r' );
 
@@ -73,18 +74,18 @@ class opThemeInfoParser
     // Make sure we catch CR-only line endings.
     $file_data = str_replace( "\r", "\n", $file_data );
 
-    if ( $context && $extra_headers = apply_filters( "extra_{$context}_headers", array() ) ) {
-      $extra_headers = array_combine( $extra_headers, $extra_headers ); // keys equal values
-      $all_headers = array_merge( $extra_headers, (array) $default_headers );
-    } else {
-      $all_headers = $default_headers;
-    }
+    $all_headers = $default_headers;
 
-    foreach ( $all_headers as $field => $regex ) {
+    foreach ( $all_headers as $field => $regex )
+    {
       if ( preg_match( '/^[ \t\/*#@]*' . preg_quote( $regex, '/' ) . ':(.*)$/mi', $file_data, $match ) && $match[1] )
+      {
         $all_headers[ $field ] = $this->_cleanup_header_comment( $match[1] );
+      }
       else
+      {
         $all_headers[ $field ] = '';
+      }
     }
 
     return $all_headers;
@@ -99,7 +100,8 @@ class opThemeInfoParser
    * @param string $str
    * @return string
    */
-  private function _cleanup_header_comment($str) {
+  private function _cleanup_header_comment($str)
+  {
     return trim(preg_replace("/\s*(?:\*\/|\?>).*/", '', $str));
   }
 }
