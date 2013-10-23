@@ -1,12 +1,12 @@
 <?php
 
 /**
-* This file is part of the OpenPNE package.
-* (c) OpenPNE Project (http://www.openpne.jp/)
-*
-* For the full copyright and license information, please view the LICENSE
-* file and the NOTICE file that were distributed with this source code.
-*/
+ * This file is part of the OpenPNE package.
+ * (c) OpenPNE Project (http://www.openpne.jp/)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file and the NOTICE file that were distributed with this source code.
+ */
 
 /**
  * Form class of theme selection
@@ -113,11 +113,11 @@ class opThemeActivationForm extends sfForm
 
     if (0 === strpos($theme->getThemeURI(), 'http', 0))
     {
-      $themeName = '<a href="'.$theme->getThemeURI().'" target="_blank">'.$theme->getThemeDirName().'</a>';
+      $themeName = '<a href="'.$theme->getThemeURI().'" target="_blank">'.$theme->getThemeName().'</a>';
     }
     else
     {
-      $themeName = $theme->getThemeDirName();
+      $themeName = $theme->getThemeName();
     }
 
     if (0 === strpos($theme->getAuthorURI(), 'http', 0))
@@ -130,12 +130,12 @@ class opThemeActivationForm extends sfForm
     }
 
     $rowContents = array(
-        'button' => $input['input'],
-        'name' => $themeName,
-        'author' => $author,
-        'version' => $theme->getVersion(),
-        'description' => $theme->getDescription(),
-        'link' => $linkTag,
+      'button' => $input['input'],
+      'name' => $themeName,
+      'author' => $author,
+      'version' => $theme->getVersion(),
+      'description' => $theme->getDescription(),
+      'link' => $linkTag,
     );
 
     $rowContentTag = '';
