@@ -31,13 +31,13 @@ class opThemeEvent
 
     $themeInfo = new opThemeConfig();
 
-    if ($themeInfo->unRegisteredIsTheme())
+    if (null === $themeInfo->getUsedThemeName())
     {
       sfContext::getInstance()->getUser()->setFlash('error', sfContext::getInstance()->getI18n()->__('Theme is not registered.'), false);
       return false;
     }
 
-    $themeName = $themeInfo->findUseTheme();
+    $themeName = $themeInfo->getUsedThemeName();
     $themeSearch = new opThemeAssetSearch();
 
     if (!$themeSearch->existsAssetsByThemeName($themeName))

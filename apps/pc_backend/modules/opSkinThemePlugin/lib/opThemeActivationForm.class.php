@@ -68,25 +68,17 @@ class opThemeActivationForm extends sfForm
 
   public function findDefaultThemeName()
   {
-    $themeInfo = new opThemeConfig();
-
-    if ($themeInfo->registeredUsedTheme())
-    {
-      $default = $themeInfo->findUseTheme();
-    }
-    else
+    $themeConfig = new opThemeConfig();
+    $defaultTheme = $themeConfig->getUsedThemeName();
+    if (null === $defaultTheme)
     {
       if ($this->emptySelectTheme())
       {
-        $default = array_shift($this->findSelectThemes());
-      }
-      else
-      {
-        $default = null;
+        $defaultTheme = array_shift($this->findSelectThemes());
       }
     }
 
-    return $default;
+    return $defaultTheme;
   }
 
   private function emptySelectTheme()
