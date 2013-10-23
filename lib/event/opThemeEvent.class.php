@@ -1,12 +1,12 @@
 <?php
 
 /**
-* This file is part of the OpenPNE package.
-* (c) OpenPNE Project (http://www.openpne.jp/)
-*
-* For the full copyright and license information, please view the LICENSE
-* file and the NOTICE file that were distributed with this source code.
-*/
+ * This file is part of the OpenPNE package.
+ * (c) OpenPNE Project (http://www.openpne.jp/)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file and the NOTICE file that were distributed with this source code.
+ */
 
 /**
  * Theme applied event class
@@ -29,18 +29,9 @@ class opThemeEvent
       return false;
     }
 
-    $themeInfo = new opThemeConfig();
-
-    if (null === $themeInfo->getUsedThemeName())
-    {
-      sfContext::getInstance()->getUser()->setFlash('error', sfContext::getInstance()->getI18n()->__('Theme is not registered.'), false);
-
-      return false;
-    }
-
-    $themeName = $themeInfo->getUsedThemeName();
+    $config = new opThemeConfig();
+    $themeName = $config->getUsedThemeName();
     $themeSearcher = new opThemeAssetSearcher();
-
     if (!$themeSearcher->existsAssetsByThemeName($themeName))
     {
       $themeName = $themeSearcher->findSubstitutionTheme();
@@ -85,9 +76,7 @@ class opThemeEvent
 
   private static function isFrontend()
   {
-    $application = sfContext::getInstance()->getConfiguration()->getApplication();
-
-    return ('pc_frontend' === $application);
+    return ('pc_frontend' === sfContext::getInstance()->getConfiguration()->getApplication());
   }
 
   public static function enableSkinByTheme($themeName)
