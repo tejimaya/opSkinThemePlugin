@@ -9,12 +9,13 @@
 */
 
 /**
-* Entity class of theme
-*
-* @package OpenPNE
-* @subpackage theme
-* @author suzuki_mar <supasu145@gmail.com>
-*/
+ * Entity class of theme
+ *
+ * @package OpenPNE
+ * @subpackage opSkinThemePlugin
+ * @author suzuki_mar <supasu145@gmail.com>
+ * @author Kaoru Nishizoe <nishizoe@tejimaya.com>
+ */
 class opTheme
 {
   private $themeDirName;
@@ -24,23 +25,18 @@ class opTheme
   public function __construct($name)
   {
     $this->themeDirName = $name;
-
     $parser = new opThemeInfoParser();
     $this->themeInfo = $parser->parseInfoFileByThemeName($this->themeDirName);
-
   }
 
   /**
-   * for directory search
+   * get the theme directory name
    */
   public function getThemeDirName()
   {
     return $this->themeDirName;
   }
 
-  /**
-   * Theme name in the theme file
-   */
   public function getThemeName()
   {
     return $this->themeInfo['theme_name'];
@@ -61,12 +57,17 @@ class opTheme
     return $this->themeInfo['author'];
   }
 
+  public function getAuthorURI()
+  {
+    return $this->themeInfo['author_uri'];
+  }
+
   public function getVersion()
   {
     return $this->themeInfo['version'];
   }
 
-  public function existsInfoFile()
+  public function existsThemeInfo()
   {
     return ($this->themeInfo !== false);
   }

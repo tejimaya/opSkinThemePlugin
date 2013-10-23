@@ -101,7 +101,7 @@ class opSkinThemePluginActions extends sfActions
   {
     foreach ($this->themes as $theme)
     {
-      if (!$theme->existsInfoFile())
+      if (!$theme->existsThemeInfo())
       {
         return true;
       }
@@ -115,7 +115,7 @@ class opSkinThemePluginActions extends sfActions
     $notInfoList = array();
     foreach ($this->themes as $theme)
     {
-      if (!$theme->existsInfoFile())
+      if (!$theme->existsThemeInfo())
       {
         $notInfoList[] = $theme->getThemeDirName();
       }
