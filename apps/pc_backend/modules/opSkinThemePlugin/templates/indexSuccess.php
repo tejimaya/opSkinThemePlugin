@@ -49,5 +49,4 @@
 <h2><?php echo __('How to add a theme') ?></h2>
 
 <p><?php echo __('You can add themes, please created under the "plugins / opSkinThemePlugin / web" directory.') ?></p>
-<p><?php echo __('After you add a theme, run the ". / Symfony publish-assets", please copy the public directory theme directory.') ?></p>
 <p><?php echo __('Please refer to the README for detailed explanation of the theme plug-in.') ?></p>
