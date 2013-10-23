@@ -98,6 +98,10 @@
         <source>directory name of the following is not recognized as a theme, because they has no 'main.css' or 'theme name' or 'author'.</source>
         <target>以下のディレクトリにはmain.cssがないか、テーマ名、作者の情報が設定されていないため、テーマとして認識されません。</target>
       </trans-unit>
+      <trans-unit id="">
+        <source>You must activate only any theme.</source>
+        <target>いずれかのテーマを有効にする必要があります。</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -41,7 +41,7 @@ class opThemeActivationForm extends sfForm
     $validatorOptions['required'] = true;
 
     $validatorMessages = array();
-    $validatorMessages['required'] = 'You must activate only a skin theme.';
+    $validatorMessages['required'] = 'You must activate only any theme.';
 
     $this->setValidator(self::THEME_FILED_KEY, new sfValidatorChoice($validatorOptions, $validatorMessages));
     $this->setDefault(self::THEME_FILED_KEY, $this->findDefaultThemeName());
