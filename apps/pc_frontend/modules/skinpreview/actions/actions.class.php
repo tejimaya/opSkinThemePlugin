@@ -9,12 +9,12 @@
 */
 
 /**
-* opSkinThemePlugin preview actions.
-*
-* @package OpenPNE
-* @subpackage theme
-* @author suzuki_mar <supasu145@gmail.com>
-*/
+ * opSkinThemePlugin preview actions.
+ *
+ * @package OpenPNE
+ * @subpackage opSkinThemePlugin
+ * @author suzuki_mar <supasu145@gmail.com>
+ */
 class skinPreviewActions extends sfActions
 {
   /**
@@ -24,11 +24,11 @@ class skinPreviewActions extends sfActions
    */
   public function executeIndex(sfWebRequest $request)
   {
-    $themeSearch = new opThemeAssetSearch();
+    $themeSearcher = new opThemeAssetSearcher();
 
     $this->themeName = $this->getRequest()->getParameterHolder()->get('theme_name');
 
-    $this->isExistsTheme = $themeSearch->existsAssetsByThemeName($this->themeName);
+    $this->isExistsTheme = $themeSearcher->existsAssetsByThemeName($this->themeName);
 
     $this->emptyThemeName = ($this->themeName === null);
   }

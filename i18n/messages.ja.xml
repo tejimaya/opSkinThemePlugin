@@ -36,7 +36,7 @@
       </trans-unit>
       <trans-unit id="">
         <source>Does not exists %value% of used theme at public directory.</source>
-        <target>使用しているテーマの %value% が公開ディレクトリにありません。</target>
+        <target>使用しているテーマの「 %value% 」が公開ディレクトリにありません。</target>
       </trans-unit>
       <trans-unit id="">
         <source>Information of the following themes is not set.</source>
@@ -81,6 +81,22 @@
       <trans-unit id="">
         <source>Theme is not registered.</source>
         <target>テーマが登録されていません。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>directory name of the following is not recognized as a theme, because malformed.</source>
+        <target>以下のディレクトリ名は不正なため、テーマとして認識されません。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>you can use alphanumeric characters ,hyphen,underscore for the directory name of the theme.</source>
+        <target>テーマのディレクトリ名には、半角英数字及び「-(半角ハイフン)」、「_(半角アンダースコア)」を使用できます。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Directory Name</source>
+        <target>ディレクトリ名</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>directory name of the following is not recognized as a theme, because they has no 'main.css' or 'theme name' or 'author'.</source>
+        <target>以下のディレクトリにはmain.cssがないか、テーマ名、作者の情報が設定されていないため、テーマとして認識されません。</target>
       </trans-unit>
     </body>
   </file>

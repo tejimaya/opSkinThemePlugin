@@ -29,9 +29,6 @@ class opTheme
     $this->themeInfo = $parser->parseInfoFileByThemeName($this->themeDirName);
   }
 
-  /**
-   * get the theme directory name
-   */
   public function getThemeDirName()
   {
     return $this->themeDirName;

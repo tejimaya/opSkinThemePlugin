@@ -9,12 +9,12 @@
 */
 
 /**
-* Theme applied event class
-*
-* @package OpenPNE
-* @subpackage theme
-* @author suzuki_mar <supasu145@gmail.com>
-*/
+ * Theme applied event class
+ *
+ * @package OpenPNE
+ * @subpackage opSkinThemePlugin
+ * @author suzuki_mar <supasu145@gmail.com>
+ */
 class opThemeEvent
 {
   public static function enableTheme(sfEvent $event)
@@ -34,15 +34,16 @@ class opThemeEvent
     if (null === $themeInfo->getUsedThemeName())
     {
       sfContext::getInstance()->getUser()->setFlash('error', sfContext::getInstance()->getI18n()->__('Theme is not registered.'), false);
+
       return false;
     }
 
     $themeName = $themeInfo->getUsedThemeName();
-    $themeSearch = new opThemeAssetSearch();
+    $themeSearcher = new opThemeAssetSearcher();
 
-    if (!$themeSearch->existsAssetsByThemeName($themeName))
+    if (!$themeSearcher->existsAssetsByThemeName($themeName))
     {
-      $themeName = $themeSearch->findSubstitutionTheme();
+      $themeName = $themeSearcher->findSubstitutionTheme();
     }
 
     self::enableSkinByTheme($themeName);
@@ -63,14 +64,13 @@ class opThemeEvent
     $request = sfContext::getInstance()->getRequest();
     $themeName = $request->getParameter('theme_name');
 
-    if ($themeName === null)
+    if (null === $themeName)
     {
       return false;
     }
 
-    $themeSearch = new opThemeAssetSearch();
-
-    if (!$themeSearch->existsAssetsByThemeName($themeName))
+    $themeSearcher = new opThemeAssetSearcher();
+    if (!$themeSearcher->existsAssetsByThemeName($themeName))
     {
       return false;
     }
@@ -80,25 +80,26 @@ class opThemeEvent
 
   private static function isPreviewModule()
   {
-    return (sfContext::getInstance()->getModuleName() === 'skinpreview');
+    return ('skinpreview' === sfContext::getInstance()->getModuleName());
   }
 
   private static function isFrontend()
   {
     $application = sfContext::getInstance()->getConfiguration()->getApplication();
-    return ($application === 'pc_frontend');
+
+    return ('pc_frontend' === $application);
   }
 
   public static function enableSkinByTheme($themeName)
   {
-    $themeSearch = new opThemeAssetSearch();
+    $themeSearcher = new opThemeAssetSearcher();
 
     $assetsType = array('css', 'js');
     foreach ($assetsType as $type)
     {
-      $filePaths = $themeSearch->findAssetsPathByThemeNameAndType($themeName, $type);
+      $filePaths = $themeSearcher->findAssetsPathByThemeNameAndType($themeName, $type);
 
-      if ($filePaths !== false)
+      if (false !== $filePaths)
       {
         self::includeCssOrJs($filePaths, $type);
       }
@@ -112,7 +113,7 @@ class opThemeEvent
   {
     $response = sfContext::getInstance()->getResponse();
 
-    if ($type === 'css')
+    if ('css' === $type)
     {
       foreach ($filePaths as $file)
       {
@@ -120,7 +121,7 @@ class opThemeEvent
       }
     }
 
-    if ($type === 'js')
+    if ('js' === $type)
     {
       foreach ($filePaths as $file)
       {

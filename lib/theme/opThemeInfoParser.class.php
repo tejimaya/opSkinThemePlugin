@@ -9,22 +9,23 @@
 */
 
 /**
-* to parse the theme information reads the configuration file
-*
-* @package OpenPNE
-* @subpackage theme
-* @author suzuki_mar <supasu145@gmail.com>
-*/
+ * to parse the theme information reads the configuration file
+ *
+ * @package OpenPNE
+ * @subpackage opSkinThemePlugin
+ * @author suzuki_mar <supasu145@gmail.com>
+ * @author Kaoru Nishizoe <nishizoe@tejimaya.com>
+ */
 class opThemeInfoParser
 {
   /**
-   * @var opThemeAssetSearch
+   * @var opThemeAssetSearcher
    */
-  private $search;
+  private $searcher;
 
   public function __construct()
   {
-    $this->search = new opThemeAssetSearch();
+    $this->searcher = new opThemeAssetSearcher();
   }
  
   public function parseInfoFileByThemeName($themeName)
@@ -37,7 +38,7 @@ class opThemeInfoParser
       'author_uri'  => 'Author URI',
       'version'     => 'Version',
     );
-    $infoPath = $this->search->getThemePath().'/'.$themeName.'/css/main.css';
+    $infoPath = $this->searcher->getThemePath().'/'.$themeName.'/css/main.css';
     $headerData = $this->get_file_data($infoPath, $file_headers);
 
     return $headerData;

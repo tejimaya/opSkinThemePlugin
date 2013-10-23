@@ -9,12 +9,13 @@
 */
 
 /**
-* Form class of theme selection
-*
-* @package OpenPNE
-* @subpackage theme
-* @author suzuki_mar <supasu145@gmail.com>
-*/
+ * Form class of theme selection
+ *
+ * @package OpenPNE
+ * @subpackage opSkinThemePlugin
+ * @author suzuki_mar <supasu145@gmail.com>
+ * @author Kaoru Nishizoe <nishizoe@tejimaya.com>
+ */
 class opThemeActivationForm extends sfForm
 {
   const THEME_FILED_KEY = 'theme';
@@ -22,23 +23,20 @@ class opThemeActivationForm extends sfForm
   public function configure()
   {
     $widgetOptions = array(
-        'choices' => $this->findSelectThemes(),
-        'multiple' => true,
-        'expanded' => true,
-        'renderer_options' => array(
-            'formatter' => array($this, 'formatter')
-        )
+      'choices' => $this->findSelectThemes(),
+      'multiple' => true,
+      'expanded' => true,
+      'renderer_options' => array('formatter' => array($this, 'formatter'))
     );
 
     $widgetOptions['multiple'] = false;
     $this->setWidget(self::THEME_FILED_KEY, new sfWidgetFormChoice($widgetOptions));
 
     $validatorOptions = array(
-        'choices' => array_keys($this->findSelectThemes()),
-        'multiple' => true,
-        'required' => false,
+      'choices' => array_keys($this->findSelectThemes()),
+      'multiple' => true,
+      'required' => false,
     );
-
     $validatorOptions['multiple'] = false;
     $validatorOptions['required'] = true;
 
@@ -46,9 +44,7 @@ class opThemeActivationForm extends sfForm
     $validatorMessages['required'] = 'You must activate only a skin theme.';
 
     $this->setValidator(self::THEME_FILED_KEY, new sfValidatorChoice($validatorOptions, $validatorMessages));
-
     $this->setDefault(self::THEME_FILED_KEY, $this->findDefaultThemeName());
-
     $this->widgetSchema->setNameFormat('theme_activation[%s]');
   }
 
@@ -57,7 +53,6 @@ class opThemeActivationForm extends sfForm
     $themes = $this->getOption('themes');
 
     $choices = array();
-
     foreach ($themes as $theme)
     {
       $choices[$theme->getThemeDirName()] = $theme->getThemeDirName();
@@ -102,12 +97,9 @@ class opThemeActivationForm extends sfForm
       $match = array();
       preg_match('/(.*_theme_)(.*)$/', $id, $match);
       $name = $match[2];
-
       $theme = $themes[$name];
-
       $rows[] = $this->createRowTag($widget, $input, $theme);
     }
-
     $rowString = implode($widget->getOption('separator'), $rows);
 
     return $rowString;
@@ -119,17 +111,34 @@ class opThemeActivationForm extends sfForm
     $linkUrl .= $theme->getThemeDirName();
     $linkTag = '<a href="'.$linkUrl.'" target="_blank">'.sfContext::getInstance()->getI18n()->__('Preview').'</a>';
 
+    if (0 === strpos($theme->getThemeURI(), 'http', 0))
+    {
+      $themeName = '<a href="'.$theme->getThemeURI().'" target="_blank">'.$theme->getThemeDirName().'</a>';
+    }
+    else
+    {
+      $themeName = $theme->getThemeDirName();
+    }
+
+    if (0 === strpos($theme->getAuthorURI(), 'http', 0))
+    {
+      $author = '<a href="'.$theme->getAuthorURI().'" target="_blank">'.$theme->getAuthor().'</a>';
+    }
+    else
+    {
+      $author = $theme->getAuthor();
+    }
+
     $rowContents = array(
         'button' => $input['input'],
-        'name' => $input['label'],
-        'author' => '<a href="'.$theme->getThemeURI().'">'.$theme->getAuthor().'</a>',
+        'name' => $themeName,
+        'author' => $author,
         'version' => $theme->getVersion(),
         'description' => $theme->getDescription(),
         'link' => $linkTag,
     );
 
     $rowContentTag = '';
-
     foreach ($rowContents as $content)
     {
       $rowContentTag .= $widget->renderContentTag('td', $content);
@@ -156,7 +165,6 @@ class opThemeActivationForm extends sfForm
           $newErrorSchema->addError($error, $name);
         }
       }
-
       $this->errorSchema = $newErrorSchema;
     }
   }
@@ -169,7 +177,6 @@ class opThemeActivationForm extends sfForm
     }
 
     $value = $this->values[self::THEME_FILED_KEY];
-
     $skinThemeInfo = new opThemeConfig();
 
     return $skinThemeInfo->save($value);

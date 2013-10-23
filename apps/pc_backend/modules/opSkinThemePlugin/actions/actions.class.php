@@ -9,35 +9,30 @@
 */
 
 /**
-* opSkinThemePlugin actions.
-*
-* @package OpenPNE
-* @subpackage theme
-* @author suzuki_mar <supasu145@gmail.com>
-*/
-
+ * opSkinThemePlugin actions.
+ *
+ * @package OpenPNE
+ * @subpackage opSkinThemePlugin
+ * @author suzuki_mar <supasu145@gmail.com>
+ * @author Kaoru Nishizoe <nishizoe@tejimaya.com>
+ */
 class opSkinThemePluginActions extends sfActions
 {
   /**
-   * @var opThemeAssetSearch
+   * @var opThemeAssetSearcher
    */
-  private $search;
+  private $searcher;
 
   /**
    * @var opThemeConfig
    */
   private $config;
 
-  /**
-   * @var opTheme
-   */
-  private $themes;
-
   public function preExecute()
   {
     parent::preExecute();
 
-    $this->search = new opThemeAssetSearch();
+    $this->searcher = new opThemeAssetSearcher();
     $this->config = new opThemeConfig();
   }
 
@@ -48,16 +43,23 @@ class opSkinThemePluginActions extends sfActions
    */
   public function executeIndex(sfWebRequest $request)
   {
-    // get all themes
-    $this->themes = $this->search->getInstalledThemes();
-    // get used theme
+    $themeObjects = $this->searcher->getThemes();
+    $this->validThemeObjects = $themeObjects['valid'];
+    $this->invalidDirNames = $themeObjects['invalid']['invalid'];
+    $this->invalidMainCss = $themeObjects['invalid']['maincss'];
     $this->usedThemeName = $this->config->getUsedThemeName();
+    if (null === $this->usedThemeName)
+    {
+      $this->existsUsedTheme = true;
+    }
+    else
+    {
+      $this->existsUsedTheme = $this->searcher->existsAssetsByThemeName($this->config->getUsedThemeName());
+    }
 
-    $this->checkThemeDirValidity();
+    $this->form = new opThemeActivationForm(array(), array('themes' => $this->validThemeObjects));
 
-    $this->form = new opThemeActivationForm(array(), array('themes' => $this->themes));
-
-    if ($request->isMethod(sfRequest::POST))
+    if ($request->isMethod(sfWebRequest::POST))
     {
       $this->form->bind($this->request->getParameter('theme_activation'));
       if ($this->form->isValid())
@@ -70,57 +72,5 @@ class opSkinThemePluginActions extends sfActions
         $this->getUser()->setFlash('error', $this->form->getErrorSchema()->getMessage());
       }
     }
-  }
-
-  /**
-   * confirm theme is being installed correctly
-   */
-  private function checkThemeDirValidity()
-  {
-    if (null === $this->config->getUsedThemeName())
-    {
-      //If it is not selected, and treated as what exists
-      $this->existsUseTheme = true;
-    }
-    else
-    {
-      $this->existsUseTheme = $this->search->existsAssetsByThemeName($this->usedThemeName);
-    }
-
-    if ($this->existsNotInfoTheme())
-    {
-      $this->notInfoThemeList = $this->findNotInfoThemeNames();
-    }
-
-    $this->isExistsErrorTheme = (
-            isset($this->notInfoThemeList)
-            || $this->existsUseTheme === false);
-  }
-
-  private function existsNotInfoTheme()
-  {
-    foreach ($this->themes as $theme)
-    {
-      if (!$theme->existsThemeInfo())
-      {
-        return true;
-      }
-    }
-
-    return false;
-  }
-
-  private function findNotInfoThemeNames()
-  {
-    $notInfoList = array();
-    foreach ($this->themes as $theme)
-    {
-      if (!$theme->existsThemeInfo())
-      {
-        $notInfoList[] = $theme->getThemeDirName();
-      }
-    }
-
-    return $notInfoList;
   }
 }
