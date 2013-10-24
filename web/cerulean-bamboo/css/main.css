@@ -88,3 +88,17 @@ div.alertBox {
   color: #df382c;
   border-color: #f8d0d4;
 }
+
+/*==============================================================================
+ * radio_list
+ *----------------------------------------------------------------------------*/
+ul.radio_list > li > input[type='radio'] {
+    float: left;
+    margin-right: 2px;
+}
+
+ul.radio_list > li > label {
+    float: left;
+    margin-right: 2px;
+    margin-bottom: 0px;
+}
