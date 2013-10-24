@@ -71,6 +71,7 @@ class opSkinThemePluginActions extends sfActions
       {
         $this->getUser()->setFlash('error', $this->form->getErrorSchema()->getMessage());
       }
+      $this->redirect('opSkinThemePlugin/index');
     }
   }
 }
