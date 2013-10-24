@@ -130,7 +130,7 @@ class opThemeAssetSearcher extends opInstalledPluginManager
       if (file_exists($mainCssPath))
       {
         $themeObj = new opTheme($dirName);
-        if (null !== $themeObj->getThemeName() && null !== $themeObj->getAuthor())
+        if (null != $themeObj->getThemeName() && null != $themeObj->getAuthor())
         {
           $themeObjects[$dirName] = new opTheme($dirName);
         }

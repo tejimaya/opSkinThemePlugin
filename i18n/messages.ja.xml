@@ -95,7 +95,7 @@
         <target>ディレクトリ名</target>
       </trans-unit>
       <trans-unit id="">
-        <source>directory name of the following is not recognized as a theme, because they has no 'main.css' or 'theme name' or 'author'.</source>
+        <source>directory name of the following is not recognized as a theme, because they has no "main.css" or "theme name" or "author".</source>
         <target>以下のディレクトリにはmain.cssがないか、テーマ名、作者の情報が設定されていないため、テーマとして認識されません。</target>
       </trans-unit>
       <trans-unit id="">
