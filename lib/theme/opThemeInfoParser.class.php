@@ -82,7 +82,7 @@ class opThemeInfoParser
     {
       if ( preg_match( '/^[ \t\/*#@]*' . preg_quote( $regex, '/' ) . ':(.*)$/mi', $file_data, $match ) && $match[1] )
       {
-        $all_headers[ $field ] = $this->_cleanup_header_comment( $match[1] );
+        $all_headers[ $field ] = htmlspecialchars($this->_cleanup_header_comment( $match[1] ));
       }
       else
       {
