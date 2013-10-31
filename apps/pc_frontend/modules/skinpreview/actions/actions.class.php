@@ -27,6 +27,10 @@ class skinPreviewActions extends sfActions
     $themeSearcher = new opThemeAssetSearcher();
 
     $this->themeName = $this->getRequest()->getParameterHolder()->get('theme_name');
+    if (null === $this->themeName)
+    {
+      $this->forward404('Request parameter id does not exist.');
+    }
 
     $this->isExistsTheme = $themeSearcher->existsAssetsByThemeName($this->themeName);
 
