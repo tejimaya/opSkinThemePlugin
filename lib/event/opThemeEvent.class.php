@@ -32,7 +32,7 @@ class opThemeEvent
     $config = new opThemeConfig();
     $themeName = $config->getUsedThemeName();
     $themeSearcher = new opThemeAssetSearcher();
-    if (!$themeSearcher->existsAssetsByThemeName($themeName))
+    if (!$themeSearcher->isAvailableTheme($themeName))
     {
       $themeName = $themeSearcher->findSubstitutionTheme();
     }
@@ -61,7 +61,7 @@ class opThemeEvent
     }
 
     $themeSearcher = new opThemeAssetSearcher();
-    if (!$themeSearcher->existsAssetsByThemeName($themeName))
+    if (!$themeSearcher->isAvailableTheme($themeName))
     {
       return false;
     }

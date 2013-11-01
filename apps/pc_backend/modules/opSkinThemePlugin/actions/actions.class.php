@@ -47,6 +47,7 @@ class opSkinThemePluginActions extends sfActions
     $this->validThemeObjects = $themeObjects['valid'];
     $this->invalidDirNames = $themeObjects['invalid']['invalid'];
     $this->invalidMainCss = $themeObjects['invalid']['maincss'];
+    $this->config->removeUsedThemeName(array_merge($this->invalidDirNames, $this->invalidMainCss), $this->validThemeObjects);
     $this->usedThemeName = $this->config->getUsedThemeName();
     if (null === $this->usedThemeName)
     {

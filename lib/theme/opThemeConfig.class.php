@@ -42,4 +42,32 @@ class opThemeConfig
 
     return $snsConfigTable->getValue();
   }
+
+  public function removeUsedThemeName(array $invalidThemeNames, $validThemeNames)
+  {
+    $snsConfigTable = Doctrine::getTable('SnsConfig')->retrieveByName('Theme_used');
+    if (null !== $snsConfigTable)
+    {
+      $usedThemeName = $snsConfigTable->getValue();
+    }
+
+    foreach ($invalidThemeNames as $invalidThemeName)
+    {
+      if ($invalidThemeName == $usedThemeName)
+      {
+        $snsConfigTable->setName('Theme_used');
+        $validThemeName = '';
+        foreach ($validThemeNames as $key => $value)
+        {
+          $validThemeName = $key;
+          break;
+        }
+        $snsConfigTable->setValue($validThemeName);
+        $snsConfigTable->save();
+        break;
+      }
+    }
+
+    return true;
+  }
 }

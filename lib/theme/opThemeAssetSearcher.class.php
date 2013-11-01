@@ -42,6 +42,36 @@ class opThemeAssetSearcher extends opInstalledPluginManager
     $this->themePath = $themePath;
   }
 
+  /**
+   * 指定されたテーマディレクトリ名のテーマが正しいテーマかどうかを判定する。
+   *
+   * @param $themeDirName String テーマディレクトリ名
+   * @return boolean 指定されたテーマディレクトリ名がただし場合はtrue、それ以外はfalse
+   */
+  public function isAvailableTheme($themeDirName)
+  {
+    // ディレクトリ名が指定されていない
+    if (null === $themeDirName)
+    {
+      return false;
+    }
+
+    // ディレクトリが存在しない
+    if (!file_exists($this->getWebDir().'/'.$themeDirName))
+    {
+      return false;
+    }
+
+    $themeObjects = $this->getThemes();
+    $validThemeObjects = $themeObjects['valid'];
+    if (!isset($validThemeObjects[$themeDirName]))
+    {
+      return false;
+    }
+
+    return true;
+  }
+
   public function existsAssetsByThemeName($themeName)
   {
     if (null === $themeName)
@@ -59,12 +89,15 @@ class opThemeAssetSearcher extends opInstalledPluginManager
    */
   public function findSubstitutionTheme()
   {
-    $pattern = $this->getWebDir().'/*';
-
-    foreach (glob($pattern, GLOB_ONLYDIR) as $dirPath)
+    $themeObjects = $this->getThemes();
+    $validThemeObjects = $themeObjects['valid'];
+    $selectThemeDirName = '';
+    foreach ($validThemeObjects as $key => $value)
     {
-      return str_replace($this->getWebDir(), '', $dirPath);
+      $selectThemeDirName = $key;
+      break;
     }
+    return str_replace($this->getWebDir(), '', $selectThemeDirName);
   }
 
   public function findAssetsPathByThemeNameAndType($themeName, $type)
