@@ -1,4 +1,7 @@
 skin_preview:
-  url: /skinpreview/index/theme_name/
+  url: /skinpreview/:theme_name
   param: { module: skinpreview, action: index }
 
+skin_preview_no_default:
+  url: /skinpreview/*
+  param: { module: default, action: error }

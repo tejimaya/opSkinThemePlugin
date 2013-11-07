@@ -31,7 +31,7 @@ OpenPNEのテーマを選択したり、簡単に追加できるようにする�
 ### 使用するテーマを選択する
 スキンテーマを有効にした後に、スキンプラグイン設定画面からopSkinThemePluginの設定画面にアクセスします。  
   opSkinThemePluginの設定画面から、使用するテーマを選択してください。       
-  [テーマの作成方法について](https://github.com/suzuki-mar/opSkinThemePlugin/wiki/%E3%83%86%E3%83%BC%E3%83%9E%E3%81%AE%E4%BD%9C%E6%88%90%E6%96%B9%E6%B3%95)
+  [テーマの作成方法について](https://github.com/tejimaya/opSkinThemePlugin/wiki/%E3%83%86%E3%83%BC%E3%83%9E%E3%81%AE%E4%BD%9C%E6%88%90%E6%96%B9%E6%B3%95)
 
 
 ## 更新履歴

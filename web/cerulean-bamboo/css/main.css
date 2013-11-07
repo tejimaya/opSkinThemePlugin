@@ -2,10 +2,11 @@
 
 /*
 Theme Name:bamboo
-Theme URI:
-Description:bamboo forest
+Theme URI:
+Description:竹林
 Author:sonobe
-Version: 1.0.0
+Author URI:
+Version:1.0.0
 */
 
 /*==============================================================================
@@ -86,4 +87,18 @@ div.alertBox {
   background-color: #fadfdd;
   color: #df382c;
   border-color: #f8d0d4;
+}
+
+/*==============================================================================
+ * radio_list
+ *----------------------------------------------------------------------------*/
+ul.radio_list > li > input[type='radio'] {
+    float: left;
+    margin-right: 2px;
+}
+
+ul.radio_list > li > label {
+    float: left;
+    margin-right: 2px;
+    margin-bottom: 0px;
 }

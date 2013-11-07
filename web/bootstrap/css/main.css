@@ -2,10 +2,11 @@
 
 /*
 Theme Name:bootstrap
-Theme URI:
+Theme URI:
 Description:for bootstrap[v2.3.2]
 Author:sonobe
-Version: 1.0.0
+Author URI:
+Version:1.0.0
 */
 
 /*==============================================================================
@@ -85,4 +86,18 @@ div.alertBox {
   background-color: #FCF8E3;
   color: #C09853;
   border-color: #FBEED5;
+}
+
+/*==============================================================================
+ * radio_list
+ *----------------------------------------------------------------------------*/
+ul.radio_list > li > input[type='radio'] {
+    float: left;
+    margin-right: 2px;
+}
+
+ul.radio_list > li > label {
+    float: left;
+    margin-right: 2px;
+    margin-bottom: 0px;
 }

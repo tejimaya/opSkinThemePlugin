@@ -9,174 +9,103 @@
 */
 
 /**
-* to parse the theme information reads the configuration file
-*
-* @package OpenPNE
-* @subpackage theme
-* @author suzuki_mar <supasu145@gmail.com>
-*/
+ * to parse the theme information reads the configuration file
+ *
+ * @package OpenPNE
+ * @subpackage opSkinThemePlugin
+ * @author suzuki_mar <supasu145@gmail.com>
+ * @author Kaoru Nishizoe <nishizoe@tejimaya.com>
+ */
 class opThemeInfoParser
 {
   /**
-   * @var opThemeAssetSearch
+   * @var opThemeAssetSearcher
    */
-  private $search;
+  private $searcher;
 
   public function __construct()
   {
-    $this->search = opThemeAssetSearchFactory::createSearchInstance();
+    $this->searcher = new opThemeAssetSearcher();
   }
-
-  private function getConfigNames()
-  {
-    return array(
-        'Theme Name',
-        'Theme URI',
-        'Description',
-        'Author',
-        'Version',
-    );
-  }
-
+ 
   public function parseInfoFileByThemeName($themeName)
   {
-    $infoPath = $this->search->getThemePath().'/'.$themeName.'/css/main.css';
-    $fp = fopen($infoPath, 'r');
+    $file_headers = array(
+      'theme_name'  => 'Theme Name',
+      'theme_uri'   => 'Theme URI',
+      'description' => 'Description',
+      'author'      => 'Author',
+      'author_uri'  => 'Author URI',
+      'version'     => 'Version',
+    );
+    $infoPath = $this->searcher->getThemePath().'/'.$themeName.'/css/main.css';
+    $headerData = $this->get_file_data($infoPath, $file_headers);
 
-    if (!$fp)
-    {
-      fclose($fp);
-      return false;
-    }
-
-    $configLines = $this->clipConfigLines($fp);
-
-    if ($configLines === false)
-    {
-      return false;
-    }
-
-    return $this->parseConfigLines($configLines);
+    return $headerData;
   }
 
-  private function clipConfigLines($fp)
+  /**
+   * Retrieve metadata from a file.
+   *
+   * Searches for metadata in the first 8kiB of a file, such as a plugin or theme.
+   * Each piece of metadata must be on its own line. Fields can not span multiple
+   * lines, the value will get cut at the end of the first line.
+   *
+   * If the file data is not within that first 8kiB, then the author should correct
+   * their plugin file and move the data headers to the top.
+   *
+   * @see http://codex.wordpress.org/File_Header
+   * @see https://github.com/WordPress/WordPress/blob/master/wp-includes/functions.php#L3675
+   *
+   * @since 2.9.0
+   * @param string $file Path to the file
+   * @param array $default_headers List of headers, in the format array('HeaderKey' => 'Header Name')
+   * @return array $all_headers array
+   */
+  private function get_file_data( $file, $default_headers)
   {
-    $commentLineStart = false;
+    // We don't need to write to the file, so just open for reading.
+    $fp = fopen( $file, 'r' );
 
-    while (!feof($fp))
+    // Pull only the first 8kiB of the file in.
+    $file_data = fread( $fp, 8192 );
+
+    // PHP will close file handle, but we are good citizens.
+    fclose( $fp );
+
+    // Make sure we catch CR-only line endings.
+    $file_data = str_replace( "\r", "\n", $file_data );
+
+    $all_headers = $default_headers;
+
+    foreach ( $all_headers as $field => $regex )
     {
-      $line = trim(fgets($fp));
-
-      if (strpos($line, '/*') !== false)
+      if ( preg_match( '/^[ \t\/*#@]*' . preg_quote( $regex, '/' ) . ':(.*)$/mi', $file_data, $match ) && $match[1] )
       {
-        $commentLineStart = true;
+        $all_headers[ $field ] = htmlspecialchars($this->_cleanup_header_comment( $match[1] ));
       }
-
-      if ($commentLineStart)
+      else
       {
-        $configLines[] = $line;
-      }
-
-      if (strpos($line, '*/') !== false)
-      {
-
-        if ($this->isConfigLines($configLines))
-        {
-          //remove the start and end of the block
-          array_shift($configLines);
-          array_pop($configLines);
-
-          fclose($fp);
-          return $configLines;
-        }
-
-        $commentLineStart = false;
-        $configLines = array();
+        $all_headers[ $field ] = '';
       }
     }
 
-    fclose($fp);
-    return false;
+    return $all_headers;
   }
 
-  private function parseConfigLines(array $configLines)
+  /**
+   * Strip close comment and close php tags from file headers used by WP.
+   * See http://core.trac.wordpress.org/ticket/8497
+   *
+   * @since 2.8.0
+   *
+   * @see https://github.com/WordPress/WordPress/blob/master/wp-includes/functions.php#L3609
+   *
+   * @param string $str
+   * @return string
+   */
+  private function _cleanup_header_comment($str)
   {
-    $configs = array();
-    foreach ($this->getConfigNames() as $name)
-    {
-      foreach ($configLines as $line)
-      {
-        $configNameFiled = $name.':';
-
-        if (strpos($line, $configNameFiled) !== false)
-        {
-          $value = str_replace($configNameFiled, '', $line);
-          $key = $this->toConfigKeyByConfigName($name);
-
-          $configs[$key] = $value;
-        }
-      }
-    }
-
-    return $configs;
-  }
-
-  private function toConfigKeyByConfigName($configName)
-  {
-    $configKey = '';
-
-    $strs = preg_split("/[\s]+/", $configName, -1, PREG_SPLIT_NO_EMPTY);
-
-    foreach ($strs as $str)
-    {
-      //Garbled measures
-      // specify the ASCII configuration name because it is all alphabetic
-      $str = mb_convert_encoding($str, 'ASCII');
-      $configKey .= strtolower($str).'_';
-    }
-
-    $configKey = substr($configKey, 0, -1);
-
-    return $configKey;
-  }
-
-  private function isConfigLines(array $lines)
-  {
-    $configCount = count($this->getConfigNames());
-
-    //add end and the beginning of the comment block
-    if (count($lines) !== $configCount + 2)
-    {
-      return false;
-    }
-
-    $configLines = array();
-    //ignore the comment block
-    for ($i = 1; $i < count($lines) - 1; $i++)
-    {
-      $configLines[] = $lines[$i];
-    }
-
-    //It is an error If the desired item is not aligned
-    foreach ($this->getConfigNames() as $name)
-    {
-      $existsConfig = false;
-
-      foreach ($configLines as $line)
-      {
-        $configNameFiled = $name.':';
-
-        if (strpos($line, $configNameFiled) !== false)
-        {
-          $existsConfig = true;
-        }
-      }
-
-      if (!$existsConfig) {
-        return false;
-      }
-    }
-
-    return true;
+    return trim(preg_replace("/\s*(?:\*\/|\?>).*/", '', $str));
   }
 }

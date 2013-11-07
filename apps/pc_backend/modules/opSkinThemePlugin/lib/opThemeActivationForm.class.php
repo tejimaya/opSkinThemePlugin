@@ -1,20 +1,21 @@
 <?php
 
 /**
-* This file is part of the OpenPNE package.
-* (c) OpenPNE Project (http://www.openpne.jp/)
-*
-* For the full copyright and license information, please view the LICENSE
-* file and the NOTICE file that were distributed with this source code.
-*/
+ * This file is part of the OpenPNE package.
+ * (c) OpenPNE Project (http://www.openpne.jp/)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file and the NOTICE file that were distributed with this source code.
+ */
 
 /**
-* Form class of theme selection
-*
-* @package OpenPNE
-* @subpackage theme
-* @author suzuki_mar <supasu145@gmail.com>
-*/
+ * Form class of theme selection
+ *
+ * @package OpenPNE
+ * @subpackage opSkinThemePlugin
+ * @author suzuki_mar <supasu145@gmail.com>
+ * @author Kaoru Nishizoe <nishizoe@tejimaya.com>
+ */
 class opThemeActivationForm extends sfForm
 {
   const THEME_FILED_KEY = 'theme';
@@ -22,33 +23,28 @@ class opThemeActivationForm extends sfForm
   public function configure()
   {
     $widgetOptions = array(
-        'choices' => $this->findSelectThemes(),
-        'multiple' => true,
-        'expanded' => true,
-        'renderer_options' => array(
-            'formatter' => array($this, 'formatter')
-        )
+      'choices' => $this->findSelectThemes(),
+      'multiple' => true,
+      'expanded' => true,
+      'renderer_options' => array('formatter' => array($this, 'formatter'))
     );
 
     $widgetOptions['multiple'] = false;
     $this->setWidget(self::THEME_FILED_KEY, new sfWidgetFormChoice($widgetOptions));
 
     $validatorOptions = array(
-        'choices' => array_keys($this->findSelectThemes()),
-        'multiple' => true,
-        'required' => false,
+      'choices' => array_keys($this->findSelectThemes()),
+      'multiple' => true,
+      'required' => false,
     );
-
     $validatorOptions['multiple'] = false;
     $validatorOptions['required'] = true;
 
     $validatorMessages = array();
-    $validatorMessages['required'] = 'You must activate only a skin theme.';
+    $validatorMessages['required'] = 'You must activate only any theme.';
 
     $this->setValidator(self::THEME_FILED_KEY, new sfValidatorChoice($validatorOptions, $validatorMessages));
-
     $this->setDefault(self::THEME_FILED_KEY, $this->findDefaultThemeName());
-
     $this->widgetSchema->setNameFormat('theme_activation[%s]');
   }
 
@@ -57,7 +53,6 @@ class opThemeActivationForm extends sfForm
     $themes = $this->getOption('themes');
 
     $choices = array();
-
     foreach ($themes as $theme)
     {
       $choices[$theme->getThemeDirName()] = $theme->getThemeDirName();
@@ -68,25 +63,17 @@ class opThemeActivationForm extends sfForm
 
   public function findDefaultThemeName()
   {
-    $themeInfo = new opThemeConfig();
-
-    if ($themeInfo->registeredUsedTheme())
-    {
-      $default = $themeInfo->findUseTheme();
-    }
-    else
+    $themeConfig = new opThemeConfig();
+    $defaultTheme = $themeConfig->getUsedThemeName();
+    if (null === $defaultTheme)
     {
       if ($this->emptySelectTheme())
       {
-        $default = array_shift($this->findSelectThemes());
-      }
-      else
-      {
-        $default = null;
+        $defaultTheme = array_shift($this->findSelectThemes());
       }
     }
 
-    return $default;
+    return $defaultTheme;
   }
 
   private function emptySelectTheme()
@@ -110,12 +97,9 @@ class opThemeActivationForm extends sfForm
       $match = array();
       preg_match('/(.*_theme_)(.*)$/', $id, $match);
       $name = $match[2];
-
       $theme = $themes[$name];
-
       $rows[] = $this->createRowTag($widget, $input, $theme);
     }
-
     $rowString = implode($widget->getOption('separator'), $rows);
 
     return $rowString;
@@ -123,27 +107,37 @@ class opThemeActivationForm extends sfForm
 
   private function createRowTag($widget, $input, opTheme $theme)
   {
-    $linkUrl = sfContext::getInstance()->getConfiguration()->generateAppUrl('pc_frontend', array('sf_route' => 'skin_preview'), true);
-    $linkUrl .= $theme->getThemeDirName();
+    $linkUrl = sfContext::getInstance()->getConfiguration()->generateAppUrl('pc_frontend', array('sf_route' => 'skin_preview', 'theme_name' => $theme->getThemeDirName()), true);
     $linkTag = '<a href="'.$linkUrl.'" target="_blank">'.sfContext::getInstance()->getI18n()->__('Preview').'</a>';
 
-    $tagIds = array(
-        'author' => 'author_'.$theme->getThemeName(),
-        'version' => 'version_'.$theme->getThemeName(),
-        'summery' => 'summery_'.$theme->getThemeName(),
-    );
+    if (0 === strpos($theme->getThemeURI(), 'http', 0))
+    {
+      $themeName = '<a href="'.$theme->getThemeURI().'" target="_blank">'.$theme->getThemeName().'</a>';
+    }
+    else
+    {
+      $themeName = $theme->getThemeName();
+    }
+
+    if (0 === strpos($theme->getAuthorURI(), 'http', 0))
+    {
+      $author = '<a href="'.$theme->getAuthorURI().'" target="_blank">'.$theme->getAuthor().'</a>';
+    }
+    else
+    {
+      $author = $theme->getAuthor();
+    }
 
     $rowContents = array(
-        'button' => $input['input'],
-        'name' => $input['label'],
-        'author' => '<a href="'.$theme->getThemeURI().'">'.$theme->getAuthor().'</a>',
-        'version' => $theme->getVersion(),
-        'description' => $theme->getDescription(),
-        'link' => $linkTag,
+      'button' => $input['input'],
+      'name' => $themeName,
+      'author' => $author,
+      'version' => $theme->getVersion(),
+      'description' => $theme->getDescription(),
+      'link' => $linkTag,
     );
 
     $rowContentTag = '';
-
     foreach ($rowContents as $content)
     {
       $rowContentTag .= $widget->renderContentTag('td', $content);
@@ -170,7 +164,6 @@ class opThemeActivationForm extends sfForm
           $newErrorSchema->addError($error, $name);
         }
       }
-
       $this->errorSchema = $newErrorSchema;
     }
   }
@@ -183,7 +176,6 @@ class opThemeActivationForm extends sfForm
     }
 
     $value = $this->values[self::THEME_FILED_KEY];
-
     $skinThemeInfo = new opThemeConfig();
 
     return $skinThemeInfo->save($value);
