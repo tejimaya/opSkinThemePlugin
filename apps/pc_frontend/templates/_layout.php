@@ -30,6 +30,28 @@ var openpne = '.json_encode($jsonData).';
 <?php endif ?>
 <?php include_javascripts() ?>
 <?php echo $op_config->get('pc_html_head') ?>
+  <script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+      var gads = document.createElement('script');
+      gads.async = true;
+      gads.type = 'text/javascript';
+      var useSSL = 'https:' == document.location.protocol;
+      gads.src = (useSSL ? 'https:' : 'http:') +
+        '//www.googletagservices.com/tag/js/gpt.js';
+      var node = document.getElementsByTagName('script')[0];
+      node.parentNode.insertBefore(gads, node);
+    })();
+  </script>
+
+  <script type='text/javascript'>
+    googletag.cmd.push(function() {
+      googletag.defineSlot('/7083201/pne_jp_side1', [160, 600], 'div-gpt-ad-1383195165288-0').addService(googletag.pubads());
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+  </script>
 </head>
 <body id="<?php printf('page_%s_%s', $view->getModuleName(), $view->getActionName()) ?>" class="<?php echo opToolkit::isSecurePage() ? 'secure_page' : 'insecure_page' ?>">
 <?php echo $op_config->get('pc_html_top2') ?>
@@ -123,17 +145,12 @@ EOM;
 <?php if (opConfig::get('opt_ad_free') == 0): ?>
 <?php 
 echo <<<EOM
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-5836291027790450";
-/* pne.jp_160×600_1*/
-google_ad_slot = "3745225209";
-google_ad_width = 160;
-google_ad_height = 600;
-//-->
+<!-- pne_jp_side2 -->
+<div id='div-gpt-ad-1383195165288-0' style='width:160px; height:600px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1383195165288-0'); });
 </script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+</div>
 EOM;
 ?>
 </div>
