@@ -37,13 +37,8 @@ var openpne = '.json_encode($jsonData).';
 <?php echo $op_config->get('pc_html_top') ?>
 <div id="Container">
 <?php $url = $_SERVER['REQUEST_URI']; ?>
-<div id="Header" class="navbar <?php if(preg_match("#^/member/profile#",$url)): 
-  ?><?php elseif(preg_match("#^/member/#",$url)): 
-  ?>navbar-inverse<?php elseif(preg_match("#^/diary/listMember/#",$url)): 
-  ?>navbar-inverse<?php elseif(preg_match("#^/message/sendToFriend/id/#",$url)): 
-  ?>navbar-inverse<?php elseif(preg_match("#^/friend/list\?id#",$url)): 
-  ?>navbar-inverse<?php else: ?>
-<?php endif; ?>">
+<?php $type = sfConfig::get('sf_nav_type', sfConfig::get('mod_'.$module.'_default_nav', 'default')); ?>
+<div id="Header" class="navbar <?php if('friend' == $type): ?>navbar-inverse<?php endif; ?>">
 <div id="HeaderContainer" div class="navbar-inner">
 <div class="container">
 <?php include_partial('global/header') ?>
