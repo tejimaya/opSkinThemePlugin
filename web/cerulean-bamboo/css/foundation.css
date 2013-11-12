@@ -344,6 +344,32 @@ div#sideBanner form {
 /*----------------------------------------------
  * Header
  *--------------------------------------------*/
+.navbar .pull-right>li>.dropdown-menu {
+  margin-top:60px;
+}
+.navbar .nav li.dropdown>.dropdown-toggle {
+  padding-bottom: 18px;
+  position: absolute;
+  right: -20px;
+  padding-right: 30px;
+  padding-left: 25px;
+}
+.navbar .nav li.dropdown>.dropdown-toggle:before {
+  content: "menu";
+  font-size: 12px;
+  margin-left: -6.5px;
+  position: absolute;
+  width: auto;
+  margin-top: -7px;
+  padding-bottom: 2px;
+}
+.navbar .nav li.dropdown>.dropdown-toggle .caret {
+  border-top: 11px solid;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  margin-top: 12px;
+  margin-bottom: -7px;
+}
 /*----------------------------------------------
  * Notification Center
  *--------------------------------------------*/
@@ -711,8 +737,13 @@ div.operation {  padding: 4px }
 /*----------------------------------------------
  * Calendar
  *--------------------------------------------*/
-#Left .calendar .partsHeading {  text-align: center }
- #Left .calendar .partsHeading a {  text-decoration: none }
+#Left .calendar .partsHeading h3 {
+  text-align: center;
+}
+#Left .calendar .partsHeading a {
+  text-decoration: none;
+  font-size:16px;
+}
 .calendar th {
   background-color: #EEEEEE;
   text-align: center;
@@ -758,18 +789,13 @@ div.operation {  padding: 4px }
 /*==============================================================================
  * informationBox
  *----------------------------------------------------------------------------*/
-.informationBox {
-  padding: 8px 14px 8px 14px;
-  margin-bottom: 9px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+.informationBox div.body {
+  padding-left: 95px;
+  padding-right: 10px;
+  padding-top: 7px;
+  min-height: 18px;
+  line-height: 1em;
 }
- .informationBox div.body {
-   min-height: 1.2em;
-   padding: 5px;
- }
 * html .informationBox,
 * html .informationBox div.body {  zoom: 1 }
  * html .informationBox div.body {  height: 1.2em }
@@ -787,15 +813,28 @@ div.operation {  padding: 4px }
  .informationBox .caution a:hover,
  .informationBox a:hover strong,
  .descriptionBox a:hover {  font-weight: bold }
-.informationBox {  border: 1px solid black }
 .informationBox,
 #notificationCenterDetail {
-  padding: 8px 35px 8px 14px;
+  padding: 8px 35px 4px 14px;
   margin-bottom: 20px;
   text-shadow: 0 1px 0 rgba(255,255,255,0.5);
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+}
+div.informationBox {
+  padding:0;
+}
+.parts.informationBox:before {
+  content: "Information";
+  font-size: 16px;
+  background-color: rgba(70,70,70,0.2);
+  position: absolute;
+  color: white;
+  left: 6px;
+  top: 6px;
+  padding: 3px;
+  border-radius: inherit;
 }
 /*==============================================================================
  * alertBox

@@ -81,6 +81,9 @@ div.container div#notificationCenter div#notificationCenterDetail,
   background-color: #D9EDF7;
   border-color: #BCE8F1;
 }
+.informationBox div.body {
+  margin-left:10px;
+}
 div.alertBox {
   background-color: #FCF8E3;
   color: #C09853;
