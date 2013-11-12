@@ -24,7 +24,8 @@ Version: 1.0.0
 #MailAddressLogin,
 div.dparts div.parts,
 #profileForm,
-#Footer {
+#Footer,
+.timeline-large {
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
   -webkit-border-radius: 4px;

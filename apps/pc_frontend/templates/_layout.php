@@ -36,8 +36,14 @@ var openpne = '.json_encode($jsonData).';
 <div id="Body">
 <?php echo $op_config->get('pc_html_top') ?>
 <div id="Container">
-
-<div id="Header" class="navbar">
+<?php $url = $_SERVER['REQUEST_URI']; ?>
+<div id="Header" class="navbar <?php if(preg_match("#^/member/profile#",$url)): 
+  ?><?php elseif(preg_match("#^/member/#",$url)): 
+  ?>navbar-inverse<?php elseif(preg_match("#^/diary/listMember/#",$url)): 
+  ?>navbar-inverse<?php elseif(preg_match("#^/message/sendToFriend/id/#",$url)): 
+  ?>navbar-inverse<?php elseif(preg_match("#^/friend/list\?id#",$url)): 
+  ?>navbar-inverse<?php else: ?>
+<?php endif; ?>">
 <div id="HeaderContainer" div class="navbar-inner">
 <div class="container">
 <?php include_partial('global/header') ?>
