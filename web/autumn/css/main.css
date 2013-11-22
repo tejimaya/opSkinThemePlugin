@@ -71,6 +71,9 @@ div.parts table {
 /*==============================================================================
  * Header
  *----------------------------------------------------------------------------*/
+.navbar-inverse .navbar-inner {
+  background: #7E1F18;
+}
 div#Header div#HeaderContainer div.container div#notificationCenter {  background-image: url(../img/NOTIFY_CENTER_2.png) }
 /*==============================================================================
  * Notification
