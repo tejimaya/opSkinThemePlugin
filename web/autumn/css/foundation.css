@@ -36,7 +36,7 @@ embed {
 body {
   font-size: 14px;
   line-height: 20px;
-  font-family: "Helvetica Neue", Helvetica, Arial, Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, 'ＭＳ Ｐゴシック', sans-serif;
 }
 ul,
 ol {
@@ -344,31 +344,28 @@ div#sideBanner form {
 /*----------------------------------------------
  * Header
  *--------------------------------------------*/
+.navbar-inner {
+  min-height:40px;
+}
+.navbar .nav > li > a {
+  padding:10px;
+}
+.navbar .brand {
+  padding:10px 20px 10px; 
+}
 .navbar .pull-right>li>.dropdown-menu {
-  margin-top:60px;
+  margin-top:15px;
+  margin-right:2px;
 }
-.navbar .nav li.dropdown>.dropdown-toggle {
-  padding-bottom: 18px;
-  position: absolute;
-  right: -20px;
-  padding-right: 30px;
-  padding-left: 25px;
+.navbar .nav li#newGlobalNav>.dropdown-toggle p {
+  font-size: 18px;
+  float:left;
 }
-.navbar .nav li.dropdown>.dropdown-toggle:before {
-  content: "menu";
-  font-size: 12px;
-  margin-left: -6.5px;
-  position: absolute;
-  width: auto;
-  margin-top: -7px;
-  padding-bottom: 2px;
-}
-.navbar .nav li.dropdown>.dropdown-toggle .caret {
-  border-top: 11px solid;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
-  margin-top: 12px;
-  margin-bottom: -7px;
+.navbar .fa-sort-asc {
+  font-size:25px;
+  padding-left:5px;
+  margin-top: -5px;
+  float:left;
 }
 /*----------------------------------------------
  * Notification Center
