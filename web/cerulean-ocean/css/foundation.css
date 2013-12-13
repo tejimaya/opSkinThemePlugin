@@ -1454,10 +1454,6 @@ div#sideBanner div.ad ins, div#sideBanner div.ad div {
   margin-left: 20px !important;
 }
 
-/*古いデザインのタグは表示しないようにする*/
-#oldLocalNavContents,
-#oldGlobalNav {  display: none }
-.memberImageBox,
 #MailAddressLogin,
 div.dparts div.parts,
 #profileForm {
