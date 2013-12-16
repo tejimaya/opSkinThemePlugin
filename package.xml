@@ -26,38 +26,41 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2012-12-13</date>
- <time>18:09:54</time>
+ <date>2013-10-04</date>
+ <time>16:09:31</time>
  <version>
-  <release>0.9.10</release>
-  <api>0.9.10</api>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
  </version>
  <stability>
-  <release>alpha</release>
-  <api>alpha</api>
+  <release>stable</release>
+  <api>stable</api>
  </stability>
  <license>Apache</license>
  <notes>
-NONE
+First stable release.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="3492a6b42dcc83ba2d3fbb23b360f0e2" name="apps/pc_backend/modules/opSkinThemePlugin/actions/actions.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="6486e516c86661160b672b30f31eba9e" name="apps/pc_backend/modules/opSkinThemePlugin/lib/opThemeActivationForm.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="c302428f12ddc09d6df18560cc88f2eb" name="apps/pc_backend/modules/opSkinThemePlugin/templates/indexSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="9d121eca8d6a6fce99796be3b32d8b46" name="apps/pc_frontend/modules/default/templates/_globalNav.php" role="data" />
-   <file baseinstalldir="/" md5sum="b366b3e40098c0351541f3712d94c765" name="apps/pc_frontend/modules/default/templates/_localNav.php" role="data" />
-   <file baseinstalldir="/" md5sum="07bb8a2db80825a6d548dc23725c872d" name="apps/pc_frontend/modules/skinpreview/actions/actions.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="c1a103c6b5777cb1b5e0a06a5092a006" name="apps/pc_frontend/modules/skinpreview/templates/indexSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="30b2e281db9dde74c6d441e09e6e08be" name="apps/pc_frontend/templates/_header.php" role="data" />
-   <file baseinstalldir="/" md5sum="30f6a4c8d7bb208e7d510ec9c4d8033d" name="apps/pc_frontend/templates/_layout.php" role="data" />
+   <file baseinstalldir="/" md5sum="42522d421952a24d47456c019e9f7fb9" name="apps/pc_backend/modules/opSkinThemePlugin/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="d2d1ca63ca17e834d556aa44c8f8a39c" name="apps/pc_backend/modules/opSkinThemePlugin/lib/opThemeActivationForm.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="59a2ec6f49e5c391ae0efa6d5e9017a3" name="apps/pc_backend/modules/opSkinThemePlugin/templates/indexSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="1411855392dbcdecb21d5685b67a3124" name="apps/pc_backend/modules/opSkinThemePlugin/templates/_themeSelectRows.php" role="data" />
+   <file baseinstalldir="/" md5sum="c0aef4bac87ad2ffae31313ccd8035ad" name="apps/pc_frontend/config/routing.yml" role="data" />
+   <file baseinstalldir="/" md5sum="2302d14cfa6b0df9d7e48dec39ec23ab" name="apps/pc_frontend/modules/default/templates/_globalNav.php" role="data" />
+   <file baseinstalldir="/" md5sum="7c88a5e11ef73f0531c5296775503583" name="apps/pc_frontend/modules/default/templates/_localNav.php" role="data" />
+   <file baseinstalldir="/" md5sum="c97370d4f413396cfde53ad30aa430ca" name="apps/pc_frontend/modules/skinpreview/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="d2f08a05cc1da2514fa1b8933219b49c" name="apps/pc_frontend/modules/skinpreview/templates/indexSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="6fc0c25a76a5d68c8be5647d0801709f" name="apps/pc_frontend/templates/_header.php" role="data" />
+   <file baseinstalldir="/" md5sum="db69e2b9b893ae5f8958b73c42e89dfa" name="apps/pc_frontend/templates/_layout.php" role="data" />
    <file baseinstalldir="/" md5sum="c04ce99efe864873ac6781cc1252b699" name="config/config.php" role="data" />
-   <file baseinstalldir="/" md5sum="fba1e823799e23941d085a5bd47598b5" name="lib/event/opThemeEvent.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="a17c8c2c2accf952a2cba0d4d545c924" name="lib/theme/opTheme.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="d60e3c057c66042768c6bd10e9d8c19d" name="lib/theme/opThemeAssetSearch.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="daac3952e16ad61cb476d0a46b1cc229" name="lib/theme/opThemeAssetSearchFactory.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="39c1e1e78e756081dd10c3361240bd6e" name="lib/theme/opThemeConfig.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="6eb6a538fc2f0f8eb3740aca4cb3e228" name="lib/theme/opThemeInfoParser.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="96e1e2855aabd1685e8fb728f2c98c7e" name="i18n/messages.ja.xml" role="data" />
+   <file baseinstalldir="/" md5sum="fecee141862a029e85b33c0c7c4571d4" name="lib/event/opThemeEvent.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="cfab1cda7233a69966eda2aa02b6ae9b" name="lib/theme/opTheme.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="92c317101ab59edddc66224de8cf202e" name="lib/theme/opThemeAssetSearch.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="650d8a5588e078b11e4861a8642a6a51" name="lib/theme/opThemeAssetSearchFactory.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="dc5d72a492666c8898c7b6ed6720004f" name="lib/theme/opThemeConfig.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="37dd3dec1e3acec92e80d9026535afdf" name="lib/theme/opThemeInfoParser.class.php" role="data" />
    <file baseinstalldir="/" md5sum="6059fe5458d6348af2659d38af527912" name="test/bootstrap/database.php" role="data" />
    <file baseinstalldir="/" md5sum="155ce720c060aa5fc9e2bbbc779b7a13" name="test/bootstrap/functional.php" role="data" />
    <file baseinstalldir="/" md5sum="53df737807ad0e3ba7dd2abb8cab3e3c" name="test/bootstrap/unit.php" role="data" />
@@ -65,126 +68,79 @@ NONE
    <file baseinstalldir="/" md5sum="8a98cacfcc151f2808c399543fd52679" name="test/functional/mobile_frontend/skeletonActionsTest.php" role="data" />
    <file baseinstalldir="/" md5sum="1faa199e87c1ce270e86edee706b37fd" name="test/functional/pc_frontend/skeletonActionsTest.php" role="data" />
    <file baseinstalldir="/" md5sum="52440ab0abcc01c98551283f1e9942e1" name="test/unit/model/SkeletonTest.php" role="data" />
-   <file baseinstalldir="/" md5sum="96018773897d15af4345c351cc04b7ce" name="web/basic/css/main.css" role="data" />
-   <file baseinstalldir="/" md5sum="23ec1042080aef8623ce446f8f422d01" name="web/basic/images/articleList_marker.gif" role="data" />
-   <file baseinstalldir="/" md5sum="fe3b5933143e2ebd9db2e51e14c501ad" name="web/basic/images/bg_button.gif" role="data" />
-   <file baseinstalldir="/" md5sum="5eefad6da459f3239cadb257bc21e88c" name="web/basic/images/bg_button_a.gif" role="data" />
-   <file baseinstalldir="/" md5sum="3f312828a1998dff76fab663b6a92f74" name="web/basic/images/bg_contents.gif" role="data" />
-   <file baseinstalldir="/" md5sum="44a8b2fe5841ba91660d58413bcf1f32" name="web/basic/images/bg_footer.gif" role="data" />
-   <file baseinstalldir="/" md5sum="91285acc7beec88c5aede8bccf135460" name="web/basic/images/bg_globalnav_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="b09bce5a5c70a01ec429f2dc69065f7f" name="web/basic/images/bg_header.gif" role="data" />
-   <file baseinstalldir="/" md5sum="5a134eab6bf42e481f7ae8ecc8b2dc73" name="web/basic/images/bg_localnav_community.gif" role="data" />
-   <file baseinstalldir="/" md5sum="7088fd9c6906207e366cfa327756b794" name="web/basic/images/bg_localnav_community_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="6ee4730abd58f4c8386efb798b57ed2c" name="web/basic/images/bg_localnav_default.gif" role="data" />
-   <file baseinstalldir="/" md5sum="00287e9ece4038c13be3497d745209b1" name="web/basic/images/bg_localnav_default_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="904c192732299411291d490e35e58db7" name="web/basic/images/bg_localnav_friend.gif" role="data" />
-   <file baseinstalldir="/" md5sum="9356225ec7d00a2b8a09790482804bca" name="web/basic/images/bg_localnav_friend_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="562e99c7d47171ac7f66761c126a2a1b" name="web/basic/images/bg_parts_heading_175.gif" role="data" />
-   <file baseinstalldir="/" md5sum="5f84c157b04e59c23c85393aac6f481e" name="web/basic/images/bg_parts_heading_270.gif" role="data" />
-   <file baseinstalldir="/" md5sum="e1e0d15d78c0805ab964f17bc0b1790c" name="web/basic/images/bg_parts_heading_440.gif" role="data" />
-   <file baseinstalldir="/" md5sum="7c4743c946d5c1ed299797826a836661" name="web/basic/images/bg_parts_heading_540.gif" role="data" />
-   <file baseinstalldir="/" md5sum="702ffed28dd55b51e9a2ce9c4a84dd57" name="web/basic/images/bg_parts_heading_650.gif" role="data" />
-   <file baseinstalldir="/" md5sum="a17051d19a539dddf8c3c63ed9fb375b" name="web/basic/images/bg_parts_heading_720.gif" role="data" />
-   <file baseinstalldir="/" md5sum="26546f759370c8e9fe8ccc919345f206" name="web/basic/images/bg_parts_photo_box.gif" role="data" />
-   <file baseinstalldir="/" md5sum="0c275a776f5c2c7bfadf3304982d8ddc" name="web/basic/images/icon_1.gif" role="data" />
-   <file baseinstalldir="/" md5sum="bfbc70a55b4452943c376842e9cb0a35" name="web/basic/images/icon_arrow_1.gif" role="data" />
-   <file baseinstalldir="/" md5sum="0d4d24af678e2a46d97fad6d4912e0ab" name="web/basic/images/icon_arrow_2.gif" role="data" />
-   <file baseinstalldir="/" md5sum="8fb6dfeea0b7c3e731515ace58aa4103" name="web/basic/images/icon_information.gif" role="data" />
-   <file baseinstalldir="/" md5sum="d83b5e3bb500ed36a4c1e69bc8a5a408" name="web/basic/images/skin_header_logo.jpg" role="data" />
-   <file baseinstalldir="/" md5sum="67433c2d6eff54d7795d132c4678f834" name="web/cerulean/css/bootstrap.css" role="data" />
-   <file baseinstalldir="/" md5sum="fd0d96ecad101cb1e28d58965c18b4b4" name="web/cerulean/css/main.css" role="data" />
-   <file baseinstalldir="/" md5sum="23ec1042080aef8623ce446f8f422d01" name="web/cerulean/images/articleList_marker.gif" role="data" />
-   <file baseinstalldir="/" md5sum="fe3b5933143e2ebd9db2e51e14c501ad" name="web/cerulean/images/bg_button.gif" role="data" />
-   <file baseinstalldir="/" md5sum="5eefad6da459f3239cadb257bc21e88c" name="web/cerulean/images/bg_button_a.gif" role="data" />
-   <file baseinstalldir="/" md5sum="3f312828a1998dff76fab663b6a92f74" name="web/cerulean/images/bg_contents.gif" role="data" />
-   <file baseinstalldir="/" md5sum="44a8b2fe5841ba91660d58413bcf1f32" name="web/cerulean/images/bg_footer.gif" role="data" />
-   <file baseinstalldir="/" md5sum="91285acc7beec88c5aede8bccf135460" name="web/cerulean/images/bg_globalnav_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="b09bce5a5c70a01ec429f2dc69065f7f" name="web/cerulean/images/bg_header.gif" role="data" />
-   <file baseinstalldir="/" md5sum="5a134eab6bf42e481f7ae8ecc8b2dc73" name="web/cerulean/images/bg_localnav_community.gif" role="data" />
-   <file baseinstalldir="/" md5sum="7088fd9c6906207e366cfa327756b794" name="web/cerulean/images/bg_localnav_community_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="6ee4730abd58f4c8386efb798b57ed2c" name="web/cerulean/images/bg_localnav_default.gif" role="data" />
-   <file baseinstalldir="/" md5sum="00287e9ece4038c13be3497d745209b1" name="web/cerulean/images/bg_localnav_default_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="904c192732299411291d490e35e58db7" name="web/cerulean/images/bg_localnav_friend.gif" role="data" />
-   <file baseinstalldir="/" md5sum="9356225ec7d00a2b8a09790482804bca" name="web/cerulean/images/bg_localnav_friend_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="562e99c7d47171ac7f66761c126a2a1b" name="web/cerulean/images/bg_parts_heading_175.gif" role="data" />
-   <file baseinstalldir="/" md5sum="5f84c157b04e59c23c85393aac6f481e" name="web/cerulean/images/bg_parts_heading_270.gif" role="data" />
-   <file baseinstalldir="/" md5sum="e1e0d15d78c0805ab964f17bc0b1790c" name="web/cerulean/images/bg_parts_heading_440.gif" role="data" />
-   <file baseinstalldir="/" md5sum="7c4743c946d5c1ed299797826a836661" name="web/cerulean/images/bg_parts_heading_540.gif" role="data" />
-   <file baseinstalldir="/" md5sum="702ffed28dd55b51e9a2ce9c4a84dd57" name="web/cerulean/images/bg_parts_heading_650.gif" role="data" />
-   <file baseinstalldir="/" md5sum="a17051d19a539dddf8c3c63ed9fb375b" name="web/cerulean/images/bg_parts_heading_720.gif" role="data" />
-   <file baseinstalldir="/" md5sum="26546f759370c8e9fe8ccc919345f206" name="web/cerulean/images/bg_parts_photo_box.gif" role="data" />
-   <file baseinstalldir="/" md5sum="0c275a776f5c2c7bfadf3304982d8ddc" name="web/cerulean/images/icon_1.gif" role="data" />
-   <file baseinstalldir="/" md5sum="bfbc70a55b4452943c376842e9cb0a35" name="web/cerulean/images/icon_arrow_1.gif" role="data" />
-   <file baseinstalldir="/" md5sum="0d4d24af678e2a46d97fad6d4912e0ab" name="web/cerulean/images/icon_arrow_2.gif" role="data" />
-   <file baseinstalldir="/" md5sum="8fb6dfeea0b7c3e731515ace58aa4103" name="web/cerulean/images/icon_information.gif" role="data" />
-   <file baseinstalldir="/" md5sum="d83b5e3bb500ed36a4c1e69bc8a5a408" name="web/cerulean/images/skin_header_logo.jpg" role="data" />
+   <file baseinstalldir="/" md5sum="4dadb7d31b2124a8ed01ae058bbc70bd" name="web/cerulean-bamboo/css/bootstrap.css" role="data" />
+   <file baseinstalldir="/" md5sum="48cfb77224d6e6067e38c483c0250af0" name="web/cerulean-bamboo/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="df792ed7a210001331fe13bdbcd196bd" name="web/cerulean-bamboo/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="6da087138021d690828d41222deda67e" name="web/cerulean-bamboo/img/bg.jpg" role="data" />
+   <file baseinstalldir="/" md5sum="11118ae8db796d41dd11482067c89d01" name="web/cerulean-bamboo/img/glyphicons-halflings-white.png" role="data" />
+   <file baseinstalldir="/" md5sum="531d4b607365ac65b09a181216f0664d" name="web/cerulean-bamboo/img/glyphicons-halflings.png" role="data" />
+   <file baseinstalldir="/" md5sum="b7ea8fd1dd236c9a671aa6a54322f7a3" name="web/cerulean-bamboo/img/NOTIFY_CENTER_1.png" role="data" />
+   <file baseinstalldir="/" md5sum="3bb8a12cf45a980b2dd84ff48e7a39eb" name="web/cerulean-bamboo/img/NOTIFY_CENTER_2.png" role="data" />
+   <file baseinstalldir="/" md5sum="02d11a3acdd04a3083510007e36e1369" name="web/cerulean-bamboo/img/smoke.png" role="data" />
+   <file baseinstalldir="/" md5sum="20b2ec1e5ef4fc93c613f613bffb9758" name="web/cerulean-bamboo/js/bootstrap-dropdown.js" role="data" />
+   <file baseinstalldir="/" md5sum="4dadb7d31b2124a8ed01ae058bbc70bd" name="web/cerulean-dark/css/bootstrap.css" role="data" />
+   <file baseinstalldir="/" md5sum="48cfb77224d6e6067e38c483c0250af0" name="web/cerulean-dark/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="a9d5a9e556604808e1dd200158c95650" name="web/cerulean-dark/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="bfc9b983b4028011805677d7854507e9" name="web/cerulean-dark/img/bg.png" role="data" />
+   <file baseinstalldir="/" md5sum="11118ae8db796d41dd11482067c89d01" name="web/cerulean-dark/img/glyphicons-halflings-white.png" role="data" />
+   <file baseinstalldir="/" md5sum="531d4b607365ac65b09a181216f0664d" name="web/cerulean-dark/img/glyphicons-halflings.png" role="data" />
+   <file baseinstalldir="/" md5sum="b7ea8fd1dd236c9a671aa6a54322f7a3" name="web/cerulean-dark/img/NOTIFY_CENTER_1.png" role="data" />
+   <file baseinstalldir="/" md5sum="3bb8a12cf45a980b2dd84ff48e7a39eb" name="web/cerulean-dark/img/NOTIFY_CENTER_2.png" role="data" />
+   <file baseinstalldir="/" md5sum="02d11a3acdd04a3083510007e36e1369" name="web/cerulean-dark/img/smoke.png" role="data" />
+   <file baseinstalldir="/" md5sum="20b2ec1e5ef4fc93c613f613bffb9758" name="web/cerulean-dark/js/bootstrap-dropdown.js" role="data" />
+   <file baseinstalldir="/" md5sum="4dadb7d31b2124a8ed01ae058bbc70bd" name="web/cerulean-light/css/bootstrap.css" role="data" />
+   <file baseinstalldir="/" md5sum="48cfb77224d6e6067e38c483c0250af0" name="web/cerulean-light/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="38e67b2da52c3a0d6bc4fa7d447293d4" name="web/cerulean-light/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="fd25cf263f97e81a3b403a06dae0013e" name="web/cerulean-light/img/bg.png" role="data" />
+   <file baseinstalldir="/" md5sum="11118ae8db796d41dd11482067c89d01" name="web/cerulean-light/img/glyphicons-halflings-white.png" role="data" />
+   <file baseinstalldir="/" md5sum="531d4b607365ac65b09a181216f0664d" name="web/cerulean-light/img/glyphicons-halflings.png" role="data" />
+   <file baseinstalldir="/" md5sum="b7ea8fd1dd236c9a671aa6a54322f7a3" name="web/cerulean-light/img/NOTIFY_CENTER_1.png" role="data" />
+   <file baseinstalldir="/" md5sum="3bb8a12cf45a980b2dd84ff48e7a39eb" name="web/cerulean-light/img/NOTIFY_CENTER_2.png" role="data" />
+   <file baseinstalldir="/" md5sum="02d11a3acdd04a3083510007e36e1369" name="web/cerulean-light/img/smoke.png" role="data" />
+   <file baseinstalldir="/" md5sum="20b2ec1e5ef4fc93c613f613bffb9758" name="web/cerulean-light/js/bootstrap-dropdown.js" role="data" />
+   <file baseinstalldir="/" md5sum="4dadb7d31b2124a8ed01ae058bbc70bd" name="web/cerulean-ocean/css/bootstrap.css" role="data" />
+   <file baseinstalldir="/" md5sum="48cfb77224d6e6067e38c483c0250af0" name="web/cerulean-ocean/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="94f18b74cb1f2b612922fd510c4ea821" name="web/cerulean-ocean/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="799fc53f0c16404f22d3244af4b428cd" name="web/cerulean-ocean/img/bg.jpg" role="data" />
+   <file baseinstalldir="/" md5sum="11118ae8db796d41dd11482067c89d01" name="web/cerulean-ocean/img/glyphicons-halflings-white.png" role="data" />
+   <file baseinstalldir="/" md5sum="531d4b607365ac65b09a181216f0664d" name="web/cerulean-ocean/img/glyphicons-halflings.png" role="data" />
+   <file baseinstalldir="/" md5sum="b7ea8fd1dd236c9a671aa6a54322f7a3" name="web/cerulean-ocean/img/NOTIFY_CENTER_1.png" role="data" />
+   <file baseinstalldir="/" md5sum="3bb8a12cf45a980b2dd84ff48e7a39eb" name="web/cerulean-ocean/img/NOTIFY_CENTER_2.png" role="data" />
+   <file baseinstalldir="/" md5sum="02d11a3acdd04a3083510007e36e1369" name="web/cerulean-ocean/img/smoke.png" role="data" />
+   <file baseinstalldir="/" md5sum="20b2ec1e5ef4fc93c613f613bffb9758" name="web/cerulean-ocean/js/bootstrap-dropdown.js" role="data" />
+   <file baseinstalldir="/" md5sum="4dadb7d31b2124a8ed01ae058bbc70bd" name="web/cerulean-sakura/css/bootstrap.css" role="data" />
+   <file baseinstalldir="/" md5sum="48cfb77224d6e6067e38c483c0250af0" name="web/cerulean-sakura/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="1d8a97e466e467389ca9401b1936fccc" name="web/cerulean-sakura/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="a6a7366a14728ef875e269a1b33f2a86" name="web/cerulean-sakura/img/bg.jpg" role="data" />
+   <file baseinstalldir="/" md5sum="11118ae8db796d41dd11482067c89d01" name="web/cerulean-sakura/img/glyphicons-halflings-white.png" role="data" />
+   <file baseinstalldir="/" md5sum="531d4b607365ac65b09a181216f0664d" name="web/cerulean-sakura/img/glyphicons-halflings.png" role="data" />
+   <file baseinstalldir="/" md5sum="b7ea8fd1dd236c9a671aa6a54322f7a3" name="web/cerulean-sakura/img/NOTIFY_CENTER_1.png" role="data" />
+   <file baseinstalldir="/" md5sum="3bb8a12cf45a980b2dd84ff48e7a39eb" name="web/cerulean-sakura/img/NOTIFY_CENTER_2.png" role="data" />
+   <file baseinstalldir="/" md5sum="02d11a3acdd04a3083510007e36e1369" name="web/cerulean-sakura/img/smoke.png" role="data" />
+   <file baseinstalldir="/" md5sum="20b2ec1e5ef4fc93c613f613bffb9758" name="web/cerulean-sakura/js/bootstrap-dropdown.js" role="data" />
+   <file baseinstalldir="/" md5sum="4dadb7d31b2124a8ed01ae058bbc70bd" name="web/cerulean-tree/css/bootstrap.css" role="data" />
+   <file baseinstalldir="/" md5sum="48cfb77224d6e6067e38c483c0250af0" name="web/cerulean-tree/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="d84beec6b2f0b2d7b1aea83de705e340" name="web/cerulean-tree/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="894444530e06b7714ae9a186a1b6016e" name="web/cerulean-tree/img/bg.jpg" role="data" />
+   <file baseinstalldir="/" md5sum="11118ae8db796d41dd11482067c89d01" name="web/cerulean-tree/img/glyphicons-halflings-white.png" role="data" />
+   <file baseinstalldir="/" md5sum="531d4b607365ac65b09a181216f0664d" name="web/cerulean-tree/img/glyphicons-halflings.png" role="data" />
+   <file baseinstalldir="/" md5sum="b7ea8fd1dd236c9a671aa6a54322f7a3" name="web/cerulean-tree/img/NOTIFY_CENTER_1.png" role="data" />
+   <file baseinstalldir="/" md5sum="3bb8a12cf45a980b2dd84ff48e7a39eb" name="web/cerulean-tree/img/NOTIFY_CENTER_2.png" role="data" />
+   <file baseinstalldir="/" md5sum="02d11a3acdd04a3083510007e36e1369" name="web/cerulean-tree/img/smoke.png" role="data" />
+   <file baseinstalldir="/" md5sum="20b2ec1e5ef4fc93c613f613bffb9758" name="web/cerulean-tree/js/bootstrap-dropdown.js" role="data" />
+   <file baseinstalldir="/" md5sum="4dadb7d31b2124a8ed01ae058bbc70bd" name="web/cerulean/css/bootstrap.css" role="data" />
+   <file baseinstalldir="/" md5sum="48cfb77224d6e6067e38c483c0250af0" name="web/cerulean/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="1e2f32f94fc6040e0fb38949c4b3f171" name="web/cerulean/css/main.css" role="data" />
    <file baseinstalldir="/" md5sum="11118ae8db796d41dd11482067c89d01" name="web/cerulean/img/glyphicons-halflings-white.png" role="data" />
    <file baseinstalldir="/" md5sum="531d4b607365ac65b09a181216f0664d" name="web/cerulean/img/glyphicons-halflings.png" role="data" />
+   <file baseinstalldir="/" md5sum="b7ea8fd1dd236c9a671aa6a54322f7a3" name="web/cerulean/img/NOTIFY_CENTER_1.png" role="data" />
+   <file baseinstalldir="/" md5sum="3bb8a12cf45a980b2dd84ff48e7a39eb" name="web/cerulean/img/NOTIFY_CENTER_2.png" role="data" />
+   <file baseinstalldir="/" md5sum="02d11a3acdd04a3083510007e36e1369" name="web/cerulean/img/smoke.png" role="data" />
    <file baseinstalldir="/" md5sum="20b2ec1e5ef4fc93c613f613bffb9758" name="web/cerulean/js/bootstrap-dropdown.js" role="data" />
-   <file baseinstalldir="/" md5sum="86dc09017cf2ff9b00db77498f2bcc4b" name="web/superhero/css/bootstrap.css" role="data" />
-   <file baseinstalldir="/" md5sum="95898f557d5072901ae546800ff72fbe" name="web/superhero/css/main.css" role="data" />
-   <file baseinstalldir="/" md5sum="23ec1042080aef8623ce446f8f422d01" name="web/superhero/images/articleList_marker.gif" role="data" />
-   <file baseinstalldir="/" md5sum="fe3b5933143e2ebd9db2e51e14c501ad" name="web/superhero/images/bg_button.gif" role="data" />
-   <file baseinstalldir="/" md5sum="5eefad6da459f3239cadb257bc21e88c" name="web/superhero/images/bg_button_a.gif" role="data" />
-   <file baseinstalldir="/" md5sum="3f312828a1998dff76fab663b6a92f74" name="web/superhero/images/bg_contents.gif" role="data" />
-   <file baseinstalldir="/" md5sum="44a8b2fe5841ba91660d58413bcf1f32" name="web/superhero/images/bg_footer.gif" role="data" />
-   <file baseinstalldir="/" md5sum="91285acc7beec88c5aede8bccf135460" name="web/superhero/images/bg_globalnav_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="b09bce5a5c70a01ec429f2dc69065f7f" name="web/superhero/images/bg_header.gif" role="data" />
-   <file baseinstalldir="/" md5sum="5a134eab6bf42e481f7ae8ecc8b2dc73" name="web/superhero/images/bg_localnav_community.gif" role="data" />
-   <file baseinstalldir="/" md5sum="7088fd9c6906207e366cfa327756b794" name="web/superhero/images/bg_localnav_community_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="6ee4730abd58f4c8386efb798b57ed2c" name="web/superhero/images/bg_localnav_default.gif" role="data" />
-   <file baseinstalldir="/" md5sum="00287e9ece4038c13be3497d745209b1" name="web/superhero/images/bg_localnav_default_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="904c192732299411291d490e35e58db7" name="web/superhero/images/bg_localnav_friend.gif" role="data" />
-   <file baseinstalldir="/" md5sum="9356225ec7d00a2b8a09790482804bca" name="web/superhero/images/bg_localnav_friend_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="562e99c7d47171ac7f66761c126a2a1b" name="web/superhero/images/bg_parts_heading_175.gif" role="data" />
-   <file baseinstalldir="/" md5sum="5f84c157b04e59c23c85393aac6f481e" name="web/superhero/images/bg_parts_heading_270.gif" role="data" />
-   <file baseinstalldir="/" md5sum="e1e0d15d78c0805ab964f17bc0b1790c" name="web/superhero/images/bg_parts_heading_440.gif" role="data" />
-   <file baseinstalldir="/" md5sum="7c4743c946d5c1ed299797826a836661" name="web/superhero/images/bg_parts_heading_540.gif" role="data" />
-   <file baseinstalldir="/" md5sum="702ffed28dd55b51e9a2ce9c4a84dd57" name="web/superhero/images/bg_parts_heading_650.gif" role="data" />
-   <file baseinstalldir="/" md5sum="a17051d19a539dddf8c3c63ed9fb375b" name="web/superhero/images/bg_parts_heading_720.gif" role="data" />
-   <file baseinstalldir="/" md5sum="26546f759370c8e9fe8ccc919345f206" name="web/superhero/images/bg_parts_photo_box.gif" role="data" />
-   <file baseinstalldir="/" md5sum="0c275a776f5c2c7bfadf3304982d8ddc" name="web/superhero/images/icon_1.gif" role="data" />
-   <file baseinstalldir="/" md5sum="bfbc70a55b4452943c376842e9cb0a35" name="web/superhero/images/icon_arrow_1.gif" role="data" />
-   <file baseinstalldir="/" md5sum="0d4d24af678e2a46d97fad6d4912e0ab" name="web/superhero/images/icon_arrow_2.gif" role="data" />
-   <file baseinstalldir="/" md5sum="8fb6dfeea0b7c3e731515ace58aa4103" name="web/superhero/images/icon_information.gif" role="data" />
-   <file baseinstalldir="/" md5sum="d83b5e3bb500ed36a4c1e69bc8a5a408" name="web/superhero/images/skin_header_logo.jpg" role="data" />
-   <file baseinstalldir="/" md5sum="11118ae8db796d41dd11482067c89d01" name="web/superhero/img/glyphicons-halflings-white.png" role="data" />
-   <file baseinstalldir="/" md5sum="531d4b607365ac65b09a181216f0664d" name="web/superhero/img/glyphicons-halflings.png" role="data" />
-   <file baseinstalldir="/" md5sum="20b2ec1e5ef4fc93c613f613bffb9758" name="web/superhero/js/bootstrap-dropdown.js" role="data" />
-   <file baseinstalldir="/" md5sum="82bad69c171bdc4b863b2c7b96b942c3" name="web/united/css/bootstrap.css" role="data" />
-   <file baseinstalldir="/" md5sum="709ec1640b0df9e61bef2b0300b3b755" name="web/united/css/main.css" role="data" />
-   <file baseinstalldir="/" md5sum="23ec1042080aef8623ce446f8f422d01" name="web/united/images/articleList_marker.gif" role="data" />
-   <file baseinstalldir="/" md5sum="fe3b5933143e2ebd9db2e51e14c501ad" name="web/united/images/bg_button.gif" role="data" />
-   <file baseinstalldir="/" md5sum="5eefad6da459f3239cadb257bc21e88c" name="web/united/images/bg_button_a.gif" role="data" />
-   <file baseinstalldir="/" md5sum="3f312828a1998dff76fab663b6a92f74" name="web/united/images/bg_contents.gif" role="data" />
-   <file baseinstalldir="/" md5sum="44a8b2fe5841ba91660d58413bcf1f32" name="web/united/images/bg_footer.gif" role="data" />
-   <file baseinstalldir="/" md5sum="91285acc7beec88c5aede8bccf135460" name="web/united/images/bg_globalnav_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="b09bce5a5c70a01ec429f2dc69065f7f" name="web/united/images/bg_header.gif" role="data" />
-   <file baseinstalldir="/" md5sum="5a134eab6bf42e481f7ae8ecc8b2dc73" name="web/united/images/bg_localnav_community.gif" role="data" />
-   <file baseinstalldir="/" md5sum="7088fd9c6906207e366cfa327756b794" name="web/united/images/bg_localnav_community_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="6ee4730abd58f4c8386efb798b57ed2c" name="web/united/images/bg_localnav_default.gif" role="data" />
-   <file baseinstalldir="/" md5sum="00287e9ece4038c13be3497d745209b1" name="web/united/images/bg_localnav_default_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="904c192732299411291d490e35e58db7" name="web/united/images/bg_localnav_friend.gif" role="data" />
-   <file baseinstalldir="/" md5sum="9356225ec7d00a2b8a09790482804bca" name="web/united/images/bg_localnav_friend_hover.gif" role="data" />
-   <file baseinstalldir="/" md5sum="562e99c7d47171ac7f66761c126a2a1b" name="web/united/images/bg_parts_heading_175.gif" role="data" />
-   <file baseinstalldir="/" md5sum="5f84c157b04e59c23c85393aac6f481e" name="web/united/images/bg_parts_heading_270.gif" role="data" />
-   <file baseinstalldir="/" md5sum="e1e0d15d78c0805ab964f17bc0b1790c" name="web/united/images/bg_parts_heading_440.gif" role="data" />
-   <file baseinstalldir="/" md5sum="7c4743c946d5c1ed299797826a836661" name="web/united/images/bg_parts_heading_540.gif" role="data" />
-   <file baseinstalldir="/" md5sum="702ffed28dd55b51e9a2ce9c4a84dd57" name="web/united/images/bg_parts_heading_650.gif" role="data" />
-   <file baseinstalldir="/" md5sum="a17051d19a539dddf8c3c63ed9fb375b" name="web/united/images/bg_parts_heading_720.gif" role="data" />
-   <file baseinstalldir="/" md5sum="26546f759370c8e9fe8ccc919345f206" name="web/united/images/bg_parts_photo_box.gif" role="data" />
-   <file baseinstalldir="/" md5sum="0c275a776f5c2c7bfadf3304982d8ddc" name="web/united/images/icon_1.gif" role="data" />
-   <file baseinstalldir="/" md5sum="bfbc70a55b4452943c376842e9cb0a35" name="web/united/images/icon_arrow_1.gif" role="data" />
-   <file baseinstalldir="/" md5sum="0d4d24af678e2a46d97fad6d4912e0ab" name="web/united/images/icon_arrow_2.gif" role="data" />
-   <file baseinstalldir="/" md5sum="8fb6dfeea0b7c3e731515ace58aa4103" name="web/united/images/icon_information.gif" role="data" />
-   <file baseinstalldir="/" md5sum="d83b5e3bb500ed36a4c1e69bc8a5a408" name="web/united/images/skin_header_logo.jpg" role="data" />
-   <file baseinstalldir="/" md5sum="11118ae8db796d41dd11482067c89d01" name="web/united/img/glyphicons-halflings-white.png" role="data" />
-   <file baseinstalldir="/" md5sum="531d4b607365ac65b09a181216f0664d" name="web/united/img/glyphicons-halflings.png" role="data" />
-   <file baseinstalldir="/" md5sum="20b2ec1e5ef4fc93c613f613bffb9758" name="web/united/js/bootstrap-dropdown.js" role="data" />
    <file baseinstalldir="/" md5sum="4fe408ce7dc9ee70a6461a747a5019bb" name="dependencies.yml" role="data" />
    <file baseinstalldir="/" md5sum="f4bd0e6add3040a3e83192e1c0bdb3d3" name="index.html" role="data" />
    <file baseinstalldir="/" md5sum="57112f65787338bc31b4cc71822b1c0d" name="params.json" role="data" />
-   <file baseinstalldir="/" md5sum="6f145a503da616e309a9f3fe967e5ad4" name="README.md" role="data" />
+   <file baseinstalldir="/" md5sum="59912aa4592fb6a104597084b2ded5bc" name="README.md" role="data" />
   </dir>
  </contents>
  <dependencies>
@@ -307,6 +263,21 @@ NONE
    <license>Apache</license>
    <notes>
 NONE
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-10-04</date>
+   <license>Apache</license>
+   <notes>
+First stable release.
    </notes>
   </release>
  </changelog>

@@ -9,12 +9,12 @@
 */
 
 /**
-* opSkinThemePlugin preview actions.
-*
-* @package OpenPNE
-* @subpackage theme
-* @author suzuki_mar <supasu145@gmail.com>
-*/
+ * opSkinThemePlugin preview actions.
+ *
+ * @package OpenPNE
+ * @subpackage opSkinThemePlugin
+ * @author suzuki_mar <supasu145@gmail.com>
+ */
 class skinPreviewActions extends sfActions
 {
   /**
@@ -24,11 +24,15 @@ class skinPreviewActions extends sfActions
    */
   public function executeIndex(sfWebRequest $request)
   {
-    $themeSearch = opThemeAssetSearchFactory::createSearchInstance();
+    $themeSearcher = new opThemeAssetSearcher();
 
-    $this->themeName = $this->getRequest()->getParameterHolder()->get('theme_name');
+    $this->themeName = $request->getParameterHolder()->get('theme_name');
+    if (null === $this->themeName)
+    {
+      $this->forward404('Request parameter id does not exist.');
+    }
 
-    $this->isExistsTheme = $themeSearch->existsAssetsByThemeName($this->themeName);
+    $this->isExistsTheme = $themeSearcher->isAvailableTheme($this->themeName);
 
     $this->emptyThemeName = ($this->themeName === null);
   }

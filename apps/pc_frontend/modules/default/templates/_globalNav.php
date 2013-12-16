@@ -2,7 +2,7 @@
 <?php if ($navs && 0 < count($navs)): ?>
 <li id="newGlobalNav" class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-<b class="caret"></b>
+<p>menu</p><i class="fa fa-sort-asc"></i>
 </a>
 <ul class="dropdown-menu">
 <?php foreach ($navs as $nav): ?>

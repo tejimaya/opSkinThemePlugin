@@ -1,24 +1,36 @@
+<?php slot('submenu') ?>
+<?php include_partial('plugin/submenu') ?>
+<?php end_slot(); ?>
+
 <h2><?php echo __('Setting of Skin Theme') ?></h2>
 
-<?php if ($isExistsErrorTheme): ?>
+<?php if ((isset($invalidDirNames) && count($invalidDirNames) > 0) || (isset($invalidMainCss) && count($invalidMainCss) > 0) || !$existsUsedTheme): ?>
   <h3><?php echo __('Errors of Skin Theme') ?></h3>
-
-  <?php if (!$unRegisterUseTheme && !$existsUseTheme): ?>
-    <p><?php echo __('Does not exists %value% of used theme at public directory.', array('%value%' => $useTheme)) ?></p>
-    <?php if (isset($notInfoThemeList)): ?>
-      <br />
-    <?php endif; ?>
+  <?php if (isset($invalidDirNames) && count($invalidDirNames) > 0): ?>
+  <p><?php echo __('directory name of the following is not recognized as a theme, because malformed.') ?></p>
+  <p><?php echo __('you can use alphanumeric characters ,hyphen,underscore for the directory name of the theme.') ?></p>
+  <table>
+    <tr><th><?php echo __('Directory Name'); ?></th></tr>
+  <?php foreach ($invalidDirNames as $invalidDirName): ?>
+  <tr><td><?php echo $invalidDirName ?></td></tr>
+  <?php endforeach; ?>
+  </table>
+  <br />
   <?php endif; ?>
-
-  <?php if (isset($notInfoThemeList)): ?>
-    <p><?php echo __('Information of the following themes is not set.') ?><br />
-    <?php foreach ($notInfoThemeList as $theme): ?>
-      <?php echo $theme.__('Theme') ?> <br />
-    <?php endforeach; ?>
-    </p>
+  <?php if (isset($invalidMainCss) && count($invalidMainCss) > 0): ?>
+    <p><?php echo __('directory name of the following is not recognized as a theme, because they has no "main.css" or "theme name" or "author".') ?></p>
+    <table>
+      <tr><th><?php echo __('Directory Name'); ?></th></tr>
+      <?php foreach ($invalidMainCss as $invalidMainCssName): ?>
+        <tr><td><?php echo $invalidMainCssName ?></td></tr>
+      <?php endforeach; ?>
+    </table>
+    <br />
   <?php endif; ?>
-
-<br />
+  <?php if (!$existsUsedTheme): ?>
+    <p><?php echo __('Does not exists %value% of used theme at public directory.', array('%value%' => $usedThemeName)) ?></p>
+    <br />
+  <?php endif; ?>
 <?php endif; ?>
 
 <p><?php echo __('You need only one is set to "Enable" any skins theme.') ?></p>
@@ -37,5 +49,4 @@
 <h2><?php echo __('How to add a theme') ?></h2>
 
 <p><?php echo __('You can add themes, please created under the "plugins / opSkinThemePlugin / web" directory.') ?></p>
-<p><?php echo __('After you add a theme, run the ". / Symfony publish-assets", please copy the public directory theme directory.') ?></p>
 <p><?php echo __('Please refer to the README for detailed explanation of the theme plug-in.') ?></p>

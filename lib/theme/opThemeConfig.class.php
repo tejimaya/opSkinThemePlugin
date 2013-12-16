@@ -12,51 +12,62 @@
  * Class that manages the set value of the theme (such as a theme to be used)
  *
  * @package OpenPNE
- * @subpackage theme
+ * @subpackage opSkinThemeConfig
  * @author suzuki_mar <supasu145@gmail.com>
+ * @author Kaoru Nishizoe <nishizoe@tejimaya.com>
  */
 class opThemeConfig
 {
-  public function findUseTheme()
+  public function save($themeName)
   {
-    if ($this->_findThemeUsedInstance() === null)
+    $snsConfigTable = Doctrine::getTable('SnsConfig')->retrieveByName('Theme_used');
+    if (null === $snsConfigTable)
+    {
+      $snsConfigTable = new SnsConfig();
+      $snsConfigTable->setName('Theme_used');
+    }
+    $snsConfigTable->setValue($themeName);
+    $snsConfigTable->save();
+
+    return true;
+  }
+
+  public function getUsedThemeName()
+  {
+    $snsConfigTable = Doctrine::getTable('SnsConfig')->retrieveByName('Theme_used');
+    if (null === $snsConfigTable)
     {
       return null;
     }
 
-    return $this->_findThemeUsedInstance()->getValue();
+    return $snsConfigTable->getValue();
   }
 
-  public function registeredUsedTheme()
+  public function removeUsedThemeName(array $invalidThemeNames, $validThemeNames)
   {
-    return ($this->_findThemeUsedInstance() !== null);
-  }
-
-  public function unRegisteredIsTheme()
-  {
-    return!($this->registeredUsedTheme());
-  }
-
-  public function save($ThemeName)
-  {
-    if ($this->registeredUsedTheme())
+    $snsConfigTable = Doctrine::getTable('SnsConfig')->retrieveByName('Theme_used');
+    if (null !== $snsConfigTable)
     {
-      $themeUsed = $this->_findThemeUsedInstance();
-    }
-    else
-    {
-      $themeUsed = new SnsConfig();
-      $themeUsed->setName('Theme_used');
+      $usedThemeName = $snsConfigTable->getValue();
     }
 
-    $themeUsed->setValue($ThemeName);
-    $themeUsed->save();
+    foreach ($invalidThemeNames as $invalidThemeName)
+    {
+      if ($invalidThemeName == $usedThemeName)
+      {
+        $snsConfigTable->setName('Theme_used');
+        $validThemeName = '';
+        foreach ($validThemeNames as $key => $value)
+        {
+          $validThemeName = $key;
+          break;
+        }
+        $snsConfigTable->setValue($validThemeName);
+        $snsConfigTable->save();
+        break;
+      }
+    }
+
     return true;
-  }
-
-  private function _findThemeUsedInstance()
-  {
-    $snsConfigTable = Doctrine::getTable('SnsConfig');
-    return $snsConfigTable->retrieveByName('Theme_used');
   }
 }

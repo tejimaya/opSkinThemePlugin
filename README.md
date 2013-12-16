@@ -18,7 +18,7 @@ OpenPNEのテーマを選択したり、簡単に追加できるようにする�
 
 ## インストール方法
 1. 以下のコマンドを実行して、プラグインをインストールしてください。
- * ./symfony opPlugin:install opSkinThemePlugin -r 0.9.10
+ * ./symfony opPlugin:install opSkinThemePlugin -r 1.0.0
 2. 以下のコマンドを実行し、opSkinThemePluginのwebディレクトリ以下のファイルを公開ディレクトリにコピーしてください
  * ./symfony plugin:publish-assets
 
@@ -31,10 +31,14 @@ OpenPNEのテーマを選択したり、簡単に追加できるようにする�
 ### 使用するテーマを選択する
 スキンテーマを有効にした後に、スキンプラグイン設定画面からopSkinThemePluginの設定画面にアクセスします。  
   opSkinThemePluginの設定画面から、使用するテーマを選択してください。       
-  [テーマの作成方法について](https://github.com/suzuki-mar/opSkinThemePlugin/wiki/%E3%83%86%E3%83%BC%E3%83%9E%E3%81%AE%E4%BD%9C%E6%88%90%E6%96%B9%E6%B3%95)
+  [テーマの作成方法について](https://github.com/tejimaya/opSkinThemePlugin/wiki/%E3%83%86%E3%83%BC%E3%83%9E%E3%81%AE%E4%BD%9C%E6%88%90%E6%96%B9%E6%B3%95)
 
 
 ## 更新履歴
+### 1.0.0
+* テーマの追加
+* 正式リリース
+
 ### 1.0.0 alpha
 * ceruleanを中心に大幅なデザインの変更(bootstrap v2.3.2に対応)
 * タイムライン部分のテーマが変更されない場合は、opTimelinePluginの更新をお願いします

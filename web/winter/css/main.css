@@ -2,10 +2,11 @@
 
 /*
 Theme Name:winter
-Theme URI:
-Description:雪景色
+Theme URI:
+Description:snowscape
 Author:sonobe
-Version: 1.0.0
+Author URI:
+Version:1.0.0
 */
 
 /*==============================================================================
@@ -96,4 +97,18 @@ div.alertBox {
 #Footer span {
   position: absolute;
   margin-top: 6px;
+}
+
+/*==============================================================================
+ * radio_list
+ *----------------------------------------------------------------------------*/
+ul.radio_list > li > input[type='radio'] {
+  float: left;
+  margin-right: 2px;
+}
+
+ul.radio_list > li > label {
+  float: left;
+  margin-right: 2px;
+  margin-bottom: 0px;
 }
