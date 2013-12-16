@@ -54,7 +54,7 @@
 
 <?php endif ?>
 
-<ul class="nav" id="newLocalNav">
+<ul class="nav" id="localNav">
 <?php
 $context = sfContext::getInstance();
 $module = $context->getActionStack()->getLastEntry()->getModuleName();
