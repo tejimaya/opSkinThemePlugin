@@ -351,7 +351,7 @@ div#sideBanner form {
   padding:10px;
 }
 .navbar .brand {
-  padding:10px 20px 10px; 
+  padding:10px 20px 10px;
 }
 .navbar .pull-right>li>.dropdown-menu {
   margin-top:15px;
@@ -367,12 +367,21 @@ div#sideBanner form {
   margin-top: -5px;
   float:left;
 }
+.navbar-inner {
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.navbar .brand {  line-height: 1em }
+.navbar-inner .dropdown-toggle {
+  height: 20px;
+}
 /*----------------------------------------------
  * Notification Center
  *--------------------------------------------*/
 #notificationCenter {
   width: 97px;
-  padding: 4px 14px 4px 14px;
+  padding: 3px 14px 4px 13px;
   float: left;
   position: relative;
   background-repeat: no-repeat;
@@ -828,7 +837,7 @@ div.informationBox {
   position: absolute;
   color: white;
   left: 6px;
-  top: 6px;
+  top: 7px;
   padding: 3px;
   border-radius: inherit;
 }
@@ -1481,12 +1490,8 @@ div#notificationCenter div#notificationCenterDetail div#notificationCenterError 
   color: inherit;
 }
 .alertBox div.parts table {  border: none !important }
-.navbar-inner {
-  border-radius: 0;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-}
-.navbar .brand {  line-height: 1em }
+
+
 #profile_op_preset_birthday_value_year,
 #profile_op_preset_birthday_value_month,
 #profile_op_preset_birthday_value_day,
