@@ -1,6 +1,6 @@
 <?php // global navigation of new design. ?>
 <?php if ($navs && 0 < count($navs)): ?>
-<li id="newGlobalNav" class="dropdown">
+<li id="globalNav" class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 <p>menu</p><i class="fa fa-sort-asc"></i>
 </a>

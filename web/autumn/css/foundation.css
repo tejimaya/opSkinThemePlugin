@@ -357,7 +357,7 @@ div#sideBanner form {
   margin-top:15px;
   margin-right:2px;
 }
-.navbar .nav li#newGlobalNav>.dropdown-toggle p {
+.navbar .nav li#globalNav>.dropdown-toggle p {
   font-size: 18px;
   float:left;
 }
