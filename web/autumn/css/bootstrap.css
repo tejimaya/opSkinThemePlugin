@@ -1158,14 +1158,14 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus {
-  border-color: rgba(82, 168, 236, 0.8);
+  border-color: rgba(233, 104, 72, 0.8);
   outline: 0;
   outline: thin dotted \9;
   /* IE6-9 */
 
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 104, 72, 0.8);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 104, 72, 0.8);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 104, 72, 0.8);
 }
 
 input[type="radio"],
@@ -1213,7 +1213,7 @@ input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
   outline: thin dotted #333;
-  outline: 5px auto -webkit-focus-ring-color;
+  outline: 5px auto rgba(233, 104, 72, 0.8);
   outline-offset: -2px;
 }
 
@@ -2960,16 +2960,16 @@ table th[class*="span"],
 .dropdown-menu > li > a:focus,
 .dropdown-submenu:hover > a,
 .dropdown-submenu:focus > a {
-  color: #ffffff;
   text-decoration: none;
-  background-color: #007af5;
-  background-image: -moz-linear-gradient(top, #007fff, #0072e6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#007fff), to(#0072e6));
-  background-image: -webkit-linear-gradient(top, #007fff, #0072e6);
-  background-image: -o-linear-gradient(top, #007fff, #0072e6);
-  background-image: linear-gradient(to bottom, #007fff, #0072e6);
+  color: #ffffff;
+  background-color: #d8340b;
+  background-image: -moz-linear-gradient(top, #e2360b, #ca300a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e2360b), to(#ca300a));
+  background-image: -webkit-linear-gradient(top, #e2360b, #ca300a);
+  background-image: -o-linear-gradient(top, #e2360b, #ca300a);
+  background-image: linear-gradient(to bottom, #e2360b, #ca300a);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff007fff', endColorstr='#ff0072e6', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe2360b', endColorstr='#ffca300a', GradientType=0);
 }
 
 .dropdown-menu > .active > a,
@@ -3362,18 +3362,20 @@ input[type="button"].btn-block {
 .btn-primary {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #0f82f5;
-  *background-color: #0072e6;
-  background-image: -moz-linear-gradient(top, #1a8cff, #0072e6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1a8cff), to(#0072e6));
-  background-image: -webkit-linear-gradient(top, #1a8cff, #0072e6);
-  background-image: -o-linear-gradient(top, #1a8cff, #0072e6);
-  background-image: linear-gradient(to bottom, #1a8cff, #0072e6);
+  background-color: #e97d48;
+  background-image: -moz-linear-gradient(top, #e96848, #e99e48);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e96848), to(#e99e48));
+  background-image: -webkit-linear-gradient(top, #e96848, #e99e48);
+  background-image: -o-linear-gradient(top, #e96848, #e99e48);
+  background-image: linear-gradient(to bottom, #e96848, #e99e48);
   background-repeat: repeat-x;
-  border-color: #0072e6 #0072e6 #004c99;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe96848', endColorstr='#ffe99e48', GradientType=0);
+  border-color: #e99e48 #e99e48 #cc7819;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1a8cff', endColorstr='#ff0072e6', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  *background-color: #e99e48;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 
 .btn-primary:hover,
@@ -3383,13 +3385,13 @@ input[type="button"].btn-block {
 .btn-primary.disabled,
 .btn-primary[disabled] {
   color: #ffffff;
-  background-color: #0072e6;
-  *background-color: #0066cc;
+  background-color: #e99e48;
+  *background-color: #e69231;
 }
 
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #0059b3 \9;
+  background-color: #e3851b \9;
 }
 
 .btn-warning {
@@ -3879,7 +3881,7 @@ input[type="submit"].btn.btn-mini {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  background-color: #ff7518;
+  background-color: #e96848;
   border: 1px solid transparent;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;

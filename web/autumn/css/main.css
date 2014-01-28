@@ -6,7 +6,7 @@ Theme URI:
 Description:紅葉
 Author:sonobe
 Author URI:
-Version:1.0.0
+Version:2.0.0
 */
 
 /*==============================================================================
@@ -33,7 +33,6 @@ text-decoration: underline;
 .memberImageBox,
 #MailAddressLogin,
 div.dparts div.parts,
-#profileForm,
 #Footer,
 .timeline-large {
   background-color: #eeeeee;
@@ -59,7 +58,7 @@ input[type="button"] {
 }
 .input_submit:hover,
 input[type="submit"]:hover,
-input[type="button"]:hover { 
+input[type="button"]:hover {
   background-color: #e6e6e6
 }
 div.parts table {
@@ -72,21 +71,11 @@ div.parts table {
  * Header
  *----------------------------------------------------------------------------*/
 .navbar-inverse .navbar-inner {
-  background: #7E1F18;
+  background: #3f1018;
 }
-div#Header div#HeaderContainer div.container div#notificationCenter {  background-image: url(../img/NOTIFY_CENTER_2.png) }
 /*==============================================================================
  * Notification
  *----------------------------------------------------------------------------*/
-div.container div#notificationCenter div#notificationCenterDetail,
-#informationAboutThisIsYourProfilePage.descriptionBox .parts,
-.flashError,
-.informationBox,
-div.alertBox {
-  background-color: #C52F0A;
-  border: none;
-  color: #FFFFFF;
-}
 #Left .pageNav li.current {
   background-color: #C52F0A;
 }
@@ -95,6 +84,19 @@ div.alertBox {
  *----------------------------------------------------------------------------*/
 .timeline-post a.screen-name,
 .nav > li > a {  color: #333 }
+/*==============================================================================
+ * informationBox
+ *----------------------------------------------------------------------------*/
+.informationBox {
+  color: #ffffff;
+  background-color: #e96848;
+  border-color: transparent;
+}
+div.alertBox {
+  background-color: #fadfdd;
+  color: #df382c;
+  border-color: #f8d0d4;
+}
 /*==============================================================================
  * license
  *----------------------------------------------------------------------------*/
@@ -105,18 +107,4 @@ div.alertBox {
 #Footer span {
   position: absolute;
   margin-top: 6px;
-}
-
-/*==============================================================================
- * radio_list
- *----------------------------------------------------------------------------*/
-ul.radio_list > li > input[type='radio'] {
-    float: left;
-    margin-right: 2px;
-}
-
-ul.radio_list > li > label {
-    float: left;
-    margin-right: 2px;
-    margin-bottom: 0px;
 }

@@ -122,6 +122,9 @@ form p {
   margin: 0;
   padding: 0;
 }
+.well {
+  margin-bottom: 12px;
+}
 /*==============================================================================
  * OpenPNE Common Style
  *----------------------------------------------------------------------------*/
@@ -201,7 +204,7 @@ div.parts .form table {
  .form table td + td,
  .form table th + td,
  .form table td + th {
-   /*  border-left: 1px solid #ddd;;*/
+  line-height: 30px;
  }
  .form table thead:first-child tr:first-child th,
  .form table tbody:first-child tr:first-child th,
@@ -231,7 +234,6 @@ div#LayoutC {
   overflow: -moz-scrollbars-none;
   padding-top: 0;
   background: transparent;
-  padding-bottom: 50px;
   min-height: 800px;
 }
 #Left,
@@ -240,9 +242,12 @@ div#LayoutC {
 #sideBanner {
   zoom: 1;
   overflow: hidden;
-  background-image: url(../img/smoke.png);
-  background: rgba(255, 255, 255, 0.3);
-  padding: 5px;
+  margin-bottom: 12px;
+}
+#LayoutA,
+#LayoutB,
+#LayoutC {
+  margin-right: 12px;
 }
 dd div,
 dt,
@@ -280,9 +285,19 @@ pre {  overflow: auto }
   width: 975px;
 }
 #ContentsContainer {
+  background-image: url(../img/smoke.png);
+  background: rgba(255, 255, 255, 0.3);
   position: relative;
   margin: 0 auto;
   width: 1080px;
+  padding: 14px;
+}
+#ContentsContainer:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 1px;
+    overflow: hidden;
 }
 #LayoutA,
 #LayoutB,
@@ -293,10 +308,11 @@ pre {  overflow: auto }
  #LayoutA #Left {
    float: left;
    width: 270px;
+   margin-right: 12px;
  }
  #LayoutA #Center {
-   float: right;
-   width: 530px;
+   float: left;
+   width: 538px;
  }
  #LayoutA #Bottom {  clear: both }
  #LayoutB #Left {
@@ -322,9 +338,8 @@ pre {  overflow: auto }
   width: 468px;*/
 }
 #sideBanner {
-  float: right;
-  width: 250px;
-  margin-bottom: 30px;
+  float: left;
+  width: 248px;
 }
 div#sideBanner form {
   margin-bottom: 20px;
@@ -345,6 +360,9 @@ div#sideBanner form {
 /*----------------------------------------------
  * Header
  *--------------------------------------------*/
+.navbar {
+  margin-bottom: 0px;
+}
 .navbar-inner {
   min-height:40px;
 }
@@ -377,21 +395,28 @@ div#sideBanner form {
 .navbar-inner .dropdown-toggle {
   height: 20px;
 }
+#globalNav:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 1px;
+  overflow: hidden;
+}
 /*----------------------------------------------
  * Notification Center
  *--------------------------------------------*/
 #notificationCenter {
-  width: 97px;
-  padding: 3px 14px 4px 13px;
-  float: left;
-  position: relative;
-  background-repeat: no-repeat;
-  background-position: 14px 4px;
+  margin-top: -3px;
+  margin-bottom: -3px;
+  cursor: pointer;
+}
+#notificationCenter i,
+#notificationCenter b {
+  font-size: 25px;
 }
 #notificationCenterDetail {
   width: 320px;
-  background: #FFFFFF;
-  border: 2px solid;
+  border-width: 2px;
   position: absolute;
   left: 15px;
   top: 40px;
@@ -418,10 +443,11 @@ div#sideBanner form {
 #notificationCenterError {
   width: 320px;
   padding: 20px 0;
-  color: #000000;
+  color: inherit;
   text-align: center;
   display: inline-block;
   font-size: 11px;
+  border: 0;
 }
 .notificationCenterList {  background: #DDD }
 #notificationCenterDetail .push {
@@ -581,7 +607,7 @@ div#sideBanner form {
  * Parts
  *--------------------------------------------*/
 div.parts,
-div.dparts {  margin: 0 auto 5px }
+div.dparts {  margin: 0 auto 12px }
 div.parts:last-child,
 div.dparts:last-child {  margin: 0 auto 0px }
 div.dparts div.parts {  margin: 0 }
@@ -721,11 +747,10 @@ div.operation {  padding: 4px }
  * informationBox
  *----------------------------------------------------------------------------*/
 .informationBox div.body {
-  padding-left: 95px;
-  padding-right: 10px;
-  padding-top: 7px;
-  min-height: 18px;
-  line-height: 1em;
+  position: relative;
+  margin-left: 115px;
+  line-height: 1.6em;
+  padding-top: 3px;
 }
 * html .informationBox,
 * html .informationBox div.body {  zoom: 1 }
@@ -735,7 +760,6 @@ div.operation {  padding: 4px }
  .informationBox .caution a,
  .informationBox a strong,
  .descriptionBox a {
-   color: inherit;
    text-decoration: underline;
    font-weight: normal;
    font-size: inherit;
@@ -749,23 +773,41 @@ div.operation {  padding: 4px }
   padding: 8px 35px 4px 14px;
   margin-bottom: 20px;
   text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
+  border-width: 2px;
 }
-div.informationBox {
+.informationBox {
   padding:0;
 }
-.parts.informationBox:before {
+#information_1 {
+  min-height: 23px;
+  margin-bottom: 0;
+  position: relative;
+}
+#information_1:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 1px;
+    overflow: hidden;
+}
+.well#information_1 div:first-child {
   content: "Information";
-  font-size: 16px;
+  font-size: 18px;
   background-color: rgba(70,70,70,0.2);
   position: absolute;
   color: white;
-  left: 6px;
-  top: 7px;
   padding: 3px;
-  border-radius: inherit;
+  float: left;
+  top: 0;
+  bottom: 0;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+#informationAboutThisIsYourProfilePage.descriptionBox .well,
+.flashError,
+#notificationCenterError {
+  color: inherit;
+  margin-bottom: 0;
 }
 /*==============================================================================
  * alertBox
@@ -819,6 +861,22 @@ div.informationBox {
   clear: both;
   color: #FF0000;
 }
+.form .radio_list li {
+  margin-left: 2px;
+}
+/*==============================================================================
+ * radio_list
+ *----------------------------------------------------------------------------*/
+ul.radio_list > li > input[type='radio'] {
+    float: left;
+    margin-right: 2px;
+}
+
+ul.radio_list > li > label {
+    float: left;
+    margin-right: 2px;
+    margin-bottom: 0px;
+}
 /*==============================================================================
  * news pager
  *----------------------------------------------------------------------------*/
@@ -843,7 +901,8 @@ div.informationBox {
  *----------------------------------------------------------------------------*/
 .listBox th,
 .listBox td {  width: 83px }
-#profile th {  width: 89px }
+#profile th {  width: 56px }
+#profile td { width: auto;}
 .listBox th,
 .listBox td {  padding: 5px }
 #profileForm .parts {
@@ -1130,7 +1189,7 @@ div.informationBox {
 /*==============================================================================
  * loginForm
  *----------------------------------------------------------------------------*/
-.loginForm {  margin: 10px 0 20px 0 }
+/*.loginForm {  margin: 10px 0 20px 0 }*/
  .loginForm th,
  .loginForm td {  padding: 3px }
  .loginForm td {  width: 160px }
@@ -1167,6 +1226,12 @@ input:active {
 .loginForm .password_query {
   margin-bottom: 5px;
   font-size: 12px;
+  text-align: right;
+}
+.loginForm .input_submit {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
 }
 /*==============================================================================
  * Activity
@@ -1368,9 +1433,9 @@ span.op_color {
  * ad_toggle
  *----------------------------------------------------------------------------*/
 div#LayoutA div#Left div.ad ins {
-  margin-left: -4px !important;
-  margin-top: -4px !important;
-  margin-bottom: -13px !important;
+  margin-left: -5px !important;
+  margin-top: -5px !important;
+  margin-bottom: -16px !important;
 }
 div#LayoutB div#Left div.ad {
   display: none;
@@ -1381,8 +1446,7 @@ div#sideBanner div.ad ins, div#sideBanner div.ad div {
 
 .memberImageBox,
 #MailAddressLogin,
-div.dparts div.parts,
-#profileForm {
+div.dparts div.parts {
   min-height: 20px;
   padding: 10px;
   -webkit-box-shadow: none;
@@ -1391,11 +1455,11 @@ div.dparts div.parts,
   border: 1px solid black;
 }
 form label {
-  float: left;
+  display: inline;
   font-size: 15px;
 }
 form select#language_culture {
-  width: 140px;
+  width: 209px;
   float: right;
   margin-top: -4px;
 }
@@ -1407,20 +1471,15 @@ div#notificationCenter div#notificationCenterDetail div#notificationCenterDetail
 div#notificationCenter div#notificationCenterDetail div#notificationCenterLoading,
 div#notificationCenter div#notificationCenterDetail div#notificationCenterLoading,
 div#notificationCenter div#notificationCenterDetail div#notificationCenterError {  color: inherit }
-#page_member_login div#LayoutA {  width: 980px }
+#page_member_login #ContentsContainer {
+  width: 390px;
+  background: none;
+}
+#page_member_login div#LayoutA {  width: auto }
 #page_member_login div#Top,
-#page_member_login div#Center {  background: none }
-#page_member_login #MailAddressLogin.loginForm {
-  margin: 140px;
-  padding: 60px;
-}
+#page_member_login div#Center { padding-top: 200px; }
 #page_member_login #sideBanner {  display: none }
-#page_member_login.insecure_page div#LayoutA div#Center {
-  float: left;
-  width: 30%;
-  margin-left: 40%;
-  margin-top: 10%;
-}
+#page_member_login.insecure_page div#LayoutA div#Center { width: 380px; }
 #page_member_profile .alertBox.dparts table,
 #page_member_profile .alertBox.dparts th,
 #page_member_profile .alertBox. td {

@@ -6,7 +6,7 @@ Theme URI:
 Description:snowscape
 Author:sonobe
 Author URI:
-Version:1.0.0
+Version:2.0.0
 */
 
 /*==============================================================================
@@ -25,7 +25,6 @@ Version:1.0.0
 .memberImageBox,
 #MailAddressLogin,
 div.dparts div.parts,
-#profileForm,
 #Footer,
 .timeline-large {
   background-color: #f5f5f5;
@@ -51,7 +50,7 @@ input[type="button"] {
 }
 .input_submit:hover,
 input[type="submit"]:hover,
-input[type="button"]:hover { 
+input[type="button"]:hover {
   background-color: #e6e6e6
 }
 div.parts table {
@@ -62,17 +61,9 @@ div.parts table {
 /*==============================================================================
  * Header
  *----------------------------------------------------------------------------*/
-div#Header div#HeaderContainer div.container div#notificationCenter {  background-image: url(../img/NOTIFY_CENTER_1.png) }
 /*==============================================================================
  * Notification
  *----------------------------------------------------------------------------*/
-div.container div#notificationCenter div#notificationCenterDetail,
-#informationAboutThisIsYourProfilePage.descriptionBox .parts,
-.flashError {
-  background-color: #fcefd4;
-  border: 1px solid #fae1c6;
-  color: #eca918;
-}
 /*==============================================================================
  * Timeline
  *----------------------------------------------------------------------------*/
@@ -81,7 +72,8 @@ div.container div#notificationCenter div#notificationCenterDetail,
 /*==============================================================================
  * informationBox
  *----------------------------------------------------------------------------*/
-.informationBox {
+.informationBox,
+#informationAboutThisIsYourProfilePage .well {
   color: #3A87AD;
   background-color: #D9EDF7;
   border-color: #BCE8F1;
@@ -97,18 +89,4 @@ div.alertBox {
 #Footer span {
   position: absolute;
   margin-top: 6px;
-}
-
-/*==============================================================================
- * radio_list
- *----------------------------------------------------------------------------*/
-ul.radio_list > li > input[type='radio'] {
-  float: left;
-  margin-right: 2px;
-}
-
-ul.radio_list > li > label {
-  float: left;
-  margin-right: 2px;
-  margin-bottom: 0px;
 }
