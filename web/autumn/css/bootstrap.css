@@ -233,13 +233,13 @@ body {
 }
 
 a {
-  color: #007fff;
+  color: #E2360B;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #0066cc;
+  color: #E2360B;
   text-decoration: underline;
 }
 
@@ -4628,7 +4628,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
-  color: #bbbbbb;
+  color: #E2360B;
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0.05);
 }
@@ -6254,7 +6254,7 @@ a.text-success:hover {
 }
 
 .navbar .brand:hover {
-  color: #bbbbbb;
+  color: #ffffff;
 }
 
 .navbar .nav > .active > a,

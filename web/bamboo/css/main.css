@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 /*
-Theme Name:autumn
+Theme Name:bamboo
 Theme URI:
-Description:紅葉
+Description:竹林
 Author:sonobe
 Author URI:
 Version:2.1.0
@@ -12,7 +12,6 @@ Version:2.1.0
 /*==============================================================================
  * Common
  *----------------------------------------------------------------------------*/
-
 #Body {
   z-index: -100;
   background-image: url(../img/bg.jpg);
@@ -22,14 +21,15 @@ Version:2.1.0
 }
 
 .navbar-inverse .navbar-inner {
-  background-color: #3f1018;
-  background-image: -moz-linear-gradient(top, #3f1018, #3f1018);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3f1018), to(#3f1018));
-  background-image: -webkit-linear-gradient(top, #3f1018, #3f1018);
-  background-image: -o-linear-gradient(top, #3f1018, #3f1018);
-  background-image: linear-gradient(to bottom, #3f1018, #3f1018);
+  background-color: #A21424;
+  background-image: -moz-linear-gradient(top, #b03745, #A21424);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#b03745), to(#A21424));
+  background-image: -webkit-linear-gradient(top, #b03745, #A21424);
+  background-image: -o-linear-gradient(top, #b03745, #A21424);
+  background-image: linear-gradient(to bottom, #b03745, #A21424);
   background-repeat: repeat-x;
-  border-color: #3f1018;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff524944', endColorstr='#ff332e2b', GradientType=0);
+  border: 1px solid #A21424;
 }
 .navbar-inverse .brand:hover,
 .navbar-inverse .nav > li > a:hover,
@@ -79,37 +79,23 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus {
-  border-color: rgba(233, 104, 72, 0.8);
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 104, 72, 0.8);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 104, 72, 0.8);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 104, 72, 0.8);
+  border-color: rgba(102, 153, 64, 0.8);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,153,64,.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,153,64,.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,153,64,.6);
 }
 select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: 5px auto rgba(233, 104, 72, 0.8);
+  outline: 5px auto rgba(102,153,64,.6);
 }
-
 /*==============================================================================
  * InformationBox
  *----------------------------------------------------------------------------*/
 .informationBox,
-#informationAboutThisIsYourProfilePage .well,
-#informationAboutThisIsYourProfilePage .well a {
-  color: #ffffff!important;
-  background-color: #e96848;
-  border-color: transparent;
-}
-
-/*==============================================================================
- * license
- *----------------------------------------------------------------------------*/
-#Footer {
-  background-color:#080808;
-  color:#ffffff;
-}
-#Footer span {
-  position: absolute;
-  margin-top: 6px;
+#informationAboutThisIsYourProfilePage .well {
+  color: #38b44a;
+  background-color: #caeecf;
+  border-color: #b7e8b6;
 }

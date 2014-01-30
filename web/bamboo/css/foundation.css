@@ -6,38 +6,6 @@ body {  height: 100% }
 /*==============================================================================
  * Reset Default Style
  *----------------------------------------------------------------------------*/
-body,
-div,
-p,
-pre,
-blockquote,
-th,
-td,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-iframe,
-object,
-embed {
-  margin: 0;
-  padding: 0;
-  border: none;
-  text-align: left;
-}
-body {
-  font-size: 14px;
-  line-height: 20px;
-  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, 'ＭＳ Ｐゴシック', sans-serif;
-}
 ul,
 ol {
   list-style-position: outside;
@@ -333,12 +301,6 @@ pre {  overflow: auto }
  }
 #topBanner {
   display: none;
-  /* : ;
-  height: 48px;
-  left: 474px;
-  position: absolute;
-  top: 2px;
-  width: 468px;*/
 }
 #sideBanner {
   float: left;
@@ -351,14 +313,25 @@ div#sideBanner form {
 #Footer {
   clear: both;
   border-top: 1px solid #ccc;
-  bottom: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0;
   border-radius: 0!important;
   -webkit-border-radius: 0!important;
   -moz-border-radius: 0!important;
   border: none!important;
+}
+#page_member_login div#LayoutA {
+  width: 430px;
+  float: none;
+  margin: 0 auto;
+}
+#page_member_login div#Top,
+#page_member_login div#Center {
+  padding-top: 200px;
+}
+#page_member_login #sideBanner {
+  display: none
+}
+#page_member_login.insecure_page div#LayoutA div#Center {
+  width: 100%;
 }
 /*----------------------------------------------
  * Header
@@ -404,6 +377,10 @@ div#sideBanner form {
   clear: both;
   height: 1px;
   overflow: hidden;
+}
+a.brand {
+  line-height: 1em;
+  margin: 0;
 }
 /*----------------------------------------------
  * Notification Center
@@ -793,7 +770,6 @@ div.operation {  padding: 4px }
     overflow: hidden;
 }
 .well#information_1 div:first-child {
-  content: "Information";
   font-size: 18px;
   background-color: rgba(70,70,70,0.2);
   position: absolute;
@@ -1465,23 +1441,10 @@ form select#language_culture {
   float: right;
   margin-top: -4px;
 }
-a.brand {
-  line-height: 1em;
-  margin: 0;
-}
-div#notificationCenter div#notificationCenterDetail div#notificationCenterDetailHeader,
-div#notificationCenter div#notificationCenterDetail div#notificationCenterLoading,
-div#notificationCenter div#notificationCenterDetail div#notificationCenterLoading,
-div#notificationCenter div#notificationCenterDetail div#notificationCenterError {  color: inherit }
-#page_member_login #ContentsContainer {
-  width: 390px;
-  background: none;
-}
-#page_member_login div#LayoutA {  width: auto }
-#page_member_login div#Top,
-#page_member_login div#Center { padding-top: 200px; }
-#page_member_login #sideBanner {  display: none }
-#page_member_login.insecure_page div#LayoutA div#Center { width: 380px; }
+
+/*==============================================================================
+ * Profile
+ *----------------------------------------------------------------------------*/
 #page_member_profile .alertBox.dparts table,
 #page_member_profile .alertBox.dparts th,
 #page_member_profile .alertBox. td {
@@ -1498,3 +1461,29 @@ div#notificationCenter div#notificationCenterDetail div#notificationCenterError 
 #member_profile_op_preset_birthday_year,
 #member_profile_op_preset_birthday_month,
 #member_profile_op_preset_birthday_day {  width: 120px }
+
+/*==============================================================================
+ * Timeline
+ *----------------------------------------------------------------------------*/
+.timeline-post a.screen-name,
+.nav > li > a {  color: #333 }
+
+/*==============================================================================
+ * input
+ *----------------------------------------------------------------------------*/
+.input_submit,
+input[type="submit"],
+input[type="button"] {
+  color: #333;
+  background-color: #fff;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  border-bottom-color: #b3b3b3;
+}
+.input_submit:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {  background-color: #e6e6e6 }
+div.parts table {
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}

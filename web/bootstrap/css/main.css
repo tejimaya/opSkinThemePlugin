@@ -6,13 +6,23 @@ Theme URI:
 Description:for bootstrap[v2.3.2]
 Author:sonobe
 Author URI:
-Version:2.0.0
+Version:2.1.0
 */
 
 /*==============================================================================
  * Common
  *----------------------------------------------------------------------------*/
-/*well*/
+#Body {
+  z-index: -100;
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/*==============================================================================
+ * Well
+ *----------------------------------------------------------------------------*/
 .parts,
 .memberImageBox,
 #MailAddressLogin,
@@ -32,46 +42,16 @@ div.partsHeading h3 {
   color: #333;
   border-bottom: 1px solid #f5f5f5;
 }
-.input_submit,
-input[type="submit"],
-input[type="button"] {
-  color: #555555;
-  background-color: #fff;
-  border-color: 1px solid #cccccc;
-  border-bottom-color: #b3b3b3;
-}
-.input_submit:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover {
-  background-color: #e6e6e6
-}
-div.parts table {
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-}
+
 /*==============================================================================
- * Header
+ * Input_area
  *----------------------------------------------------------------------------*/
 /*==============================================================================
- * Notification
- *----------------------------------------------------------------------------*/
-/*==============================================================================
- * Timeline
- *----------------------------------------------------------------------------*/
-.timeline-post a.screen-name,
-.nav > li > a {  color: #333 }
-/*==============================================================================
- * informationBox
+ * InformationBox
  *----------------------------------------------------------------------------*/
 .informationBox,
 #informationAboutThisIsYourProfilePage .well {
   color: #3A87AD;
   background-color: #D9EDF7;
   border-color: #BCE8F1;
-}
-div.alertBox {
-  background-color: #FCF8E3;
-  color: #C09853;
-  border-color: #FBEED5;
 }
