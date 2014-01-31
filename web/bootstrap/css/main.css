@@ -6,22 +6,27 @@ Theme URI:
 Description:for bootstrap[v2.3.2]
 Author:sonobe
 Author URI:
-Version:1.0.0
+Version:2.1.0
 */
 
 /*==============================================================================
  * Common
  *----------------------------------------------------------------------------*/
-body {
-  background:white;
-  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, 'ＭＳ Ｐゴシック', sans-serif;
+#Body {
+  z-index: -100;
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
-/*well*/
+
+/*==============================================================================
+ * Well
+ *----------------------------------------------------------------------------*/
 .parts,
 .memberImageBox,
 #MailAddressLogin,
 div.dparts div.parts,
-#profileForm,
 #Footer,
 .timeline-large {
   background-color: #f5f5f5;
@@ -37,70 +42,16 @@ div.partsHeading h3 {
   color: #333;
   border-bottom: 1px solid #f5f5f5;
 }
-.input_submit,
-input[type="submit"],
-input[type="button"] {
-  color: #555555;
-  background-color: #fff;
-  border-color: 1px solid #cccccc;
-  border-bottom-color: #b3b3b3;
-}
-.input_submit:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover { 
-  background-color: #e6e6e6
-}
-div.parts table {
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-}
+
 /*==============================================================================
- * Header
+ * Input_area
  *----------------------------------------------------------------------------*/
-div#Header div#HeaderContainer div.container div#notificationCenter {  background-image: url(../img/NOTIFY_CENTER_1.png) }
 /*==============================================================================
- * Notification
+ * InformationBox
  *----------------------------------------------------------------------------*/
-div.container div#notificationCenter div#notificationCenterDetail,
-#informationAboutThisIsYourProfilePage.descriptionBox .parts,
-.flashError {
-  background-color: #fcefd4;
-  border: 1px solid #fae1c6;
-  color: #eca918;
-}
-/*==============================================================================
- * Timeline
- *----------------------------------------------------------------------------*/
-.timeline-post a.screen-name,
-.nav > li > a {  color: #333 }
-/*==============================================================================
- * informationBox
- *----------------------------------------------------------------------------*/
-.informationBox {
+.informationBox,
+#informationAboutThisIsYourProfilePage .well {
   color: #3A87AD;
   background-color: #D9EDF7;
   border-color: #BCE8F1;
-}
-.informationBox div.body {
-  margin-left:10px;
-}
-div.alertBox {
-  background-color: #FCF8E3;
-  color: #C09853;
-  border-color: #FBEED5;
-}
-
-/*==============================================================================
- * radio_list
- *----------------------------------------------------------------------------*/
-ul.radio_list > li > input[type='radio'] {
-    float: left;
-    margin-right: 2px;
-}
-
-ul.radio_list > li > label {
-    float: left;
-    margin-right: 2px;
-    margin-bottom: 0px;
 }

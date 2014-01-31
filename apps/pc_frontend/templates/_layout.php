@@ -126,7 +126,7 @@ EOM;
 <?php include_component('default', 'sideBannerGadgets'); ?>
 <div class="dparts ad">
 <?php if (opConfig::get('opt_ad_free') == 0): ?>
-<?php 
+<?php
 echo <<<EOM
 <!-- pne_jp_side2 -->
 <div id='div-gpt-ad-1383195165288-0' style='width:160px; height:600px;'>
@@ -139,7 +139,7 @@ EOM;
 </div>
 
 <div class="dparts ad">
-<?php 
+<?php
 echo <<<EOM
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-5836291027790450";
