@@ -6,7 +6,7 @@ Theme URI: p://example.com/sakura/
 Description:桜
 Author:sonobe
 Author URI: tp://example.com/sonobe/
-Version:1.0.0
+Version:2.0.0
 */
 
 /*==============================================================================
@@ -24,7 +24,6 @@ Version:1.0.0
 .memberImageBox,
 #MailAddressLogin,
 div.dparts div.parts,
-#profileForm,
 #Footer,
 .timeline-large {
   background-color: #f5f5f5;
@@ -59,17 +58,9 @@ div.parts table {
 /*==============================================================================
  * Header
  *----------------------------------------------------------------------------*/
-div#Header div#HeaderContainer div.container div#notificationCenter {  background-image: url(../img/NOTIFY_CENTER_2.png) }
 /*==============================================================================
  * Notification
  *----------------------------------------------------------------------------*/
-div.container div#notificationCenter div#notificationCenterDetail,
-#informationAboutThisIsYourProfilePage.descriptionBox .parts,
-.flashError {
-  background-color: #fcefd4;
-  border: 1px solid #fae1c6;
-  color: #eca918;
-}
 /*==============================================================================
  * Timeline
  *----------------------------------------------------------------------------*/
@@ -78,7 +69,8 @@ div.container div#notificationCenter div#notificationCenterDetail,
 /*==============================================================================
  * informationBox
  *----------------------------------------------------------------------------*/
-.informationBox {
+.informationBox,
+#informationAboutThisIsYourProfilePage .well {
   color: #38b44a;
   background-color: #caeecf;
   border-color: #b7e8b6;
@@ -87,18 +79,4 @@ div.alertBox {
   background-color: #fadfdd;
   color: #df382c;
   border-color: #f8d0d4;
-}
-
-/*==============================================================================
- * radio_list
- *----------------------------------------------------------------------------*/
-ul.radio_list > li > input[type='radio'] {
-    float: left;
-    margin-right: 2px;
-}
-
-ul.radio_list > li > label {
-    float: left;
-    margin-right: 2px;
-    margin-bottom: 0px;
 }
