@@ -1407,21 +1407,6 @@ span.op_color {
   font-size: inherit;
 }
 
-/*==============================================================================
- * ad_toggle
- *----------------------------------------------------------------------------*/
-div#LayoutA div#Left div.ad ins {
-  margin-left: -5px !important;
-  margin-top: -5px !important;
-  margin-bottom: -16px !important;
-}
-div#LayoutB div#Left div.ad {
-  display: none;
-}
-div#sideBanner div.ad ins, div#sideBanner div.ad div {
-  margin-left: 20px !important;
-}
-
 .memberImageBox,
 #MailAddressLogin,
 div.dparts div.parts {
