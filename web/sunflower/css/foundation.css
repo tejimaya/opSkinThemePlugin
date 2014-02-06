@@ -121,7 +121,8 @@ strong { }
 /*----------------------------------------------
  * Table
  *--------------------------------------------*/
-div.parts table {
+div.parts table,
+.well table {
   table-layout: fixed;
   width: 100%;
   border-width: 0px;
