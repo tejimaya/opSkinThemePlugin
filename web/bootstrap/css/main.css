@@ -12,12 +12,8 @@ Version:2.1.0
 /*==============================================================================
  * Common
  *----------------------------------------------------------------------------*/
-#Body {
-  z-index: -100;
-  background-image: url(../img/bg.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+body {
+    background:white;
 }
 
 /*==============================================================================
