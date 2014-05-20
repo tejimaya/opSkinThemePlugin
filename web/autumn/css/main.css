@@ -13,7 +13,7 @@ Version:2.1.0
  * Common
  *----------------------------------------------------------------------------*/
 
-#Body {
+body {
   z-index: -100;
   background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
