@@ -1,0 +1,184 @@
+.row {
+  margin-left: -4px;
+}
+
+[class*="span"] {
+  margin-left: 4px;
+}
+.span1 {
+  width: 23px;
+}
+.span2 {
+  width: 50px;
+}
+.span3 {
+  width: 77px;
+}
+.span4 {
+  width: 104px;
+}
+.span5 {
+  width: 131px;
+}
+.span6 {
+  width: 158px;
+}
+.span7 {
+  width: 185px;
+}
+.span8 {
+  width: 212px;
+}
+.span9 {
+  width: 239px;
+}
+.span10 {
+  width: 266px;
+}
+.span11 {
+  width: 293px;
+}
+.span12,
+.container {
+  width: 320px;
+}
+.offset1 {
+  margin-left: 31px;
+}
+.offset2 {
+  margin-left: 58px;
+}
+.offset3 {
+  margin-left: 85px;
+}
+.offset4 {
+  margin-left: 112px;
+}
+.offset5 {
+  margin-left: 139px;
+}
+.offset6 {
+  margin-left: 166px;
+}
+.offset7 {
+  margin-left: 193px;
+}
+.offset8 {
+  margin-left: 220px;
+}
+.offset9 {
+  margin-left: 247px;
+}
+.offset10 {
+  margin-left: 274px;
+}
+.offset11 {
+  margin-left: 301px;
+}
+
+.container {
+  width: 320px;
+}
+
+.container-fluid {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+input.span1,
+textarea.span1,
+.uneditable-input.span1 {
+  width: 13px;
+}
+input.span2,
+textarea.span2,
+.uneditable-input.span2 {
+  width: 40px;
+}
+input.span3,
+textarea.span3,
+.uneditable-input.span3 {
+  width: 67px;
+}
+input.span4,
+textarea.span4,
+.uneditable-input.span4 {
+  width: 94px;
+}
+input.span5,
+textarea.span5,
+.uneditable-input.span5 {
+  width: 121px;
+}
+input.span6,
+textarea.span6,
+.uneditable-input.span6 {
+  width: 148px;
+}
+input.span7,
+textarea.span7,
+.uneditable-input.span7 {
+  width: 175px;
+}
+input.span8,
+textarea.span8,
+.uneditable-input.span8 {
+  width: 202px;
+}
+input.span9,
+textarea.span9,
+.uneditable-input.span9 {
+  width: 229px;
+}
+input.span10,
+textarea.span10,
+.uneditable-input.span10 {
+  width: 256px;
+}
+input.span11,
+textarea.span11,
+.uneditable-input.span11 {
+  width: 283px;
+}
+input.span12,
+textarea.span12,
+.uneditable-input.span12 {
+  width: 310px;
+}
+
+table .span1 {
+  width: 7px;
+}
+table .span2 {
+  width: 34px;
+}
+table .span3 {
+  width: 61px;
+}
+table .span4 {
+  width: 88px;
+}
+table .span5 {
+  width: 115px;
+}
+table .span6 {
+  width: 142px;
+}
+table .span7 {
+  width: 169px;
+}
+table .span8 {
+  width: 196px;
+}
+table .span9 {
+  width: 223px;
+}
+table .span10 {
+  width: 250px;
+}
+table .span11 {
+  width: 277px;
+}
+table .span12 {
+  width: 304px;
+}
