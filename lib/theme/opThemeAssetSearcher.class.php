@@ -100,9 +100,10 @@ class opThemeAssetSearcher extends opInstalledPluginManager
     return str_replace($this->getWebDir(), '', $selectThemeDirName);
   }
 
-  public function findAssetsPathByThemeNameAndType($themeName, $type)
+  public function findAssetsPathByThemeNameAndType($themeName, $type, $isSmt = false)
   {
-    $pattern = $this->getWebDir().'/'.$themeName.'/'.$type.'/'.'*.'.$type;
+    $smtPrefix = $isSmt ? 'smt_' : '';
+    $pattern = $this->getWebDir().'/'.$themeName.'/'.$smtPrefix.$type.'/'.'*.'.$type;
 
     $files = array();
     foreach (glob($pattern) as $fileName)
