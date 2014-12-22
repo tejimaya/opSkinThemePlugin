@@ -82,15 +82,16 @@ class opThemeEvent
   public static function enableSkinByTheme($themeName)
   {
     $themeSearcher = new opThemeAssetSearcher();
+    $isSmt = sfContext::getInstance()->getRequest()->isSmartphone();
 
     $assetsType = array('css', 'js');
     foreach ($assetsType as $type)
     {
-      $filePaths = $themeSearcher->findAssetsPathByThemeNameAndType($themeName, $type);
+      $filePaths = $themeSearcher->findAssetsPathByThemeNameAndType($themeName, $type, $isSmt);
 
       if (false !== $filePaths)
       {
-        self::includeCssOrJs($filePaths, $type);
+        self::includeCssOrJs($filePaths, $type, $isSmt);
       }
     }
   }
@@ -98,7 +99,7 @@ class opThemeEvent
   /**
    * @todo process in the case of non-javascript or css
    */
-  private static function includeCssOrJs($filePaths, $type)
+  private static function includeCssOrJs($filePaths, $type, $isSmt = false)
   {
     $response = sfContext::getInstance()->getResponse();
 
@@ -106,7 +107,14 @@ class opThemeEvent
     {
       foreach ($filePaths as $file)
       {
-        $response->addStylesheet($file, 'last');
+        if ($isSmt)
+        {
+          $response->addSmtStylesheet($file, 'last');
+        }
+        else
+        {
+          $response->addStylesheet($file, 'last');
+        }
       }
     }
 
@@ -114,7 +122,14 @@ class opThemeEvent
     {
       foreach ($filePaths as $file)
       {
-        $response->addJavaScript($file, 'last');
+        if ($isSmt)
+        {
+          $response->addSmtJavaScript($file, 'last');
+        }
+        else
+        {
+          $response->addJavaScript($file, 'last');
+        }
       }
     }
   }
