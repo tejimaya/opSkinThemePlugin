@@ -1,0 +1,17 @@
+.navbar .brand {
+  background: transparent;
+}
+
+.navbar .nav > li > a,
+.navbar .dropdown-menu a {
+  color: #ffffff;
+}
+
+.navbar .nav > li > a:hover,
+.navbar .dropdown-menu a:hover {
+  background-color: #1684c2;
+}
+
+.postform, .ncform, .menuform {
+  background-color: #45aeea;
+}

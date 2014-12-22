@@ -1,0 +1,17 @@
+.navbar .nav > li > a:hover,
+.navbar .dropdown-menu a:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #61912c;
+  background-image: -moz-linear-gradient(top, #66992e, #598528);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#66992e), to(#598528));
+  background-image: -webkit-linear-gradient(top, #66992e, #598528);
+  background-image: -o-linear-gradient(top, #66992e, #598528);
+  background-image: linear-gradient(to bottom, #66992e, #598528);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff66992e', endColorstr='#ff598528', GradientType=0);
+}
+
+.postform, .ncform, .menuform {
+  background-color: #463e3a;
+}

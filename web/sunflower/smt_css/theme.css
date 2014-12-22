@@ -1,0 +1,8 @@
+.navbar .nav > li > a,
+.navbar .dropdown-menu a {
+  color: #ffffff;
+}
+
+.postform, .ncform, .menuform {
+  background-color: #80843c;
+}

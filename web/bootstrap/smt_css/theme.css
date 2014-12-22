@@ -1,0 +1,25 @@
+.navbar .brand {
+  color: #777777;
+}
+
+.navbar .nav > li > a,
+.navbar .dropdown-menu a {
+  color: #777777;
+  text-shadow: none;
+}
+
+.navbar .nav > li > a:hover,
+.navbar .dropdown-menu a:hover {
+  color: #555555;
+  background-color: #888888;
+}
+
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover {
+  color: #555555;
+  background-color: #999999;
+}
+
+.postform, .ncform, .menuform {
+  background-color: #d6d6d6;
+}
