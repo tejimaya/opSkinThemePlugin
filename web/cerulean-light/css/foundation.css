@@ -20,8 +20,8 @@ ol {
 #diaryForm table input[type="radio"],
 #configNotificationMailBox table input[type="radio"],
 #mailForm table input[type="radio"] {
-  float: left;
   margin-left: 5px;
+  margin-bottom: 10px;
 }
 #diaryForm table input[type="radio"]:first-child,
 #configNotificationMailBox table input[type="radio"]:first-child,
