@@ -87,11 +87,19 @@ class opThemeEvent
     $assetsType = array('css', 'js');
     foreach ($assetsType as $type)
     {
-      $filePaths = $themeSearcher->findAssetsPathByThemeNameAndType($themeName, $type, $isSmt);
-
-      if (false !== $filePaths)
+      $pcFilePaths = $themeSearcher->findAssetsPathByThemeNameAndType($themeName, $type, false);
+      if (false !== $pcFilePaths)
       {
-        self::includeCssOrJs($filePaths, $type, $isSmt);
+        self::includeCssOrJs($pcFilePaths, $type, false);
+      }
+
+      if ($isSmt)
+      {
+        $smtFilePaths = $themeSearcher->findAssetsPathByThemeNameAndType($themeName, $type, true);
+        if (false !== $smtFilePaths)
+        {
+          self::includeCssOrJs($smtFilePaths, $type, true);
+        }
       }
     }
   }
