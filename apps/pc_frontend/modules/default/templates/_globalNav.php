@@ -10,7 +10,7 @@
 <?php if('@member_profile_mine' === $nav->uri): ?>
 <li id="globalNav_<?php echo op_url_to_id($nav->uri, true) ?>"><?php echo link_to($memberName, $nav->uri) ?></li>
 <?php else: ?>
-<li id="globalNav_<?php echo op_url_to_id($nav->uri, true) ?>"><?php echo link_to($nav->caption, $nav->uri) ?></li>
+<li id="globalNav_<?php echo op_url_to_id($nav->uri, true) ?>"><?php echo link_to(__($nav->caption), $nav->uri) ?></li>
 <?php endif ?>
 <?php endif; ?>
 <?php endforeach; ?>
