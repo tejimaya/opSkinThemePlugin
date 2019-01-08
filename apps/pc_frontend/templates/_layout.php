@@ -14,12 +14,10 @@ use_helper('Javascript');
 use_javascript('jquery.min.js');
 use_javascript('jquery.tmpl.min.js');
 ?>
-<?php if (opConfig::get('enable_jsonapi') && opToolkit::isSecurePage()): ?>
+<?php if (opConfig::get('enable_jsonapi')): ?>
 <?php
-use_javascript('jquery.notify.js');
-use_javascript('op_notify.js');
 $jsonData = array(
-  'apiKey' => $sf_user->getMemberApiKey(),
+  'apiKey' => opToolkit::isSecurePage() ? $sf_user->getMemberApiKey() : 'UNAUTHORIZED',
   'apiBase' => app_url_for('api', 'homepage'),
   'baseUrl' => $sf_request->getRelativeUrlRoot().'/',
 );
@@ -28,6 +26,12 @@ echo javascript_tag('
 var openpne = '.json_encode($jsonData).';
 ');
 ?>
+<?php if (opConfig::get('enable_jsonapi') && opToolkit::isSecurePage()): ?>
+<?php
+use_javascript('jquery.notify.js');
+use_javascript('op_notify.js');
+?>
+<?php endif ?>
 <?php endif ?>
 <?php include_javascripts() ?>
 <?php echo $op_config->get('pc_html_head') ?>
