@@ -38,11 +38,11 @@
   <email />
   <active>yes</active>
  </contributor>
- <date>2016-11-17</date>
- <time>17:55:27</time>
+ <date>2020-03-11</date>
+ <time>08:32:51</time>
  <version>
-  <release>1.0.13</release>
-  <api>1.0.13</api>
+  <release>1.0.14</release>
+  <api>1.0.14</api>
  </version>
  <stability>
   <release>alpha</release>
@@ -50,7 +50,7 @@
  </stability>
  <license>Apache</license>
  <notes>
-version 1.0.13 alpha release.
+version 1.0.14 alpha release.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -59,9 +59,9 @@ version 1.0.13 alpha release.
    <file baseinstalldir="/" md5sum="c2e26073702e71e0c9367433a95d3714" name="apps/pc_backend/modules/opSkinThemePlugin/templates/indexSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="1411855392dbcdecb21d5685b67a3124" name="apps/pc_backend/modules/opSkinThemePlugin/templates/_themeSelectRows.php" role="data" />
    <file baseinstalldir="/" md5sum="02c19a01a18f6cb7ce942d79fb607cff" name="apps/pc_frontend/config/routing.yml" role="data" />
-   <file baseinstalldir="/" md5sum="abcc6a68d0ea1f488d45048391713883" name="apps/pc_frontend/modules/default/templates/_globalNav.php" role="data" />
+   <file baseinstalldir="/" md5sum="3c113cbabe7a582f9e58f771e902ad4d" name="apps/pc_frontend/modules/default/templates/_globalNav.php" role="data" />
    <file baseinstalldir="/" md5sum="08fcb47eb99a11374be15a4865a7c1d4" name="apps/pc_frontend/modules/default/templates/_informationBox.php" role="data" />
-   <file baseinstalldir="/" md5sum="390c2d6609a61f5ebf45dc48520d9341" name="apps/pc_frontend/modules/default/templates/_localNav.php" role="data" />
+   <file baseinstalldir="/" md5sum="df1b573c7067d1cf0515aca4d175a4ec" name="apps/pc_frontend/modules/default/templates/_localNav.php" role="data" />
    <file baseinstalldir="/" md5sum="aec9fadcdd182478cd5290dcfecc10cb" name="apps/pc_frontend/modules/skinpreview/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="d2f08a05cc1da2514fa1b8933219b49c" name="apps/pc_frontend/modules/skinpreview/templates/indexSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="87be55d82f459452625533f4fa9e8272" name="apps/pc_frontend/templates/_footer.php" role="data" />
@@ -486,6 +486,21 @@ alpha release.
    <license>Apache</license>
    <notes>
 version 1.0.13 alpha release.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.14</release>
+    <api>1.0.14</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2020-03-11</date>
+   <license>Apache</license>
+   <notes>
+version 1.0.14 alpha release.
    </notes>
   </release>
  </changelog>
