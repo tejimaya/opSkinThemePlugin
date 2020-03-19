@@ -38,19 +38,19 @@
   <email />
   <active>yes</active>
  </contributor>
- <date>2020-03-11</date>
- <time>08:32:51</time>
+ <date>2020-03-19</date>
+ <time>10:04:26</time>
  <version>
-  <release>1.0.14</release>
-  <api>1.0.14</api>
+  <release>1.0.15</release>
+  <api>1.0.15</api>
  </version>
  <stability>
-  <release>alpha</release>
-  <api>alpha</api>
+  <release>stable</release>
+  <api>stable</api>
  </stability>
  <license>Apache</license>
  <notes>
-version 1.0.14 alpha release.
+version 1.0.15 alpha release.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -65,7 +65,7 @@ version 1.0.14 alpha release.
    <file baseinstalldir="/" md5sum="aec9fadcdd182478cd5290dcfecc10cb" name="apps/pc_frontend/modules/skinpreview/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="d2f08a05cc1da2514fa1b8933219b49c" name="apps/pc_frontend/modules/skinpreview/templates/indexSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="87be55d82f459452625533f4fa9e8272" name="apps/pc_frontend/templates/_footer.php" role="data" />
-   <file baseinstalldir="/" md5sum="0b76069bfebcb7a00382b741de107a4a" name="apps/pc_frontend/templates/_header.php" role="data" />
+   <file baseinstalldir="/" md5sum="c10540d0f70fde144f8e7ea5c91b98f1" name="apps/pc_frontend/templates/_header.php" role="data" />
    <file baseinstalldir="/" md5sum="73f95f4de010dba8b80dc8cda4618d98" name="apps/pc_frontend/templates/_layout.php" role="data" />
    <file baseinstalldir="/" md5sum="f437986e2d839231972582850d3779ae" name="apps/pc_frontend/templates/_partsInformationBox.php" role="data" />
    <file baseinstalldir="/" md5sum="7849100c5e75df07c481ced51d356d66" name="apps/pc_frontend/templates/_partsLayout.php" role="data" />
@@ -501,6 +501,21 @@ version 1.0.13 alpha release.
    <license>Apache</license>
    <notes>
 version 1.0.14 alpha release.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.15</release>
+    <api>1.0.15</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2020-03-19</date>
+   <license>Apache</license>
+   <notes>
+version 1.0.15 alpha release.
    </notes>
   </release>
  </changelog>
