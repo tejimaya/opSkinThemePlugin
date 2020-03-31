@@ -301,10 +301,12 @@ pre {  overflow: auto }
    margin: 0 auto;
  }
 #topBanner {
-  display: none;
+  right: 10px;
+  position: absolute;
+  top: 2px;
 }
 #sideBanner {
-  float: left;
+  float: right;
   width: 248px;
 }
 div#sideBanner form {
@@ -319,17 +321,9 @@ div#sideBanner form {
   -moz-border-radius: 0!important;
   border: none!important;
 }
-#page_member_login div#LayoutA {
-  width: 430px;
-  float: none;
-  margin: 0 auto;
-}
 #page_member_login div#Top,
 #page_member_login div#Center {
   padding-top: 200px;
-}
-#page_member_login #sideBanner {
-  display: none
 }
 #page_member_login.insecure_page div#LayoutA div#Center {
   width: 100%;
@@ -1168,7 +1162,10 @@ ul.radio_list > li > label {
 /*==============================================================================
  * loginForm
  *----------------------------------------------------------------------------*/
-/*.loginForm {  margin: 10px 0 20px 0 }*/
+.loginForm {
+  width: 430px;
+  margin: 10px auto 20px auto;
+}
  .loginForm th,
  .loginForm td {  padding: 3px }
  .loginForm td {  width: 160px }
