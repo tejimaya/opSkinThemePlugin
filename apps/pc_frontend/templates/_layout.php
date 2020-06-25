@@ -10,25 +10,25 @@
 <?php endif; ?>
 <?php include_stylesheets() ?>
 <?php
-use_helper('Javascript');
 use_javascript('jquery.min.js');
-use_javascript('jquery.tmpl.min.js');
-?>
-<?php if (opConfig::get('enable_jsonapi') && opToolkit::isSecurePage()): ?>
-<?php
-use_javascript('jquery.notify.js');
-use_javascript('op_notify.js');
-$jsonData = array(
-  'apiKey' => $sf_user->getMemberApiKey(),
-  'apiBase' => app_url_for('api', 'homepage'),
-  'baseUrl' => $sf_request->getRelativeUrlRoot().'/',
-);
+use_helper('Javascript');
+$jsonData = array('urlForUrl' => url_for('@url_for'));
+if (opConfig::get('enable_jsonapi') && opToolkit::isSecurePage())
+{
+  use_javascript('jquery.tmpl.min.js');
+  use_javascript('jquery.notify.js');
+  use_javascript('op_notify.js');
+  $jsonData = array_merge(array(
+    'apiKey' => $sf_user->getMemberApiKey(),
+    'apiBase' => app_url_for('api', 'homepage'),
+    'baseUrl' => $sf_request->getRelativeUrlRoot().'/',
+  ), $jsonData);
+}
 
-echo javascript_tag('
-var openpne = '.json_encode($jsonData).';
-');
+$json = defined('JSON_PRETTY_PRINT') ? json_encode($jsonData, JSON_PRETTY_PRINT) : json_encode($jsonData);
+
+echo javascript_tag('var openpne = '.$json.';');
 ?>
-<?php endif ?>
 <?php include_javascripts() ?>
 <?php echo javascript_tag(<<<JS
 document.addEventListener('DOMContentLoaded', function() {
