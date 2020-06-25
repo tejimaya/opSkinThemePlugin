@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+<package packagerversion="1.10.3" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
@@ -38,19 +38,19 @@
   <email />
   <active>yes</active>
  </contributor>
- <date>2020-03-19</date>
- <time>10:04:26</time>
+ <date>2020-06-25</date>
+ <time>18:49:35</time>
  <version>
-  <release>1.0.15</release>
-  <api>1.0.15</api>
+  <release>1.0.16</release>
+  <api>1.0.16</api>
  </version>
  <stability>
-  <release>stable</release>
-  <api>stable</api>
+  <release>alpha</release>
+  <api>alpha</api>
  </stability>
  <license>Apache</license>
  <notes>
-version 1.0.15 alpha release.
+version 1.0.16 alpha release.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -66,7 +66,7 @@ version 1.0.15 alpha release.
    <file baseinstalldir="/" md5sum="d2f08a05cc1da2514fa1b8933219b49c" name="apps/pc_frontend/modules/skinpreview/templates/indexSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="87be55d82f459452625533f4fa9e8272" name="apps/pc_frontend/templates/_footer.php" role="data" />
    <file baseinstalldir="/" md5sum="c10540d0f70fde144f8e7ea5c91b98f1" name="apps/pc_frontend/templates/_header.php" role="data" />
-   <file baseinstalldir="/" md5sum="73f95f4de010dba8b80dc8cda4618d98" name="apps/pc_frontend/templates/_layout.php" role="data" />
+   <file baseinstalldir="/" md5sum="562bc84fc7e75673c580e4355e9c0c93" name="apps/pc_frontend/templates/_layout.php" role="data" />
    <file baseinstalldir="/" md5sum="f437986e2d839231972582850d3779ae" name="apps/pc_frontend/templates/_partsInformationBox.php" role="data" />
    <file baseinstalldir="/" md5sum="7849100c5e75df07c481ced51d356d66" name="apps/pc_frontend/templates/_partsLayout.php" role="data" />
    <file baseinstalldir="/" md5sum="443d614586f638cb0b2c850dc69cc597" name="apps/pc_frontend/templates/_partsSimpleBox.php" role="data" />
@@ -87,8 +87,8 @@ version 1.0.15 alpha release.
    <file baseinstalldir="/" md5sum="66d438815dbd707b938f60b6fbcf0c64" name="test/unit/model/opSkinThemePluginTest.php" role="data" />
    <file baseinstalldir="/" md5sum="5cab19fff75c20c3200245a214f21fcc" name="web/bamboo/css/bootstrap.css" role="data" />
    <file baseinstalldir="/" md5sum="1f9e9d1a5a1d347d945ef4b7727f2ea0" name="web/bamboo/css/font-awesome.css" role="data" />
-   <file baseinstalldir="/" md5sum="f3fdd6c13e22606df84cfa02b4154d17" name="web/bamboo/css/foundation.css" role="data" />
-   <file baseinstalldir="/" md5sum="379f6b2b00bfb618faa4055003916f3c" name="web/bamboo/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="170064b92a2c72de0a7d0827f19bfb4e" name="web/bamboo/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="bd8d069a2ba33405eeae0b99610d4e75" name="web/bamboo/css/main.css" role="data" />
    <file baseinstalldir="/" md5sum="8b27bc96115c2d24350f0d09e6a9433f" name="web/bamboo/fonts/fontawesome-webfont.eot" role="data" />
    <file baseinstalldir="/" md5sum="0a799148a50bb02c6f380eabd8d97559" name="web/bamboo/fonts/fontawesome-webfont.svg" role="data" />
    <file baseinstalldir="/" md5sum="dcb26c7239d850266941e80370e207c1" name="web/bamboo/fonts/fontawesome-webfont.ttf" role="data" />
@@ -105,8 +105,8 @@ version 1.0.15 alpha release.
    <file baseinstalldir="/" md5sum="9eacb388a5b3a2afce8545fdce26d30f" name="web/bamboo/smt_css/variables.less" role="data" />
    <file baseinstalldir="/" md5sum="53721f01e2dfd5e95450b1cfd5601021" name="web/bootstrap/css/bootstrap.css" role="data" />
    <file baseinstalldir="/" md5sum="1f9e9d1a5a1d347d945ef4b7727f2ea0" name="web/bootstrap/css/font-awesome.css" role="data" />
-   <file baseinstalldir="/" md5sum="f3fdd6c13e22606df84cfa02b4154d17" name="web/bootstrap/css/foundation.css" role="data" />
-   <file baseinstalldir="/" md5sum="ffb740315536c905afe9de4773032a5d" name="web/bootstrap/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="170064b92a2c72de0a7d0827f19bfb4e" name="web/bootstrap/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="ecb448dc57e3da12ee240549f6f7725a" name="web/bootstrap/css/main.css" role="data" />
    <file baseinstalldir="/" md5sum="8b27bc96115c2d24350f0d09e6a9433f" name="web/bootstrap/fonts/fontawesome-webfont.eot" role="data" />
    <file baseinstalldir="/" md5sum="0a799148a50bb02c6f380eabd8d97559" name="web/bootstrap/fonts/fontawesome-webfont.svg" role="data" />
    <file baseinstalldir="/" md5sum="dcb26c7239d850266941e80370e207c1" name="web/bootstrap/fonts/fontawesome-webfont.ttf" role="data" />
@@ -123,8 +123,8 @@ version 1.0.15 alpha release.
    <file baseinstalldir="/" md5sum="af7d19887aa9a271825b836a0f6d1c3a" name="web/cat/license.txt" role="data" />
    <file baseinstalldir="/" md5sum="85661d0e573e7e945ea7c5628ea710a9" name="web/cat/css/bootstrap.css" role="data" />
    <file baseinstalldir="/" md5sum="1f9e9d1a5a1d347d945ef4b7727f2ea0" name="web/cat/css/font-awesome.css" role="data" />
-   <file baseinstalldir="/" md5sum="f3fdd6c13e22606df84cfa02b4154d17" name="web/cat/css/foundation.css" role="data" />
-   <file baseinstalldir="/" md5sum="25ca45312a79fb0fb0fd5f10437dc4b1" name="web/cat/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="170064b92a2c72de0a7d0827f19bfb4e" name="web/cat/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="98a9bcade312936a25dac3a5f3e58670" name="web/cat/css/main.css" role="data" />
    <file baseinstalldir="/" md5sum="8b27bc96115c2d24350f0d09e6a9433f" name="web/cat/fonts/fontawesome-webfont.eot" role="data" />
    <file baseinstalldir="/" md5sum="0a799148a50bb02c6f380eabd8d97559" name="web/cat/fonts/fontawesome-webfont.svg" role="data" />
    <file baseinstalldir="/" md5sum="dcb26c7239d850266941e80370e207c1" name="web/cat/fonts/fontawesome-webfont.ttf" role="data" />
@@ -141,8 +141,8 @@ version 1.0.15 alpha release.
    <file baseinstalldir="/" md5sum="b5b9738cd80b5270003d5aad8ddd1e15" name="web/cat/smt_css/variables.less" role="data" />
    <file baseinstalldir="/" md5sum="4dadb7d31b2124a8ed01ae058bbc70bd" name="web/cerulean-dark/css/bootstrap.css" role="data" />
    <file baseinstalldir="/" md5sum="1f9e9d1a5a1d347d945ef4b7727f2ea0" name="web/cerulean-dark/css/font-awesome.css" role="data" />
-   <file baseinstalldir="/" md5sum="f3fdd6c13e22606df84cfa02b4154d17" name="web/cerulean-dark/css/foundation.css" role="data" />
-   <file baseinstalldir="/" md5sum="e340cb0a614a66f38cd7a80c83b9a3cc" name="web/cerulean-dark/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="170064b92a2c72de0a7d0827f19bfb4e" name="web/cerulean-dark/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="3296828135a3970b45413b35f342b71c" name="web/cerulean-dark/css/main.css" role="data" />
    <file baseinstalldir="/" md5sum="8b27bc96115c2d24350f0d09e6a9433f" name="web/cerulean-dark/fonts/fontawesome-webfont.eot" role="data" />
    <file baseinstalldir="/" md5sum="0a799148a50bb02c6f380eabd8d97559" name="web/cerulean-dark/fonts/fontawesome-webfont.svg" role="data" />
    <file baseinstalldir="/" md5sum="dcb26c7239d850266941e80370e207c1" name="web/cerulean-dark/fonts/fontawesome-webfont.ttf" role="data" />
@@ -159,8 +159,8 @@ version 1.0.15 alpha release.
    <file baseinstalldir="/" md5sum="e95e89624b9af8d68ec31ef53b6a203c" name="web/cerulean-dark/smt_css/variables.less" role="data" />
    <file baseinstalldir="/" md5sum="4dadb7d31b2124a8ed01ae058bbc70bd" name="web/cerulean-light/css/bootstrap.css" role="data" />
    <file baseinstalldir="/" md5sum="1f9e9d1a5a1d347d945ef4b7727f2ea0" name="web/cerulean-light/css/font-awesome.css" role="data" />
-   <file baseinstalldir="/" md5sum="f3fdd6c13e22606df84cfa02b4154d17" name="web/cerulean-light/css/foundation.css" role="data" />
-   <file baseinstalldir="/" md5sum="d1483bba8e3e2e5ce9d46f2317a11936" name="web/cerulean-light/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="170064b92a2c72de0a7d0827f19bfb4e" name="web/cerulean-light/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="93b5b228ade9ec9004d668821937cc0f" name="web/cerulean-light/css/main.css" role="data" />
    <file baseinstalldir="/" md5sum="8b27bc96115c2d24350f0d09e6a9433f" name="web/cerulean-light/fonts/fontawesome-webfont.eot" role="data" />
    <file baseinstalldir="/" md5sum="0a799148a50bb02c6f380eabd8d97559" name="web/cerulean-light/fonts/fontawesome-webfont.svg" role="data" />
    <file baseinstalldir="/" md5sum="dcb26c7239d850266941e80370e207c1" name="web/cerulean-light/fonts/fontawesome-webfont.ttf" role="data" />
@@ -177,8 +177,8 @@ version 1.0.15 alpha release.
    <file baseinstalldir="/" md5sum="e95e89624b9af8d68ec31ef53b6a203c" name="web/cerulean-light/smt_css/variables.less" role="data" />
    <file baseinstalldir="/" md5sum="4dadb7d31b2124a8ed01ae058bbc70bd" name="web/cerulean-ocean/css/bootstrap.css" role="data" />
    <file baseinstalldir="/" md5sum="1f9e9d1a5a1d347d945ef4b7727f2ea0" name="web/cerulean-ocean/css/font-awesome.css" role="data" />
-   <file baseinstalldir="/" md5sum="f3fdd6c13e22606df84cfa02b4154d17" name="web/cerulean-ocean/css/foundation.css" role="data" />
-   <file baseinstalldir="/" md5sum="7402f77b434f40204d0d5dffbf380830" name="web/cerulean-ocean/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="170064b92a2c72de0a7d0827f19bfb4e" name="web/cerulean-ocean/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="65973d760f6cc5f885a6acdeab6d2cc1" name="web/cerulean-ocean/css/main.css" role="data" />
    <file baseinstalldir="/" md5sum="8b27bc96115c2d24350f0d09e6a9433f" name="web/cerulean-ocean/fonts/fontawesome-webfont.eot" role="data" />
    <file baseinstalldir="/" md5sum="0a799148a50bb02c6f380eabd8d97559" name="web/cerulean-ocean/fonts/fontawesome-webfont.svg" role="data" />
    <file baseinstalldir="/" md5sum="dcb26c7239d850266941e80370e207c1" name="web/cerulean-ocean/fonts/fontawesome-webfont.ttf" role="data" />
@@ -195,8 +195,8 @@ version 1.0.15 alpha release.
    <file baseinstalldir="/" md5sum="e95e89624b9af8d68ec31ef53b6a203c" name="web/cerulean-ocean/smt_css/variables.less" role="data" />
    <file baseinstalldir="/" md5sum="4dadb7d31b2124a8ed01ae058bbc70bd" name="web/cerulean-sakura/css/bootstrap.css" role="data" />
    <file baseinstalldir="/" md5sum="1f9e9d1a5a1d347d945ef4b7727f2ea0" name="web/cerulean-sakura/css/font-awesome.css" role="data" />
-   <file baseinstalldir="/" md5sum="f3fdd6c13e22606df84cfa02b4154d17" name="web/cerulean-sakura/css/foundation.css" role="data" />
-   <file baseinstalldir="/" md5sum="6610037c245c56b413f79c2c7b55ecbb" name="web/cerulean-sakura/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="170064b92a2c72de0a7d0827f19bfb4e" name="web/cerulean-sakura/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="d8c57a97204ec73e3da973f77b4b699c" name="web/cerulean-sakura/css/main.css" role="data" />
    <file baseinstalldir="/" md5sum="8b27bc96115c2d24350f0d09e6a9433f" name="web/cerulean-sakura/fonts/fontawesome-webfont.eot" role="data" />
    <file baseinstalldir="/" md5sum="0a799148a50bb02c6f380eabd8d97559" name="web/cerulean-sakura/fonts/fontawesome-webfont.svg" role="data" />
    <file baseinstalldir="/" md5sum="dcb26c7239d850266941e80370e207c1" name="web/cerulean-sakura/fonts/fontawesome-webfont.ttf" role="data" />
@@ -213,8 +213,8 @@ version 1.0.15 alpha release.
    <file baseinstalldir="/" md5sum="e95e89624b9af8d68ec31ef53b6a203c" name="web/cerulean-sakura/smt_css/variables.less" role="data" />
    <file baseinstalldir="/" md5sum="4dadb7d31b2124a8ed01ae058bbc70bd" name="web/cerulean-tree/css/bootstrap.css" role="data" />
    <file baseinstalldir="/" md5sum="1f9e9d1a5a1d347d945ef4b7727f2ea0" name="web/cerulean-tree/css/font-awesome.css" role="data" />
-   <file baseinstalldir="/" md5sum="f3fdd6c13e22606df84cfa02b4154d17" name="web/cerulean-tree/css/foundation.css" role="data" />
-   <file baseinstalldir="/" md5sum="3caa1213ced792e44268c838aacb009b" name="web/cerulean-tree/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="170064b92a2c72de0a7d0827f19bfb4e" name="web/cerulean-tree/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="87306fd506e063f370e709743f1a4309" name="web/cerulean-tree/css/main.css" role="data" />
    <file baseinstalldir="/" md5sum="8b27bc96115c2d24350f0d09e6a9433f" name="web/cerulean-tree/fonts/fontawesome-webfont.eot" role="data" />
    <file baseinstalldir="/" md5sum="0a799148a50bb02c6f380eabd8d97559" name="web/cerulean-tree/fonts/fontawesome-webfont.svg" role="data" />
    <file baseinstalldir="/" md5sum="dcb26c7239d850266941e80370e207c1" name="web/cerulean-tree/fonts/fontawesome-webfont.ttf" role="data" />
@@ -231,8 +231,8 @@ version 1.0.15 alpha release.
    <file baseinstalldir="/" md5sum="e95e89624b9af8d68ec31ef53b6a203c" name="web/cerulean-tree/smt_css/variables.less" role="data" />
    <file baseinstalldir="/" md5sum="4dadb7d31b2124a8ed01ae058bbc70bd" name="web/cerulean/css/bootstrap.css" role="data" />
    <file baseinstalldir="/" md5sum="1f9e9d1a5a1d347d945ef4b7727f2ea0" name="web/cerulean/css/font-awesome.css" role="data" />
-   <file baseinstalldir="/" md5sum="f3fdd6c13e22606df84cfa02b4154d17" name="web/cerulean/css/foundation.css" role="data" />
-   <file baseinstalldir="/" md5sum="3a5e9372569cdbcbab9be75a2c488f83" name="web/cerulean/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="170064b92a2c72de0a7d0827f19bfb4e" name="web/cerulean/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="cccc3c74928e7c0d756e129a7ae0ca60" name="web/cerulean/css/main.css" role="data" />
    <file baseinstalldir="/" md5sum="8b27bc96115c2d24350f0d09e6a9433f" name="web/cerulean/fonts/fontawesome-webfont.eot" role="data" />
    <file baseinstalldir="/" md5sum="0a799148a50bb02c6f380eabd8d97559" name="web/cerulean/fonts/fontawesome-webfont.svg" role="data" />
    <file baseinstalldir="/" md5sum="dcb26c7239d850266941e80370e207c1" name="web/cerulean/fonts/fontawesome-webfont.ttf" role="data" />
@@ -249,8 +249,8 @@ version 1.0.15 alpha release.
    <file baseinstalldir="/" md5sum="af7d19887aa9a271825b836a0f6d1c3a" name="web/sunflower/license.txt" role="data" />
    <file baseinstalldir="/" md5sum="c70104a5123b088a254c9e10e5463f4f" name="web/sunflower/css/bootstrap.css" role="data" />
    <file baseinstalldir="/" md5sum="1f9e9d1a5a1d347d945ef4b7727f2ea0" name="web/sunflower/css/font-awesome.css" role="data" />
-   <file baseinstalldir="/" md5sum="f3fdd6c13e22606df84cfa02b4154d17" name="web/sunflower/css/foundation.css" role="data" />
-   <file baseinstalldir="/" md5sum="fe06d9e1463d077119ab0e9631f55381" name="web/sunflower/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="170064b92a2c72de0a7d0827f19bfb4e" name="web/sunflower/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="ddbdd8140b3e528618faa10f7140d239" name="web/sunflower/css/main.css" role="data" />
    <file baseinstalldir="/" md5sum="8b27bc96115c2d24350f0d09e6a9433f" name="web/sunflower/fonts/fontawesome-webfont.eot" role="data" />
    <file baseinstalldir="/" md5sum="0a799148a50bb02c6f380eabd8d97559" name="web/sunflower/fonts/fontawesome-webfont.svg" role="data" />
    <file baseinstalldir="/" md5sum="dcb26c7239d850266941e80370e207c1" name="web/sunflower/fonts/fontawesome-webfont.ttf" role="data" />
@@ -267,8 +267,8 @@ version 1.0.15 alpha release.
    <file baseinstalldir="/" md5sum="759d6b99616eb9b38ed8bc43d6b9603a" name="web/sunflower/smt_css/variables.less" role="data" />
    <file baseinstalldir="/" md5sum="53721f01e2dfd5e95450b1cfd5601021" name="web/winter/css/bootstrap.css" role="data" />
    <file baseinstalldir="/" md5sum="1f9e9d1a5a1d347d945ef4b7727f2ea0" name="web/winter/css/font-awesome.css" role="data" />
-   <file baseinstalldir="/" md5sum="f3fdd6c13e22606df84cfa02b4154d17" name="web/winter/css/foundation.css" role="data" />
-   <file baseinstalldir="/" md5sum="095e94abb410d606d9cc0ddfad4b3bf5" name="web/winter/css/main.css" role="data" />
+   <file baseinstalldir="/" md5sum="170064b92a2c72de0a7d0827f19bfb4e" name="web/winter/css/foundation.css" role="data" />
+   <file baseinstalldir="/" md5sum="0f1a15dcd43216751fcae1452b84a78e" name="web/winter/css/main.css" role="data" />
    <file baseinstalldir="/" md5sum="8b27bc96115c2d24350f0d09e6a9433f" name="web/winter/fonts/fontawesome-webfont.eot" role="data" />
    <file baseinstalldir="/" md5sum="0a799148a50bb02c6f380eabd8d97559" name="web/winter/fonts/fontawesome-webfont.svg" role="data" />
    <file baseinstalldir="/" md5sum="dcb26c7239d850266941e80370e207c1" name="web/winter/fonts/fontawesome-webfont.ttf" role="data" />
@@ -516,6 +516,21 @@ version 1.0.14 alpha release.
    <license>Apache</license>
    <notes>
 version 1.0.15 alpha release.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.16</release>
+    <api>1.0.16</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2020-06-25</date>
+   <license>Apache</license>
+   <notes>
+version 1.0.16 alpha release.
    </notes>
   </release>
  </changelog>
